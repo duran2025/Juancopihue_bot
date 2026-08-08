@@ -8,7 +8,7 @@
   :root {
     --verde: #1b5e20;
     --verde-claro: #2e7d32;
-    --fondo: #f4f6f4;
+    --fondo: #ffffff;
     --burbuja-usuario: #1b5e20;
     --burbuja-bot: #ffffff;
     --texto: #1a1a1a;
@@ -75,6 +75,28 @@
   @media (max-width: 1100px) {
     .mascot { display: none; }
   }
+  .mascot-inline {
+    display: none;
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+  }
+  @media (max-width: 1100px) {
+    #chat { position: relative; }
+    .mascot-inline-top {
+      display: block;
+      top: 10px;
+      left: 10px;
+      width: 100px;
+    }
+    .mascot-inline-bottom {
+      display: block;
+      top: 320px;
+      left: 16px;
+      width: 190px;
+      opacity: 0.3;
+    }
+  }
   .chat-column {
     display: flex;
     flex-direction: column;
@@ -102,6 +124,8 @@
     line-height: 1.45;
     font-size: 14.5px;
     white-space: pre-wrap;
+    position: relative;
+    z-index: 1;
   }
   .msg.user {
     align-self: flex-end;
@@ -228,6 +252,8 @@
 
   <div class="chat-column">
     <div id="chat">
+      <img class="mascot-inline mascot-inline-top" src="/images/juan_saludando.png" alt="" />
+      <img class="mascot-inline mascot-inline-bottom" src="/images/pensando.png" alt="" />
       <div class="msg system">Hola, soy Juan Copihue, gracias a tecnología volví, ¿qué puedo ayudarte hoy?</div>
     </div>
 
