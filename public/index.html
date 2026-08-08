@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Asistente Scout - Agrupación Nacional</title>
+<style>
+  :root {
+    --verde: #1b5e20;
+    --verde-claro: #2e7d32;
+    --fondo: #f4f6f4;
+    --burbuja-usuario: #1b5e20;
+    --burbuja-bot: #ffffff;
+    --texto: #1a1a1a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    background: var(--verde);
+    color: white;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  header .logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  header h1 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 600;
+  }
+  header p {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.85;
+  }
+  #chat {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 760px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .msg {
+    max-width: 78%;
+    padding: 10px 14px;
+    border-radius: 14px;
+    line-height: 1.45;
+    font-size: 14.5px;
+    white-space: pre-wrap;
+  }
+  .msg.user {
+    align-self: flex-end;
+    background: var(--burbuja-usuario);
+    color: white;
+    border-bottom-right-radius: 4px;
+  }
+  .msg.bot {
+    align-self: flex-start;
+    background: var(--burbuja-bot);
+    border: 1px solid #e0e0e0;
+    border-bottom-left-radius: 4px;
+  }
+  .msg.bot .fuentes {
+    display: block;
+    margin-top: 8px;
+    font-size: 11.5px;
+    color: #666;
+    border-top: 1px dashed #ddd;
+    padding-top: 6px;
+  }
+  .msg.system {
+    align-self: center;
+    color: #777;
+    font-size: 13px;
+    text-align: center;
+  }
+  .typing {
+    align-self: flex-start;
+    background: var(--burbuja-bot);
+    border: 1px solid #e0e0e0;
+    padding: 10px 14px;
+    border-radius: 14px;
+    border-bottom-left-radius: 4px;
+    font-size: 14px;
+    color: #888;
+  }
+  form#form {
+    display: flex;
+    gap: 8px;
+    padding: 14px 20px;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    max-width: 760px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  #input {
+    flex: 1;
+    padding: 12px 14px;
+    border-radius: 24px;
+    border: 1px solid #ccc;
+    font-size: 14.5px;
+    outline: none;
+  }
+  #input:focus { border-color: var(--verde-claro); }
+  #send {
+    background: var(--verde);
+    color: white;
+    border: none;
+    border-radius: 24px;
+    padding: 0 22px;
+    font-size: 14.5px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  #send:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🏕️</div>
+  <div>
+    <h1>Asistente Scout</h1>
+    <p>Consulta manuales y reglamentos de la Agrupación</p>
+  </div>
+</header>
+
+<div id="chat">
+  <div class="msg system">Hola, soy el asistente de la Agrupación. Pregúntame sobre reglamentos, uniformes, progresión personal y más.</div>
+</div>
+
+<form id="form">
+  <input id="input" type="text" placeholder="Escribe tu pregunta..." autocomplete="off" />
+  <button id="send" type="submit">Enviar</button>
+</form>
+
+<script>
+  const chat = document.getElementById("chat");
+  const form = document.getElementById("form");
+  const input = document.getElementById("input");
+  const sendBtn = document.getElementById("send");
+
+  let history = [];
+
+  function addMessage(role, text, sources) {
+    const div = document.createElement("div");
+    div.className = "msg " + role;
+    div.textContent = text;
+
+    if (sources && sources.length) {
+      const src = document.createElement("span");
+      src.className = "fuentes";
+      src.textContent = "Fuente(s): " + sources.join(", ");
+      div.appendChild(src);
+    }
+
+    chat.appendChild(div);
+    chat.scrollTop = chat.scrollHeight;
+    return div;
+  }
+
+  function showTyping() {
+    const div = document.createElement("div");
+    div.className = "typing";
+    div.id = "typing-indicator";
+    div.textContent = "Escribiendo...";
+    chat.appendChild(div);
+    chat.scrollTop = chat.scrollHeight;
+  }
+
+  function hideTyping() {
+    const el = document.getElementById("typing-indicator");
+    if (el) el.remove();
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const question = input.value.trim();
+    if (!question) return;
+
+    addMessage("user", question);
+    history.push({ role: "user", content: question });
+    input.value = "";
+    sendBtn.disabled = true;
+    showTyping();
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: question, history }),
+      });
+
+      const data = await res.json();
+      hideTyping();
+
+      if (!res.ok) {
+        addMessage("bot", data.error || "Ocurrió un error. Intenta de nuevo.");
+        return;
+      }
+
+      addMessage("bot", data.answer, data.sources);
+      history.push({ role: "assistant", content: data.answer });
+    } catch (err) {
+      hideTyping();
+      addMessage("bot", "No pude conectarme al servidor. Intenta de nuevo en unos momentos.");
+    } finally {
+      sendBtn.disabled = false;
+      input.focus();
+    }
+  });
+</script>
+
+</body>
+</html>

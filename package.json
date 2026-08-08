@@ -1,7 +1,7 @@
 {
-  "name": "scout-whatsapp-bot",
+  "name": "scout-web-bot",
   "version": "1.0.0",
-  "description": "Chatbot de WhatsApp con IA para consultar manuales y reglamentos de la Agrupación Nacional de Boy Scouts de Chile",
+  "description": "Chatbot web con IA para consultar manuales y reglamentos de la Agrupación Nacional de Boy Scouts de Chile",
   "main": "server.js",
   "type": "commonjs",
   "scripts": {
