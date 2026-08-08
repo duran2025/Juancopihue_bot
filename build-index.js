@@ -1,3 +1,5 @@
+// build-index.js
+// Lee todos los archivos .txt de la carpeta /knowledge...
 # Copia este archivo como ".env" (en local) y rellena el valor.
 # En Render, esta variable se configura en el panel "Environment", no en un archivo.
 
