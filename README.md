@@ -13,7 +13,7 @@ un despliegue en Render (gratis).
 
 - [ ] Cuenta en **GitHub** (gratis)
 - [ ] Cuenta en **Render.com** (gratis)
-- [ ] Una **API Key de Anthropic** (se genera en console.anthropic.com > "API Keys"). El uso de la API tiene costo según cuántas preguntas reciba el bot, pero para un sitio de agrupación scout el gasto mensual normalmente es bajo.
+- [ ] Una **API Key gratuita de Google Gemini** (ver Paso 1.5 abajo — no requiere tarjeta de crédito)
 - [ ] Tus 21 documentos convertidos a `.txt` (ver Paso 1)
 
 ---
@@ -40,6 +40,17 @@ Pon los 21 archivos `.txt` dentro de la carpeta `/knowledge`, reemplazando el ar
 
 ---
 
+## Paso 1.5: Conseguir tu API Key gratuita de Google Gemini
+
+1. Ve a [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)
+2. Inicia sesión con una cuenta de Google (Gmail).
+3. Click en **"Create API Key"**.
+4. Copia la clave que se genera (empieza distinto según el caso, pero es una cadena larga de letras y números).
+
+Esto es gratis y no pide tarjeta de crédito. Tiene un límite de uso diario/por minuto en la capa gratuita — más que suficiente para un chatbot de agrupación con uso normal. Si en algún momento se supera ese límite, Gemini simplemente devuelve un error temporal (no te cobra).
+
+---
+
 ## Paso 2: Subir el proyecto a GitHub
 
 1. Crea un repositorio nuevo en GitHub (puede ser privado, ya tienes uno creado: `Juancopihue_bot` — puedes usar ese mismo o crear uno nuevo para esta versión).
@@ -61,7 +72,7 @@ Pon los 21 archivos `.txt` dentro de la carpeta `/knowledge`, reemplazando el ar
    - **Start Command:** `npm start`
    - **Plan:** Free
 5. En **Environment Variables**, agrega:
-   - `ANTHROPIC_API_KEY` → tu clave de console.anthropic.com
+   - `GEMINI_API_KEY` → tu clave gratuita de aistudio.google.com
 6. Click en "Create Web Service". Cuando termine, Render te da una URL como:
    `https://scout-web-bot.onrender.com`
 
@@ -108,5 +119,5 @@ del servidor.
 
 ## Si algo falla
 
-- **La página carga pero no responde:** revisa los "Logs" en el panel de Render, ahí aparecen los errores. Lo más común es que falte la `ANTHROPIC_API_KEY`.
+- **La página carga pero no responde:** revisa los "Logs" en el panel de Render, ahí aparecen los errores. Lo más común es que falte o esté mal copiada la `GEMINI_API_KEY`.
 - **Respuestas raras o vacías:** verifica que `npm run build-index` se haya ejecutado bien (debería listar tus 21 documentos en el log del build de Render).

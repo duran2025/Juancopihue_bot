@@ -2,11 +2,13 @@
 // Servidor web que sirve una página de chat y responde preguntas usando
 // tus manuales/reglamentos como base de conocimiento.
 //
+// Usa la API gratuita de Google Gemini para generar las respuestas.
+//
 // Flujo:
 // 1. El usuario escribe una pregunta en la página web (public/index.html)
 // 2. El navegador manda la pregunta a POST /api/chat
 // 3. Buscamos los fragmentos más relevantes de tus manuales (retrieval.js)
-// 4. Le preguntamos a Claude, dándole esos fragmentos como contexto
+// 4. Le preguntamos a Gemini, dándole esos fragmentos como contexto
 // 5. Devolvemos la respuesta a la página web
 
 require("dotenv").config();
@@ -19,7 +21,12 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-const { ANTHROPIC_API_KEY, PORT = 3000 } = process.env;
+const { GEMINI_API_KEY, PORT = 3000 } = process.env;
+
+// Modelo gratuito de Gemini. "gemini-1.5-flash" tiene una capa gratuita
+// generosa, ideal para este tipo de bot.
+const GEMINI_MODEL = "gemini-1.5-flash";
+const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 // Carga el índice de búsqueda al arrancar el servidor.
 try {
@@ -61,40 +68,45 @@ app.post("/api/chat", async (req, res) => {
       ? `Contexto de los manuales:\n\n${context}\n\nPregunta del usuario: ${message}`
       : `No se encontró contexto relevante en los manuales para esta pregunta.\n\nPregunta del usuario: ${message}`;
 
-    // Incluimos el historial reciente de la conversación (si lo hay) para
-    // que el chat tenga continuidad, y al final la pregunta con su contexto.
-    const messages = [
-      ...history.slice(-6), // últimos mensajes para no pasarnos de tamaño
-      { role: "user", content: userMessage },
+    // Gemini usa "user"/"model" en vez de "user"/"assistant", y no tiene un
+    // campo "system" separado en todas las versiones, así que lo agregamos
+    // como instrucción del sistema aparte (systemInstruction).
+    const geminiHistory = history.slice(-6).map((m) => ({
+      role: m.role === "assistant" ? "model" : "user",
+      parts: [{ text: m.content }],
+    }));
+
+    const contents = [
+      ...geminiHistory,
+      { role: "user", parts: [{ text: userMessage }] },
     ];
 
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
+    const response = await fetch(`${GEMINI_URL}?key=${GEMINI_API_KEY}`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-key": ANTHROPIC_API_KEY,
-        "anthropic-version": "2023-06-01",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: "claude-sonnet-4-6",
-        max_tokens: 800,
-        system: SYSTEM_PROMPT,
-        messages,
+        systemInstruction: {
+          parts: [{ text: SYSTEM_PROMPT }],
+        },
+        contents,
+        generationConfig: {
+          maxOutputTokens: 800,
+        },
       }),
     });
 
     if (!response.ok) {
       const errText = await response.text();
-      console.error("Error de la API de Claude:", errText);
+      console.error("Error de la API de Gemini:", errText);
       return res.status(500).json({
         error: "Tuve un problema para responder tu pregunta. Intenta de nuevo.",
       });
     }
 
     const data = await response.json();
-    const textBlock = data.content?.find((b) => b.type === "text");
     const answer =
-      textBlock?.text || "No pude generar una respuesta, intenta reformular tu pregunta.";
+      data.candidates?.[0]?.content?.parts?.[0]?.text ||
+      "No pude generar una respuesta, intenta reformular tu pregunta.";
 
     const sources = [...new Set(relevantChunks.map((c) => c.source))];
 
