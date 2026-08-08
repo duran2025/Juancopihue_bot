@@ -105,6 +105,25 @@ GitHub.
 
 ⚠️ **Importante sobre el plan gratis de Render:** el almacenamiento de Render en el plan Free **no es permanente** — los documentos que subas desde `/admin.html` sobreviven mientras el servicio siga corriendo normalmente, pero **se pierden la próxima vez que hagas un nuevo deploy** (por ejemplo, al subir un cambio de código a GitHub). Para que un documento quede de forma permanente, complementa subiéndolo también como `.txt` a la carpeta `/knowledge` en GitHub (ver Paso 1 y 2 más arriba). Si más adelante quieres que las subidas queden siempre guardadas sin hacer este paso extra, se puede agregar un "disco persistente" de Render (tiene un costo mensual bajo) — avísame si llegas a ese punto y te ayudo a configurarlo.
 
+## Documentos sugeridos por visitantes (con aprobación)
+
+Además de que tú subas documentos directamente desde el panel de administración,
+ahora cualquier visitante de la página principal puede **sugerir** un documento:
+
+1. En la página de chat, abre "📎 ¿Falta un documento? Súgierelo aquí"
+2. Sube un PDF, Word (.docx) o texto (.txt), y opcionalmente un comentario
+3. Click en "Enviar para aprobación"
+
+Ese documento **no se agrega automáticamente al chatbot** — queda en una lista
+de pendientes. En el panel de administración (`/admin.html`), en la sección
+"Documentos pendientes de aprobación", puedes:
+- **Descargar** el archivo para revisarlo
+- **Aprobar**: lo agrega oficialmente al conocimiento del bot
+- **Rechazar**: lo elimina sin agregarlo
+
+Esto te da control total sobre qué información termina respondiendo el bot,
+mientras permite que cualquier dirigente colabore sugiriendo documentos.
+
 ### Sobre "que el chatbot aprenda solo"
 
 El bot no se reentrena automáticamente con lo que la gente le escribe (eso

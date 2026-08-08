@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Administración - Asistente Scout</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f4f6f4;
+    color: #1a1a1a;
+    padding: 20px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  header {
+    background: #1b5e20;
+    color: white;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  header h1 { margin: 0; font-size: 18px; }
+  header a { color: #cde; font-size: 12px; }
+  .card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 16px;
+  }
+  .card h2 { font-size: 15px; margin: 0 0 12px 0; }
+  input[type="password"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  button {
+    background: #1b5e20;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  button:disabled { opacity: 0.6; cursor: not-allowed; }
+  .doc-row, .log-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 13.5px;
+  }
+  .doc-row:last-child, .log-row:last-child { border-bottom: none; }
+  .doc-row button {
+    background: #c62828;
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+  .log-q { font-weight: 600; }
+  .log-a { color: #555; margin-top: 4px; white-space: pre-wrap; }
+  .log-meta { color: #999; font-size: 11px; margin-top: 4px; }
+  .msg { font-size: 13px; margin-top: 8px; }
+  .msg.error { color: #c62828; }
+  .msg.ok { color: #2e7d32; }
+  #app { display: none; }
+  small { color: #777; }
+  .pending-item {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .pending-item .name { font-weight: 600; font-size: 13.5px; }
+  .pending-item .meta { color: #888; font-size: 11.5px; margin: 3px 0 8px 0; }
+  .pending-item .note { font-size: 13px; color: #444; margin-bottom: 8px; font-style: italic; }
+  .pending-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .pending-actions button { font-size: 12px; padding: 6px 12px; }
+  .btn-approve { background: #2e7d32; }
+  .btn-reject { background: #c62828; }
+  .btn-download { background: #555; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>🏕️ Panel de administración</h1>
+  <a href="/">&larr; Volver al chat</a>
+</header>
+
+<div id="login" class="card">
+  <h2>Ingresa la contraseña de administrador</h2>
+  <input id="password" type="password" placeholder="Contraseña" />
+  <button id="loginBtn">Entrar</button>
+  <div id="loginMsg" class="msg error"></div>
+</div>
+
+<div id="app">
+
+  <div class="card">
+    <h2>Documentos pendientes de aprobación <span id="pendingCount"></span></h2>
+    <small>Documentos que visitantes sugirieron desde la página principal. Descárgalos para revisarlos antes de aprobarlos.</small><br /><br />
+    <div id="pendingList">Cargando...</div>
+  </div>
+
+  <div class="card">
+    <h2>Subir documento nuevo</h2>
+    <small>Formatos permitidos: PDF, Word (.docx) o texto (.txt). Máximo 20MB.</small><br /><br />
+    <input id="fileInput" type="file" accept=".pdf,.docx,.txt" />
+    <button id="uploadBtn">Subir y agregar al chatbot</button>
+    <div id="uploadMsg" class="msg"></div>
+  </div>
+
+  <div class="card">
+    <h2>Documentos actuales</h2>
+    <div id="docsList">Cargando...</div>
+  </div>
+
+  <div class="card">
+    <h2>Últimas preguntas hechas al chatbot</h2>
+    <small>Revisa esto de vez en cuando para ver qué falta agregar o aclarar.</small><br /><br />
+    <div id="logsList">Cargando...</div>
+  </div>
+
+</div>
+
+</div>
+
+<script>
+  let password = "";
+
+  const loginBtn = document.getElementById("loginBtn");
+  const passwordInput = document.getElementById("password");
+  const loginMsg = document.getElementById("loginMsg");
+
+  loginBtn.addEventListener("click", async () => {
+    password = passwordInput.value;
+    const res = await fetch("/api/admin/documents", {
+      headers: { "x-admin-password": password },
+    });
+    if (res.ok) {
+      document.getElementById("login").style.display = "none";
+      document.getElementById("app").style.display = "block";
+      loadDocs();
+      loadLogs();
+      loadPending();
+    } else {
+      const data = await res.json().catch(() => ({}));
+      loginMsg.textContent = data.error || "Contraseña incorrecta.";
+    }
+  });
+
+  async function loadDocs() {
+    const res = await fetch("/api/admin/documents", {
+      headers: { "x-admin-password": password },
+    });
+    const data = await res.json();
+    const container = document.getElementById("docsList");
+    if (!data.documents || data.documents.length === 0) {
+      container.innerHTML = "<small>No hay documentos indexados todavía.</small>";
+      return;
+    }
+    container.innerHTML = "";
+    data.documents.forEach((doc) => {
+      const row = document.createElement("div");
+      row.className = "doc-row";
+      row.innerHTML = `<span>${doc.source} <small>(${doc.fragments} fragmentos)</small></span>`;
+      const delBtn = document.createElement("button");
+      delBtn.textContent = "Eliminar";
+      delBtn.onclick = async () => {
+        if (!confirm(`¿Eliminar "${doc.source}" del chatbot?`)) return;
+        await fetch(`/api/admin/documents/${encodeURIComponent(doc.source)}`, {
+          method: "DELETE",
+          headers: { "x-admin-password": password },
+        });
+        loadDocs();
+      };
+      row.appendChild(delBtn);
+      container.appendChild(row);
+    });
+  }
+
+  async function loadLogs() {
+    const res = await fetch("/api/admin/logs", {
+      headers: { "x-admin-password": password },
+    });
+    const data = await res.json();
+    const container = document.getElementById("logsList");
+    if (!data.logs || data.logs.length === 0) {
+      container.innerHTML = "<small>Todavía no se ha hecho ninguna pregunta.</small>";
+      return;
+    }
+    container.innerHTML = "";
+    data.logs.forEach((log) => {
+      const row = document.createElement("div");
+      row.className = "log-row";
+      row.style.display = "block";
+      const date = new Date(log.time).toLocaleString("es-CL");
+      row.innerHTML = `
+        <div class="log-q">${log.question}</div>
+        <div class="log-a">${log.answer}</div>
+        <div class="log-meta">${date} · Fuentes: ${(log.sources || []).join(", ") || "ninguna"}</div>
+      `;
+      container.appendChild(row);
+    });
+  }
+
+  async function loadPending() {
+    const res = await fetch("/api/admin/pending", {
+      headers: { "x-admin-password": password },
+    });
+    const data = await res.json();
+    const container = document.getElementById("pendingList");
+    const countSpan = document.getElementById("pendingCount");
+
+    if (!data.pending || data.pending.length === 0) {
+      container.innerHTML = "<small>No hay documentos pendientes por ahora.</small>";
+      countSpan.textContent = "";
+      return;
+    }
+
+    countSpan.textContent = `(${data.pending.length})`;
+    container.innerHTML = "";
+
+    data.pending.forEach((item) => {
+      const date = new Date(item.submittedAt).toLocaleString("es-CL");
+      const sizeKb = Math.round(item.size / 1024);
+
+      const div = document.createElement("div");
+      div.className = "pending-item";
+      div.innerHTML = `
+        <div class="name">${item.originalName}</div>
+        <div class="meta">Enviado el ${date} · ${sizeKb} KB</div>
+        ${item.note ? `<div class="note">"${item.note}"</div>` : ""}
+      `;
+
+      const actions = document.createElement("div");
+      actions.className = "pending-actions";
+
+      const downloadBtn = document.createElement("button");
+      downloadBtn.className = "btn-download";
+      downloadBtn.textContent = "Descargar";
+      downloadBtn.onclick = async () => {
+        const res = await fetch(`/api/admin/pending/${item.id}/download`, {
+          headers: { "x-admin-password": password },
+        });
+        if (!res.ok) {
+          alert("No se pudo descargar el archivo.");
+          return;
+        }
+        const blob = await res.blob();
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = item.originalName;
+        a.click();
+        URL.revokeObjectURL(url);
+      };
+
+      const approveBtn = document.createElement("button");
+      approveBtn.className = "btn-approve";
+      approveBtn.textContent = "Aprobar";
+      approveBtn.onclick = async () => {
+        approveBtn.disabled = true;
+        const res = await fetch(`/api/admin/pending/${item.id}/approve`, {
+          method: "POST",
+          headers: { "x-admin-password": password },
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          alert(data.error || "No se pudo aprobar el documento.");
+          approveBtn.disabled = false;
+          return;
+        }
+        loadPending();
+        loadDocs();
+      };
+
+      const rejectBtn = document.createElement("button");
+      rejectBtn.className = "btn-reject";
+      rejectBtn.textContent = "Rechazar";
+      rejectBtn.onclick = async () => {
+        if (!confirm(`¿Rechazar y eliminar "${item.originalName}"?`)) return;
+        await fetch(`/api/admin/pending/${item.id}`, {
+          method: "DELETE",
+          headers: { "x-admin-password": password },
+        });
+        loadPending();
+      };
+
+      actions.appendChild(downloadBtn);
+      actions.appendChild(approveBtn);
+      actions.appendChild(rejectBtn);
+      div.appendChild(actions);
+      container.appendChild(div);
+    });
+  }
+
+  document.getElementById("uploadBtn").addEventListener("click", async () => {
+    const fileInput = document.getElementById("fileInput");
+    const msg = document.getElementById("uploadMsg");
+    if (!fileInput.files.length) {
+      msg.className = "msg error";
+      msg.textContent = "Elige un archivo primero.";
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", fileInput.files[0]);
+
+    msg.className = "msg";
+    msg.textContent = "Subiendo y procesando...";
+
+    try {
+      const res = await fetch("/api/admin/upload", {
+        method: "POST",
+        headers: { "x-admin-password": password },
+        body: formData,
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        msg.className = "msg error";
+        msg.textContent = data.error || "Ocurrió un error.";
+        return;
+      }
+
+      msg.className = "msg ok";
+      msg.textContent = data.message;
+      fileInput.value = "";
+      loadDocs();
+    } catch (err) {
+      msg.className = "msg error";
+      msg.textContent = "No se pudo conectar con el servidor.";
+    }
+  });
+</script>
+
+</body>
+</html>
