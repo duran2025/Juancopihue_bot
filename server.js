@@ -1,260 +1,348 @@
-// server.js
-// Servidor web que sirve una página de chat y responde preguntas usando
-// tus manuales/reglamentos como base de conocimiento.
-//
-// Usa la API gratuita de Google Gemini para generar las respuestas.
-// Incluye un panel de administración (protegido con contraseña) para
-// subir documentos nuevos y ver qué preguntas se han hecho.
-//
-// Flujo del chat:
-// 1. El usuario escribe una pregunta en la página web (public/index.html)
-// 2. El navegador manda la pregunta a POST /api/chat
-// 3. Buscamos los fragmentos más relevantes de tus manuales (retrieval.js)
-// 4. Le preguntamos a Gemini, dándole esos fragmentos como contexto
-// 5. Devolvemos la respuesta a la página web, y guardamos un registro
-
-require("dotenv").config();
-const express = require("express");
-const path = require("path");
-const fs = require("fs");
-const fetch = require("node-fetch");
-const multer = require("multer");
-const pdfParse = require("pdf-parse");
-const mammoth = require("mammoth");
-const { search, loadIndex, addDocument, removeDocument, listSources } = require("./retrieval");
-
-const app = express();
-app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
-
-const upload = multer({
-  storage: multer.memoryStorage(),
-  limits: { fileSize: 20 * 1024 * 1024 }, // 20MB por archivo
-});
-
-const {
-  GEMINI_API_KEY,
-  ADMIN_PASSWORD,
-  PORT = 3000,
-} = process.env;
-
-// Modelo gratuito de Gemini vigente. Google actualiza estos nombres de vez
-// en cuando — si en el futuro deja de funcionar, revisa el modelo disponible
-// en aistudio.google.com y actualiza esta línea.
-const GEMINI_MODEL = "gemini-3.5-flash-lite";
-const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
-
-const LOG_FILE = path.join(__dirname, "questions-log.jsonl");
-
-// Carga el índice de búsqueda al arrancar el servidor.
-try {
-  loadIndex();
-} catch (err) {
-  console.error(
-    "⚠️  No se pudo cargar el índice de búsqueda:",
-    err.message,
-    "\nEl servidor va a arrancar igual, pero corre 'npm run build-index' y reinicia."
-  );
-}
-
-const SYSTEM_PROMPT = `Eres el asistente virtual de la Agrupación Nacional de Boy Scouts de Chile.
-Respondes preguntas de dirigentes, familias y scouts sobre manuales y reglamentos oficiales.
-
-Reglas:
-- Responde SOLO con información que esté en los fragmentos de contexto que te entregan.
-- Si la respuesta no está en el contexto, dilo claramente y sugiere consultar con un dirigente o revisar el documento original. No inventes información.
-- Sé claro y directo.
-- Si es útil, menciona de qué documento sale la información.
-- Responde siempre en español.`;
-
-// ---------- Utilidad: registrar cada pregunta hecha ----------
-function logQuestion(question, answer, sources) {
-  try {
-    const entry = {
-      time: new Date().toISOString(),
-      question,
-      answer,
-      sources,
-    };
-    fs.appendFileSync(LOG_FILE, JSON.stringify(entry) + "\n", "utf-8");
-  } catch (err) {
-    console.error("No se pudo guardar el registro de la pregunta:", err.message);
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Administración - Asistente Scout</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f4f6f4;
+    color: #1a1a1a;
+    padding: 20px;
   }
-}
+  .wrap { max-width: 720px; margin: 0 auto; }
+  header {
+    background: #1b5e20;
+    color: white;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  header h1 { margin: 0; font-size: 18px; }
+  header a { color: #cde; font-size: 12px; }
+  .card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 16px;
+  }
+  .card h2 { font-size: 15px; margin: 0 0 12px 0; }
+  input[type="password"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  button {
+    background: #1b5e20;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  button:disabled { opacity: 0.6; cursor: not-allowed; }
+  .doc-row, .log-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 13.5px;
+  }
+  .doc-row:last-child, .log-row:last-child { border-bottom: none; }
+  .doc-row button {
+    background: #c62828;
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+  .log-q { font-weight: 600; }
+  .log-a { color: #555; margin-top: 4px; white-space: pre-wrap; }
+  .log-meta { color: #999; font-size: 11px; margin-top: 4px; }
+  .msg { font-size: 13px; margin-top: 8px; }
+  .msg.error { color: #c62828; }
+  .msg.ok { color: #2e7d32; }
+  #app { display: none; }
+  small { color: #777; }
+  .pending-item {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .pending-item .name { font-weight: 600; font-size: 13.5px; }
+  .pending-item .meta { color: #888; font-size: 11.5px; margin: 3px 0 8px 0; }
+  .pending-item .note { font-size: 13px; color: #444; margin-bottom: 8px; font-style: italic; }
+  .pending-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .pending-actions button { font-size: 12px; padding: 6px 12px; }
+  .btn-approve { background: #2e7d32; }
+  .btn-reject { background: #c62828; }
+  .btn-download { background: #555; }
+</style>
+</head>
+<body>
+<div class="wrap">
 
-// ---------- Endpoint principal del chat ----------
-app.post("/api/chat", async (req, res) => {
-  try {
-    const { message, history = [] } = req.body;
+<header>
+  <h1>🏕️ Panel de administración</h1>
+  <a href="/">&larr; Volver al chat</a>
+</header>
 
-    if (!message || typeof message !== "string") {
-      return res.status(400).json({ error: "Falta el mensaje." });
-    }
+<div id="login" class="card">
+  <h2>Ingresa la contraseña de administrador</h2>
+  <input id="password" type="password" placeholder="Contraseña" />
+  <button id="loginBtn">Entrar</button>
+  <div id="loginMsg" class="msg error"></div>
+</div>
 
-    const relevantChunks = search(message, 5);
+<div id="app">
 
-    const context = relevantChunks
-      .map((c) => `[Fuente: ${c.source}]\n${c.text}`)
-      .join("\n\n---\n\n");
+  <div class="card">
+    <h2>Documentos pendientes de aprobación <span id="pendingCount"></span></h2>
+    <small>Documentos que visitantes sugirieron desde la página principal. Descárgalos para revisarlos antes de aprobarlos.</small><br /><br />
+    <div id="pendingList">Cargando...</div>
+  </div>
 
-    const userMessage = context
-      ? `Contexto de los manuales:\n\n${context}\n\nPregunta del usuario: ${message}`
-      : `No se encontró contexto relevante en los manuales para esta pregunta.\n\nPregunta del usuario: ${message}`;
+  <div class="card">
+    <h2>Subir documento nuevo</h2>
+    <small>Formatos permitidos: PDF, Word (.docx) o texto (.txt). Máximo 20MB.</small><br /><br />
+    <input id="fileInput" type="file" accept=".pdf,.docx,.txt" />
+    <button id="uploadBtn">Subir y agregar al chatbot</button>
+    <div id="uploadMsg" class="msg"></div>
+  </div>
 
-    const geminiHistory = history.slice(-6).map((m) => ({
-      role: m.role === "assistant" ? "model" : "user",
-      parts: [{ text: m.content }],
-    }));
+  <div class="card">
+    <h2>Documentos actuales</h2>
+    <div id="docsList">Cargando...</div>
+  </div>
 
-    const contents = [
-      ...geminiHistory,
-      { role: "user", parts: [{ text: userMessage }] },
-    ];
+  <div class="card">
+    <h2>Últimas preguntas hechas al chatbot</h2>
+    <small>Revisa esto de vez en cuando para ver qué falta agregar o aclarar.</small><br /><br />
+    <div id="logsList">Cargando...</div>
+  </div>
 
-    const response = await fetch(`${GEMINI_URL}?key=${GEMINI_API_KEY}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
-        contents,
-        generationConfig: { maxOutputTokens: 800 },
-      }),
+</div>
+
+</div>
+
+<script>
+  let password = "";
+
+  const loginBtn = document.getElementById("loginBtn");
+  const passwordInput = document.getElementById("password");
+  const loginMsg = document.getElementById("loginMsg");
+
+  loginBtn.addEventListener("click", async () => {
+    password = passwordInput.value;
+    const res = await fetch("/api/admin/documents", {
+      headers: { "x-admin-password": password },
     });
-
-    if (!response.ok) {
-      const errText = await response.text();
-      console.error("Error de la API de Gemini:", errText);
-      return res.status(500).json({
-        error: "Tuve un problema para responder tu pregunta. Intenta de nuevo.",
-      });
+    if (res.ok) {
+      document.getElementById("login").style.display = "none";
+      document.getElementById("app").style.display = "block";
+      loadDocs();
+      loadLogs();
+      loadPending();
+    } else {
+      const data = await res.json().catch(() => ({}));
+      loginMsg.textContent = data.error || "Contraseña incorrecta.";
     }
+  });
 
-    const data = await response.json();
-    const answer =
-      data.candidates?.[0]?.content?.parts?.[0]?.text ||
-      "No pude generar una respuesta, intenta reformular tu pregunta.";
-
-    const sources = [...new Set(relevantChunks.map((c) => c.source))];
-
-    logQuestion(message, answer, sources);
-
-    res.json({ answer, sources });
-  } catch (err) {
-    console.error("Error procesando la pregunta:", err);
-    res.status(500).json({ error: "Ocurrió un error inesperado." });
-  }
-});
-
-// ================== PANEL DE ADMINISTRACIÓN ==================
-// Todo lo de aquí abajo requiere la contraseña de administrador
-// (variable de entorno ADMIN_PASSWORD). Si no está configurada, estas
-// funciones quedan desactivadas por seguridad.
-
-function checkAdminPassword(req, res, next) {
-  if (!ADMIN_PASSWORD) {
-    return res.status(503).json({
-      error: "El panel de administración no está configurado (falta ADMIN_PASSWORD).",
+  async function loadDocs() {
+    const res = await fetch("/api/admin/documents", {
+      headers: { "x-admin-password": password },
     });
-  }
-  const provided = req.headers["x-admin-password"];
-  if (provided !== ADMIN_PASSWORD) {
-    return res.status(401).json({ error: "Contraseña incorrecta." });
-  }
-  next();
-}
-
-// Extrae texto plano de un archivo subido según su tipo.
-async function extractText(file) {
-  const name = file.originalname.toLowerCase();
-
-  if (name.endsWith(".pdf")) {
-    const data = await pdfParse(file.buffer);
-    return data.text;
-  }
-
-  if (name.endsWith(".docx")) {
-    const result = await mammoth.extractRawText({ buffer: file.buffer });
-    return result.value;
-  }
-
-  if (name.endsWith(".txt")) {
-    return file.buffer.toString("utf-8");
-  }
-
-  throw new Error("Formato no soportado. Usa PDF, Word (.docx) o texto (.txt).");
-}
-
-// Lista los documentos actualmente indexados.
-app.get("/api/admin/documents", checkAdminPassword, (req, res) => {
-  res.json({ documents: listSources() });
-});
-
-// Sube un documento nuevo (PDF, Word o texto) y lo agrega al conocimiento del bot.
-app.post(
-  "/api/admin/upload",
-  checkAdminPassword,
-  upload.single("file"),
-  async (req, res) => {
-    try {
-      if (!req.file) {
-        return res.status(400).json({ error: "No se recibió ningún archivo." });
-      }
-
-      const text = await extractText(req.file);
-
-      if (!text || text.trim().length < 20) {
-        return res.status(400).json({
-          error: "No se pudo extraer texto legible de ese archivo. Revisa que no sea un escaneo de solo imágenes.",
+    const data = await res.json();
+    const container = document.getElementById("docsList");
+    if (!data.documents || data.documents.length === 0) {
+      container.innerHTML = "<small>No hay documentos indexados todavía.</small>";
+      return;
+    }
+    container.innerHTML = "";
+    data.documents.forEach((doc) => {
+      const row = document.createElement("div");
+      row.className = "doc-row";
+      row.innerHTML = `<span>${doc.source} <small>(${doc.fragments} fragmentos)</small></span>`;
+      const delBtn = document.createElement("button");
+      delBtn.textContent = "Eliminar";
+      delBtn.onclick = async () => {
+        if (!confirm(`¿Eliminar "${doc.source}" del chatbot?`)) return;
+        await fetch(`/api/admin/documents/${encodeURIComponent(doc.source)}`, {
+          method: "DELETE",
+          headers: { "x-admin-password": password },
         });
+        loadDocs();
+      };
+      row.appendChild(delBtn);
+      container.appendChild(row);
+    });
+  }
+
+  async function loadLogs() {
+    const res = await fetch("/api/admin/logs", {
+      headers: { "x-admin-password": password },
+    });
+    const data = await res.json();
+    const container = document.getElementById("logsList");
+    if (!data.logs || data.logs.length === 0) {
+      container.innerHTML = "<small>Todavía no se ha hecho ninguna pregunta.</small>";
+      return;
+    }
+    container.innerHTML = "";
+    data.logs.forEach((log) => {
+      const row = document.createElement("div");
+      row.className = "log-row";
+      row.style.display = "block";
+      const date = new Date(log.time).toLocaleString("es-CL");
+      row.innerHTML = `
+        <div class="log-q">${log.question}</div>
+        <div class="log-a">${log.answer}</div>
+        <div class="log-meta">${date} · Fuentes: ${(log.sources || []).join(", ") || "ninguna"}</div>
+      `;
+      container.appendChild(row);
+    });
+  }
+
+  async function loadPending() {
+    const res = await fetch("/api/admin/pending", {
+      headers: { "x-admin-password": password },
+    });
+    const data = await res.json();
+    const container = document.getElementById("pendingList");
+    const countSpan = document.getElementById("pendingCount");
+
+    if (!data.pending || data.pending.length === 0) {
+      container.innerHTML = "<small>No hay documentos pendientes por ahora.</small>";
+      countSpan.textContent = "";
+      return;
+    }
+
+    countSpan.textContent = `(${data.pending.length})`;
+    container.innerHTML = "";
+
+    data.pending.forEach((item) => {
+      const date = new Date(item.submittedAt).toLocaleString("es-CL");
+      const sizeKb = Math.round(item.size / 1024);
+
+      const div = document.createElement("div");
+      div.className = "pending-item";
+      div.innerHTML = `
+        <div class="name">${item.originalName}</div>
+        <div class="meta">Enviado el ${date} · ${sizeKb} KB</div>
+        ${item.note ? `<div class="note">"${item.note}"</div>` : ""}
+      `;
+
+      const actions = document.createElement("div");
+      actions.className = "pending-actions";
+
+      const downloadBtn = document.createElement("button");
+      downloadBtn.className = "btn-download";
+      downloadBtn.textContent = "Descargar";
+      downloadBtn.onclick = async () => {
+        const res = await fetch(`/api/admin/pending/${item.id}/download`, {
+          headers: { "x-admin-password": password },
+        });
+        if (!res.ok) {
+          alert("No se pudo descargar el archivo.");
+          return;
+        }
+        const blob = await res.blob();
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = item.originalName;
+        a.click();
+        URL.revokeObjectURL(url);
+      };
+
+      const approveBtn = document.createElement("button");
+      approveBtn.className = "btn-approve";
+      approveBtn.textContent = "Aprobar";
+      approveBtn.onclick = async () => {
+        approveBtn.disabled = true;
+        const res = await fetch(`/api/admin/pending/${item.id}/approve`, {
+          method: "POST",
+          headers: { "x-admin-password": password },
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          alert(data.error || "No se pudo aprobar el documento.");
+          approveBtn.disabled = false;
+          return;
+        }
+        loadPending();
+        loadDocs();
+      };
+
+      const rejectBtn = document.createElement("button");
+      rejectBtn.className = "btn-reject";
+      rejectBtn.textContent = "Rechazar";
+      rejectBtn.onclick = async () => {
+        if (!confirm(`¿Rechazar y eliminar "${item.originalName}"?`)) return;
+        await fetch(`/api/admin/pending/${item.id}`, {
+          method: "DELETE",
+          headers: { "x-admin-password": password },
+        });
+        loadPending();
+      };
+
+      actions.appendChild(downloadBtn);
+      actions.appendChild(approveBtn);
+      actions.appendChild(rejectBtn);
+      div.appendChild(actions);
+      container.appendChild(div);
+    });
+  }
+
+  document.getElementById("uploadBtn").addEventListener("click", async () => {
+    const fileInput = document.getElementById("fileInput");
+    const msg = document.getElementById("uploadMsg");
+    if (!fileInput.files.length) {
+      msg.className = "msg error";
+      msg.textContent = "Elige un archivo primero.";
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", fileInput.files[0]);
+
+    msg.className = "msg";
+    msg.textContent = "Subiendo y procesando...";
+
+    try {
+      const res = await fetch("/api/admin/upload", {
+        method: "POST",
+        headers: { "x-admin-password": password },
+        body: formData,
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        msg.className = "msg error";
+        msg.textContent = data.error || "Ocurrió un error.";
+        return;
       }
 
-      const sourceName = path
-        .basename(req.file.originalname, path.extname(req.file.originalname))
-        .replace(/[^a-zA-Z0-9_\-áéíóúñÁÉÍÓÚÑ ]/g, "")
-        .trim()
-        .replace(/\s+/g, "_");
-
-      const fragments = addDocument(sourceName || `documento_${Date.now()}`, text);
-
-      res.json({
-        message: `Documento agregado: ${fragments} fragmentos indexados.`,
-        source: sourceName,
-        documents: listSources(),
-      });
+      msg.className = "msg ok";
+      msg.textContent = data.message;
+      fileInput.value = "";
+      loadDocs();
     } catch (err) {
-      console.error("Error subiendo documento:", err);
-      res.status(500).json({ error: err.message || "No se pudo procesar el archivo." });
+      msg.className = "msg error";
+      msg.textContent = "No se pudo conectar con el servidor.";
     }
-  }
-);
+  });
+</script>
 
-// Elimina un documento del índice.
-app.delete("/api/admin/documents/:source", checkAdminPassword, (req, res) => {
-  const removed = removeDocument(req.params.source);
-  res.json({ removed, documents: listSources() });
-});
-
-// Devuelve las últimas preguntas hechas al bot (para revisión humana).
-app.get("/api/admin/logs", checkAdminPassword, (req, res) => {
-  try {
-    if (!fs.existsSync(LOG_FILE)) return res.json({ logs: [] });
-    const lines = fs
-      .readFileSync(LOG_FILE, "utf-8")
-      .split("\n")
-      .filter(Boolean)
-      .slice(-50)
-      .reverse()
-      .map((line) => JSON.parse(line));
-    res.json({ logs: lines });
-  } catch (err) {
-    res.status(500).json({ error: "No se pudo leer el registro." });
-  }
-});
-
-app.get("/health", (req, res) => {
-  res.send("Bot Scout web funcionando ✅");
-});
-
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en el puerto ${PORT}`);
-});
+</body>
+</html>
