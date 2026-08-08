@@ -26,7 +26,7 @@ const { GEMINI_API_KEY, PORT = 3000 } = process.env;
 // Modelo gratuito de Gemini vigente. Google actualiza estos nombres de vez
 // en cuando — si en el futuro deja de funcionar, revisa el modelo disponible
 // en aistudio.google.com y actualiza esta línea.
-const GEMINI_MODEL = "gemini-2.5-flash";
+const GEMINI_MODEL = "gemini-3.5-flash-lite";
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 // Carga el índice de búsqueda al arrancar el servidor.
