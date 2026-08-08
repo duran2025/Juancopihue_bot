@@ -1,0 +1,2421 @@
+﻿Scout 3 - Astronomía
+
+Scout 3 
+ 
+Astronomía 
+
+Prólogo
+Los primeros pasos
+Observación visual
+Organizando la observación
+Ayudas visuales
+El universo
+El sistema solar
+¿Para qué nos sirve?
+Algo más sobre astronomía
+Bibliografía
+
+Derechos Reservados por la Asociación de Scouts de México, A.C 
+Este título forma parte de la Colección Scout, literatura de apoyo para muchachos 
+
+Autor: Juan José Martínez de la Rosa 
+Primera edición: 1989 
+
+Cuarta reimpresión: marzo de 1999 
+Editado por la Gerencia de Publicaciones 
+
+de la Asociación de Scouts de México, A.C 
+Este libro no puede ser reproducido total o parcialmente, sin la autorizacion escrita del editor.  
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+PRÓLOGO  
+
+Al revisar los libros que hablan en el mercado nacional sobre Astronomía, nos encontramos que no 
+había ninguno en español que sirviera como material de apoyo para el programa de adelanto de la 
+Asociación de Scouts de México para Muchachas Scouts y Scouts, ya que los que se encontraron o 
+eran muy caros o estaban adaptados a otras latitudes diferentes de las de la República Mexicana; 
+otros textos son muy buenos, pero o son más profundos de lo que necesita un chico en edad de 
+Tropa o Avanzada, o cubren temas que no interesen desde un punto de vista práctico.  
+
+Este libro contiene entre otras cosas útiles para los Scouts: cómo utilizar las estrellas y 
+constelaciones para orientarse de noche; cómo conocer la hora con las estrellas; cómo ubicarse, 
+construyendo un astrolabio elemental; y cómo utilizar los binoculares y telescopios.  
+
+Este libro fue elaborado por la Subcomisión Nacional de Tropas, para ayudar a las Muchachas 
+Scouts y a los Scouts a cubrir sus retos de adelanto y también como apoyo a los que requieran 
+mayor información, para la especialidad en Astronomía.  
+
+Juan José Martínez de la R. 
+Miembro de la SCNT 
+
+Septiembre 1o. de 1986.  
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Los Primeros Pasos  
+
+Es muy probable que tú hayas sido uno de los tantos habitantes de las ciudades 
+que en la primera noche despejada y sin luna que hayas pasado en un 
+campamento, te haya sorprendido la cantidad de estrellas que se pueden observar 
+a simple vista.  
+
+En nuestras ciudades "civilizadas" es posible ver ocasionalmente sólo a las 
+estrellas de 1a. y 2a. magnitud, a la luna y a los planetas más brillantes, debido a 
+la gran iluminación de las calles, letreros luminosos, luces de los edificios y 
+automóviles. Si te has asomado al cielo durante un apagón, habrás notado la 
+diferencia, aunque no tan notable como en el campo, debido al humo-niebla.  
+
+El calendario lunar  
+
+El hombre primitivo no tenía esta limitación y disponía de una vista del cielo tan despejada como 
+solamente podrás ver en el campo. Los principales ciclos que podía observar eran los del sol y los 
+de la luna, y las primera divisiones naturales fueron el "DÍA" y la "LUNA", "LUNACIÓN" o "AÑO 
+LUNAR".  
+
+Una subdivisión del ciclo lunar fueron los "CUARTOS" o fases de la luna. En nuestro tiempo eso se 
+refleja como el MES y las SEMANAS, ya que el ciclo lunar es de 29.5 días aproximadamente y los 
+cuartos duran alrededor de 7 días cada uno.  
+
+Las tribus nómadas utilizaron esta división del tiempo ya que sólo colectaban alimentos de la 
+naturaleza en donde los había o pastoreaban algunos animales en etapas más avanzadas.  
+
+El calendario solar  
+
+Cuando el hombre descubrió la agricultura tuvo que adaptarse a un ciclo 
+más largo, que era el de la siembra y la cosecha, que estaba 
+estrechamente ligado a las temporadas de lluvia y de secas. Viendo las 
+variaciones de la temperatura en las diferentes épocas, descubrió que 
+estaban ligados con un movimiento aparente del sol, el cual, para los 
+pueblos que vivían en la zona templada del hemisferio norte, parecía 
+viajar hacia el sur en el invierno y hacia el norte en el verano.  
+
+Este ciclo más largo coincidía con las épocas de emigración de algunas 
+especies de animales, con la floración de algunas plantas, con las 
+
+temporadas de lluvias, de frío y de calor, entre otras, y se consideraba que duraba 360 días de 
+números redondos o doce lunaciones; y ya era utilizado por los egipcios 4,000 años antes de 
+nuestra era.  
+
+Importancia del Este  
+
+También el hombre observó que el sol al salir, no lo hace siempre por el 
+mismo lugar, sino que en la temporada de calor, sale más al norte y que en 
+el invierno, sale más al sur. Al punto medio de estos dos extremos, se le 
+llamó posteriormente el ESTE y tenía una gran significación desde el punto 
+de vista mágico-religioso.  
+
+La variación de las sombras al mediodía, fue también observada y se podía 
+medir por medio de una vara u objeto vertical, conocido como GNOMON, y 
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+cuando la sombra del sol era mínima, se obtenía una línea perpendicular a 
+la línea Este-Oeste que es la línea NORTE-SUR, por lo que era fácil determinar con gran precisión la 
+orientación de monumentos y pirámides, sin necesidad de instrumentos sofisticados.  
+
+Pronto se construyeron observatorios más y más complejos como los de 
+Stonehengue, en Inglaterra, que consiste en una serie de rocas fijadas en 
+posiciones que permiten observar la puesta y salida del sol, la luna, de 
+algunas estrellas y planetas. Esta tradición se conservó durante muchos años 
+y todos los templos se orientaban hacia el sol naciente, inclusive en épocas 
+muy recientes.  
+
+Los puntos cardinales recibieron diferentes nombres y entre los más usados 
+hasta la fecha tenemos el: Norte, Boreal o Septentrión; Sur, Austral o 
+Meridional; Este, Levante u Oriente; y Oeste, Poniente u Occidente.  
+
+Las culturas mesoamericanas tenían un gran desarrollo de las astronomía cuando llegaron los 
+españoles a conquistarlas y son notables los trabajos hechos por las culturas Teotihuacana, Maya y 
+la cultura Inca. Los congresos de astrónomos están registrados como eventos importantes en 
+códices y en esculturas en piedra, siendo notables los festejos y sacrificios ofrecidos en los 
+solsticios de verano e invierno, así como los que se efectuaban en las fechas de los equinoccios de 
+primavera y verano. Eran especialmente notables las celebraciones que se efectuaban en las 
+regiones del valle de México, con motivo del paso del sol por el cenit, el 18 de mayo en que pasa el 
+sol hacia el norte y el 21 de julio en que regresa hacia el sur.  
+
+Todo esto no sería posible sin una cuidadosa observación de lo que sucede 
+en el cielo y de llevar un registro minucioso del mismo. Esto se logró 
+también construyendo observatorios más elaborados en los que los 
+sacerdotes, científicos o astrónomos, podían medir con más exactitud los 
+cambios, sobre todo de la posición del sol. Un efecto de la orientación 
+cuidadosa de la pirámide entre los mayas, produce "La baja de Kukulkán" 
+en los 3 días anteriores y posteriores a los equinoccios de primavera y de 
+otoño.
+
+El Reloj Solar  
+
+Cuando se tuvo necesidad de un ciclo menor que un día para medir las 
+jornadas de trabajo en labores del campo y otras actividades, aparece en 
+Egipto el reloj solar, que divide la duración del día en 12 horas.  
+
+Nosotros, en este tiempo, se nos antoja imposible que se haya podido tener 
+la facilidad de hacer esto sin nuestros cronómetros, calendarios y grandes 
+observatorios, pero todo es derivado de la cuidadosa observación del cielo, de 
+los ciclos tanto del sol, como los de la luna y los de las estrellas.  
+
+Nuestra civilización, metida en sus habitaciones confortables y lejos del 
+contacto directo con la naturaleza, ha perdido la habilidad de interpretar los 
+fenómenos celestes y prefiere verlos por televisión, sin saber en qué 
+momento dado, esto puede ser usado hasta para evitarnos molestias y aún 
+salvarnos la vida.  
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Aprender a reconocer las constelaciones, las estrellas, los movimientos de la bóveda celeste, los 
+del sol y de la luna, son muy necesarios para todo navegante o excursionista, ya que sirven en 
+lugar de la brújula y el reloj, si se sabe hacer uso de ellos, aún dentro de un bosque espeso, en un 
+desierto o en un día medio nublado.  
+
+  
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+La Observación Visual  
+
+La mayoría de las personas piensa que para aprender algo de astronomía es indispensable ir a un 
+gran observatorio o por lo menos contar con un buen telescopio, pero esto es un error. Cualquiera 
+puede iniciarse en esta ciencia como diversión o para aplicarla en ciertas circunstancias para poder 
+orientarse, y no es necesario salir de casa si se tienen condiciones adecuadas para ver el cielo 
+nocturno o desde un lugar de acceso fácil, como un parque, una azotea o algún lugar o resguardo 
+de la luz artificial.  
+
+Es de gran ayuda si se cuenta con una silla reclinable, como las de playa, 
+para estar más cómodo, o por lo menos una bolsa de dormir o una cobija 
+para extenderlos sobre el piso y arroparse bien si hace frío; además hay 
+que disponer de un buen mapa estelar adecuado para la latitud del lugar y 
+saber en dónde se encuentran los puntos cardinales.  
+
+El mapa estelar o un buen planetario en el que se puedan ubicar las 
+estrellas a cualquier día y hora del año, son necesarios si no cuentas con 
+alguien que te pueda mostrar las principales constelaciones visibles en tu 
+región. En casi todas las grandes librerías del país podrás encontrar el 
+"ATLAS CÓSMICO" que edita el CONACYT o la revista "CIENCIA Y 
+
+DESARROLLO", que pueden servir de gran ayuda.  
+
+En estas publicaciones encontrarás los mapas celestes que incluyen todas las 
+estrellas, constelaciones, galaxias, nebulosas y cúmulos estelares que pueden 
+ser vistos a simple vista en un lugar muy oscuro, como en el campo durante 
+las noches despejadas y sin luna en donde es posible ver las estrellas hasta 
+de 5ª ó 6ª magnitud; sin embargo, en condiciones "normales" en la ciudad, 
+únicamente podrás ver las estrellas de 1ª y de 2ª magnitud y 
+excepcionalmente las de 3ª.  
+
+En el Atlas Cósmico puedes ver que hay un solo mapa celeste por cada dos 
+meses, (enero-febrero, marzo-abril, etc.), pero la hora a la que se presenta 
+el mismo cielo es diferente. Por ejemplo, el mapa de enero-febrero dice: 
+"aspecto del cielo a las 22 horas el 22 de enero y a las 20 horas del 22 de 
+febrero"; esto se debe a que las estrellas salen todos los días por el mismo 
+punto, pero se adelantan unos 4 minutos cada día, lo que da unos 120 
+minutos por mes o 2 horas de diferencia en el mismo tiempo y en total nos 
+dan 24 horas al año.  
+
+Este efecto se debe al giro de la tierra alrededor del sol y nos cambia el escenario del cielo cada 
+noche, lo que nos permite revisar toda la parte de la bóveda celeste visible desde nuestro punto de 
+observación durante un año.  
+
+Estrellas y Constelaciones Circumpolares  
+
+La República Mexicana está comprendida entre los paralelos 14.5º N y 32.7º N aproximadamente, 
+por lo que la única constelación que podemos ver teóricamente todas las noches despejadas sin 
+ocultarse nunca, es la de LA OSA MENOR, por lo que se le conoce como CONSTELACIÓN 
+CIRCUMPOLAR, o sea que circunda al polo todas las noches, y sólo puede ser observada en lugares 
+muy oscuros, con cielo muy despejado en el horizonte hacia el norte.  
+
+De cualquier manera, el dibujo siguiente te presenta el aspecto de la osa menor en las fechas y 
+horas anotadas y esto te puede servir como guía. La estrella polar es de 2ª magnitud y estará a 
+una altura sobre el horizonte medida en grados igual a la latitud del lugar en que se observa. En la 
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+parte media de la República, se puede ver a una altura de 24º sobre el horizonte; para la ciudad de 
+México, se encuentra a poco más de 190 de altura.  
+
+  
+
+En realidad la estrella polar no está exactamente en el polo norte sino a un grado del mismo 
+aproximadamente, así que describe un pequeño circulo alrededor del polo norte celeste y la 
+dirección del polo norte geográfico únicamente la indica cuando está en la posición más alta o más 
+baja de ese circulo, como se puede ver en la siguiente figura.  
+
+Las estrellas cercanas al horizonte son difíciles de ver por la bruma que 
+aparece en esta zona, ocupando entre 10 y 15 grados de altura en muchos 
+lugares con alto grado de humedad o con polvo. Otro problema consiste en 
+que la atmósfera actúa como una lente y deforma los rayos de luz que 
+provienen de las estrellas y cuerpos celestes, haciéndolos aparecer más altos 
+de lo que están en realidad, así que es mejor utilizar como referencias a las 
+estrellas que estén altas sobre el horizonte y cuya luz llega menos desviada.
+
+  
+
+Los marinos sabían bien esto y cuando usaban el sextante para ubicarse, preferían utilizar una 
+estrella alta sobre el horizonte para evitar este error.  
+
+También hay que tener en cuenta la estabilidad de la atmósfera cuando observes el cielo, ya que 
+cuando el cielo está muy despejado hay una fuga de calor desde la superficie de la tierra hacia el 
+espacio lo cual crea olas de aire caliente en movimiento, como las que ves en los días de calor 
+sobre el pavimento caliente, lo cual hace que las estrellas "titilen" y dificulta su observación.  
+
+Guía Sencilla del Cielo  
+
+Ahora revisemos el cielo y veremos qué podemos ver: el 20 de marzo a las 
+22 hrs podrás ver a la Osa Mayor recostada sobre su espalda por arriba de la 
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Osa Menor, la cual aparecerá ascendiendo una pendiente y un poco hacia el 
+sur y sobre tu cabeza, podrás ver a una estrella muy brillante que se llama Régulo y pertenece a la 
+constelación de Leo.  
+
+Para el 20 de junio a las 22 horas podrás ver a la Osa Menor parada sobre su cola, a la Osa Mayor 
+como si estuviera cayendo de cabeza a la izquierda de la Polar y casi sobre tu cabeza estará 
+Arturo, una estrella brillante de la constelación de Boyero, la cual se puede también localizar si 
+sigues una línea curva en la dirección en que indica la cola de la Osa Mayor. A tu derecha estará la 
+Cruz del norte o El Cisne como se conoce también, con su estrella Deneb. En un lugar muy oscuro 
+podrás reconocer a la Corona Boreal casi sobre tu cabeza, que es una constelación en forma de 
+semicírculo; más arriba de Deneb estará también otra estrella de 1ª magnitud que es Vega de la 
+constelación de la Lira, que se ve como un pequeño rombo a su derecha.  
+
+  
+
+El 21 de septiembre a las 22 horas verás a la Osa Menor sobre su espalda y sobre ella estará la 
+constelación de Ceféo que tiene forma de un pentágono; más arriba y a la izquierda estará ahora la 
+constelación del Cisne y si observas bien, verás que trazando una línea desde el extremo superior 
+de la Cruz y que pase por Deneb, llegarás a la estrella Polar y nos sirve como indicación de la 
+dirección del polo Norte cuando no podemos ver a la Polar por las nubes o porque está oculta a la 
+vista por árboles u otra obstrucción. A su derecha estará Pegaso, que es un gran rectángulo del 
+que forman parte las estrellas Alpheratz y Algenib y que apuntan en dirección sur hacia la estrella 
+Fomalhaut de la constelación del Pez Austral. Para esta fecha y hora ya no se puede ver a la Osa 
+Mayor pero ahora aparecerá Casiopea arriba y a la derecha de la Polar, formando un número "3".  
+
+  
+
+Para el 21 de diciembre a las 22 horas, la Osa Menor estará de cabeza y es muy difícil de ver, a 
+menos que estés en un lugar en el que no haya bruma en el horizonte y que no haya luna. Para 
+entonces, Casiopea estará arriba y a la izquierda de la Polar formando una letra "M", Pegaso estará 
+hacia la izquierda y sobre tu cabeza estará la constelación de Tauro, la que se distingue por su 
+estrella de 1ª magnitud, Aldebarán y del cúmulo estelar de Las Hades; un poco hacia el Noroeste 
+de Aldebarán estará otro precioso cúmulo estelar conocido como Las Pléyades en el cual se pueden 
+ver 6 o 7 estrellas juntas, dependiendo de tu agudeza visual.  
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+  
+
+Más hacia el sur de Tauro estará la espectacular constelación de Orión, 
+formada por un gran rectángulo de estrellas entre las que se encuentran 
+Betelgeuse al Noreste y Rigel al Suroeste del mismo. Al centro del 
+rectángulo puedes ver tres estrellas iguales y espaciadas regularmente y 
+forman lo que se conoce como "El cinturón de Orión" y que también son 
+conocidas como "Los tres reyes Magos", por aparecer cerca de la Navidad; 
+siguiendo en dirección Suroeste una prolongación de la línea que siguen las 
+tres estrellas del cinturón, llegarás a la estrella más brillante que se puede 
+ver en el cielo y que se llama Sirio y está formando parte de la constelación 
+del Can Mayor.  
+
+Hacia el Este, podrás ver otra estrella brillante que forma con Betelgeuse y 
+Sirio un gran triángulo de lados prácticamente iguales y es Proción que 
+forma parte de la constelación del Can Menor. Si ahora trazas una línea que 
+parte de Orión hacia la Polar, cruzarás por donde se encuentra otra estrella 
+de 1ª magnitud y que se llama Capella y pertenece a la constelación del 
+Cochero la cual tiene forma de un pentágono no regular: a su derecha 
+encontrarás a otras dos estrellas brillantes que se llaman Pólux y Cástor y 
+pertenecen a la constelación de Gémini; en algunos lugares se conocen también como "Los ojos de 
+Santa Lucia". Como podrás ver, el cielo de invierno es el más rico en constelaciones y estrellas 
+brillantes.  
+
+  
+
+Como Identificar a las Estrellas y Constelaciones  
+
+Desde tu casa probablemente no puedas ver todas las constelaciones que te 
+hemos descrito, pero sí las más brillantes tal vez, así que cuando vayas al 
+campo a un lugar oscuro trata de localizar al resto, tomando como guía las 
+que ya conozcas. Hacia el hemisferio sur no te hemos indicado muchas 
+constelaciones ya que hay pocas y poco brillantes, con excepción de Sagitario 
+y Escorpión que son muy espectaculares puedes identificar a las que ya 
+conoces por la gran cantidad de estrellas que ahora se ven, "deslúmbrate" un 
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+poco encendiendo una linterna o fogata para poder ver a tus conocidas de la 
+ciudad; una vez identificadas, apaga la linterna y ya podrás verlas como son 
+en realidad en su conjunto.
+
+La Vía Láctea  
+
+En un lugar muy oscuro tal vez te llame la atención una gran nube que 
+atraviesa el cielo, de un blanco lechoso, que pasa por las constelaciones de 
+Cisne, Casiopea, El Cochero y Gémini entre otras del hemisferio norte y 
+además de las constelaciones del Águila, Escorpión y Sagitario del 
+hemisferio sur. Esta es La Vía Láctea o sea la Galaxia de la que forma 
+parte nuestro sol y está formada por un gran número de estrellas que no 
+podemos ver a simple vista en su totalidad y sólo las más cercanas son a 
+las que conocemos por sus nombres, o por formar parte de alguna de las 
+constelaciones conocidas. 
+
+Otras nebulosas y cúmulos estelares pueden verse a simple vista en 
+lugares oscuros como Las Pléyades, Las Híades, el cúmulo del pesebre en 
+la constelación de Cáncer, los cúmulos estelares Messier 6 y 7 de Sagitario 
+y otros tantos que irás identificando con la ayuda de un buen mapa estelar 
+y con el tiempo. 
+
+Ejemplo de una Aplicación Práctica  
+
+Una vez que hayas aprendido las estrellas y constelaciones más importantes, podrás caminar de 
+noche sin ayuda de la brújula ya que las estrellas siempre salen y se ocultan por el mismo lugar 
+todas las noches, únicamente que lo hacen adelantándose 4 minutos al día cada vez.  
+
+Si desde un lugar fijo observas una estrella que esté baja en el horizonte, con 
+respecto a un sitio fijo, como una montaña, la punta de un árbol o el extremo de 
+tu bordón clavado en el suelo, a los 5 ó 10 minutos habrás observado que ya se 
+ha movido. Si se desplazó hacia la derecha o a la izquierda, es probable que estés 
+viendo hacia el Norte o hacia el Sur. Si la estrella se movió hacia arriba, estarás 
+viendo hacia el Este y si se movió hacia abajo, estarás viendo hacia el Oeste.  
+
+  
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Como ves existe la duda si al ver una estrella moverse hacia la derecha o a la 
+izquierda, estamos viendo hacia el norte o hacia el sur, por lo que te recomendamos utilizar una 
+estrella que esté alta en el cielo, ya que se moverá siempre hacia el Oeste sin lugar a dudas, 
+aunque en realidad es la tierra la que gira de Oeste a Este. Después aprenderás cómo se puede 
+saber en qué dirección estás viendo cuando hay esta duda, en un capítulo posterior.  
+
+Un buen conocedor del cielo, como los navegantes y exploradores, sacan 
+partido de estos conocimientos que les sirven tanto como una buena brújula así 
+como de reloj. Con el tiempo tu también podrás dominar este arte que te 
+ahorrará tiempo y molestias.
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Organizando la Observación  
+
+Ya vimos que en la esfera celeste las estrellas aparecen como puntos inmóviles, por lo menos para 
+fines prácticos, por lo que podemos realizar un mapa estelar en el cual nos podemos basar para 
+utilizar como referencias fijas, que nos permiten ubicarnos en tierra u orientarnos.  
+
+También vimos que la altura de la estrella polar sobre el horizonte varía con 
+nuestra posición relativa entre el ecuador y el polo norte en el hemisferio 
+norte, así como el hecho que las estrellas siempre aparecen por el mismo lugar 
+del horizonte noche a noche, pero con un adelanto de 4 minutos al día y por lo 
+tanto, también se ocultan 4 minutos antes cada noche.  
+
+Si ya leíste la historia de la balsa Kon-tiki, habrás visto que los polinesios 
+utilizan a las estrellas como base de navegación nocturna, ya que conocen 
+perfectamente que estrellas pasan por el cenit de cada una de sus islas e 
+inclusive tienen nombres iguales.  
+
+Los Mapas Celestes  
+
+Para hacer mapas celestes se ha tomado la misma técnica que se utiliza para hacer mapas del 
+globo y poder determinar con mayor precisión el lugar de cada punto sobre la tierra o de cada 
+estrella en la bóveda celeste. (Ver Scout 1, Exploración, de esta misma serie). En tierra se utilizan 
+los paralelos y meridianos, los que se dividen en grados, minutos y segundos para hacer más 
+precisa la ubicación, y en la bóveda celeste se sigue un procedimiento similar.  
+
+Coordenadas celestes  
+
+La extensión de una línea que pasa por los polos hasta la bóveda celeste, toca 
+unos puntos sobre los que se ve girar a las estrellas en su derredor y se 
+conocen como "Polos celestes", tanto norte como sur; si extendemos un plano 
+que corte a la tierra por el ecuador y que llegue a la bóveda celeste, 
+crearemos un circulo máximo sobre la misma, que se conoce como "Ecuador 
+celeste". Recuerda que todo esto es sólo imaginario y no existen en realidad ni 
+las líneas de paralelos ni las de los meridianos, así como la del ecuador o 
+puntos marcados exactamente en los polos.  
+
+La distancia entre el ecuador y los polos se divide al igual que en tierra en 
+grados, los que se consideran positivos en el hemisferio norte y negativos en el hemisferio sur; en 
+tierra a esto se le conoce como latitud pero en la esfera celeste se le conoce como DECLINACIÓN.  
+
+En tierra el ecuador se divide en grados desde un punto sobre el mismo, que 
+pasa por el observatorio de Greenwich y es el meridiano de referencia 
+internacional como en la bóveda celeste no corresponde un punto fijo a cada 
+lugar sobre la tierra todas las noches, con excepción de los polos, se ha tomado 
+como referencia el punto por donde pasa el sol, del hemisferio sur al hemisferio 
+norte, el día del equinoccio de primavera entre el 20 y 21 de marzo. A este 
+lugar se le conoce como el "Punto vernal" y está actualmente sobre la 
+constelación de Piscis. A diferencia de lo que se hace en tierra, en donde el 
+ecuador se divide en 180 grados este y oeste con respecto al meridiano cero, 
+en la bóveda celeste, el ecuador se divide en 24 horas, con subdivisiones de 
+
+minutos y segundo para mayor precisión.  
+
+La distancia en tierra entre el meridiano cero y el de un lugar se le conoce como longitud pero en la 
+bóveda celeste a la distancia del meridiano de una estrella sobre el ecuador celeste con respecto al 
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+punto vernal se le llama ASCENSIÓN RECTA.  
+
+Estas referencias sólo son buenas para un observador como nosotros, que esté en la tierra, ya que 
+la inclinación del eje terrestre con respecto al plano aparente de las órbitas de los planetas del 
+sistema solar es de unos 23.5 grados y por lo tanto el polo celeste no corresponde a un observador 
+en la luna o en Neptuno cuyo eje tiene una inclinación diferente con respecto al de la tierra.  
+
+Movimiento del Polo Celeste  
+
+La ventaja de considerar fijas a las estrellas sobre una bóveda celeste de 
+forma esférica, aunque en realidad no existe, es que permite utilizarlas como 
+referencias de precisión para navegación o para ubicar con precisión un punto 
+sobre la tierra como lo requiere un topógrafo o un geodesta. En realidad los 
+polos celestes no permanecen en el mismo lugar todo el tiempo sino que se 
+mueven dentro de un gran circulo y vuelven al mismo lugar después de unos 
+26,000 años, pero el cambio es tan pequeño que es suficiente considerarlos 
+fijos para fines prácticos.
+
+Movimiento Aparente de la Bóveda Celeste  
+
+Si te encontraras en cualquiera de los polos en una noche, verías a todas las 
+estrellas girando sobre tu cabeza, como si estuvieras bajo un gran paraguas y las 
+estrellas sobre tu cabeza harían pequeños círculos alrededor del polo; conforme 
+fueras bajando la vista hacia el horizonte, las estrellas estarán haciendo círculos 
+cada vez mayores, hasta llegar a las estrellas que estén sobre el horizonte y que 
+en este caso serían las que estuvieran colocadas en el ecuador celeste y sobre el 
+cenit de otro observador que estuviera en el ecuador. En el polo norte las 
+estrellas giran en dirección contraria a las manecillas del reloj y en el polo sur, 
+estarían girando en la dirección de las manecillas del reloj. 
+
+La Bóveda Celeste Vista Desde el Ecuador  
+
+Si por otro lado, estuvieras en cualquier punto sobre el ecuador terrestre, la estrella polar estaría 
+sobre el horizonte hacia el norte prácticamente inmóvil y las estrellas cercanas a los polos estarían 
+haciendo pequeños arcos alrededor de los mismos, pero las estrellas que estuvieran sobre el 
+ecuador celeste, estarían realizando un arco máximo y saliendo exactamente por el este, pasarían 
+sobre el cenit del lugar en que estás y se ocultarían exactamente al oeste del mismo lugar; las 
+estrellas del hemisferio sur harían arcos hacia la derecha y las del hemisferio norte los harían hacia 
+la izquierda.  
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+La Bóveda Celeste Vista Desde los Polos  
+
+En cualquiera de los polos, solamente podrás ver a las estrellas 
+correspondientes al hemisferio en que te encuentras, pero en el ecuador, 
+toda la noche te estará cambiando el escenario, ya que nuevas estrellas 
+aparecerán durante toda la noche por el horizonte este y otras estarán 
+desapareciendo por el oeste, de tal manera que puedes ver en cualquier 
+momento y en una noche despejada, la mitad de las estrellas de cada uno 
+de los hemisferios y durante toda la noche, casi podrás ver todas las 
+estrellas de la bóveda celeste, con excepción de las que se encuentran 
+atrás y cerca del sol. 
+
+La Bóveda Celeste Vista de Latitudes Intermedias  
+
+Algo más complicado sucede cuando te encuentras a una latitud 
+intermedia entre el ecuador y los polos; si por ejemplo estuvieras en un 
+lugar a 45 grados al norte del ecuador, podrías ver a la estrella polar todas 
+las noches, pero a una altura sobre el horizonte de 45 grados o sea la 
+misma altura que la declinación del lugar. Al mismo tiempo, todas las 
+estrellas que están comprendidas dentro de un círculo de 45 grados desde 
+el polo, las verás girar a su derredor todas las noches, sólo que 
+ligeramente desplazadas (4 minutos al día), debido al giro de la tierra 
+alrededor del sol. Todas las estrellas y constelaciones comprendidas dentro 
+de este círculo, son llamadas circumpolares como vimos antes. (Ve 
+también "Orientación" de esta misma SERIE SCOUT).  
+
+Por otro lado, a 45º de latitud norte, es imposible ver las estrellas que 
+están ubicadas dentro de un círculo alrededor del polo sur hasta una 
+distancia de 45º.  
+
+En la parte central de la República Mexicana a 20º de latitud norte, sólo se 
+ve como circumpolar la constelación de la osa menor, ya que es la única 
+comprendida dentro de un circulo de 20 grados desde el polo norte celeste, 
+o sea el círculo comprendido entre la declinación de 70º y el polo norte a 
+90º. Por una razón idéntica a la que consideramos en el párrafo anterior, a 
+la latitud de 20º, será imposible ver a las estrellas que se encuentran 
+comprendidas en un círculo de radio de 20º desde el polo sur celeste. Para 
+las ciudades de Europa, Asia, Estados Unidos y Canadá que estén a 
+latitudes de 45º o más, son circumpolares las constelaciones de la Osa 
+Mayor, Cefeo, Casiopea y el Dragón entre otras. 
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+En las latitudes intermedias entre el ecuador y los polos, se puede 
+observar que las estrellas que están en el ecuador celeste, salen 
+exactamente al este del observador y se ocultan exactamente al oeste 
+del mismo, pero no pasan por el cenit del observador sino que forman 
+un ángulo con la vertical del lugar en que se encuentra el observador y 
+cuando la estrella está en su punto más alto, forma un ángulo con el 
+cenit, igual a la declinación terrestre del lugar.
+
+Ventajas de las Coordenadas Celestes  
+
+Como puedes ver, el organizar las estrellas dentro de una malla de referencia formada por las 
+coordenadas celestes de declinación y de ascensión recta tiene sus ventajas, ya que podemos 
+ubicarlas con facilidad dentro de los mapas celestes como los que aparecen en el Atlas Cósmico del 
+Conacyt, si tomamos sus coordenadas de tablas como las que aparecen en el Anuario del 
+Observatorio Astronómico de la UNAM, y esto nos permite también ubicar cualquier otro cuerpo 
+celeste que no está fijo en la bóveda celeste como pueden ser los planetas, la luna y los cometas 
+por ejemplo. Posteriormente veremos cómo sacar partido de lo que hemos visto hasta este 
+momento y que nos puede ser de gran utilidad si estamos perdidos en la noche.  
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Ayudas Visuales  
+
+La astronomía no avanzó notablemente durante muchos siglos, debido 
+principalmente a la falta de instrumentos que permitieran ver cosas que el 
+ojo humano solo no puede ver. Existe una historia curiosa que nos narra el 
+hecho de que en Holanda, un chico aprendiz de un tallador de lentes, al cual 
+se le había encargado pulir unas, jugando con dos de ellas vio que el reloj 
+de la torre cercana se veía más cerca cuando colocaba una lente frente a su 
+ojo y la otra la sostenía con el brazo extendido frente a su ojo y a la primera 
+lente.  
+
+Cierta o no esta historia, nos muestra cómo la gran mayoría de los grandes 
+descubrimientos del hombre se han debido a una casualidad, pero también a 
+
+la observación del descubridor, para el cual el fenómeno no pasó desapercibido, cuando tal vez 
+otras personas hayan tenido la misma oportunidad o lo han visto también, pero no lo han 
+descubierto a los demás como algo útil.  
+
+Los Telescopios  
+
+La aportación de este descubrimiento fue el telescopio, que aprovechó 
+Galileo para iniciar la astronomía moderna haciendo uso de ayudas 
+visuales. En esencia el telescopio consta de una lente frontal llamada 
+OBJETIVO y de una lente trasera conocida como OCULAR.  
+
+Si has visto el efecto que hacen los prismas con la luz blanca, que la 
+descomponen en un espectro de varios colores, igual que las gotas de  
+lluvia lo hacen con la luz del sol produciendo el arco iris, y si vemos 
+que las lentes son en sí unos prismas, comprenderás que también 
+descompondrán la luz y debido a este efecto, los telescopios 
+primitivos como los que usó Galileo tienen este problema. Para 
+evitarlo, se desarrollaron los telescopios que usan un espejo en lugar 
+de lente objetivo, y fueron utilizados por Newton en sus estudios 
+astronómicos.  
+
+En estos telescopios, el OBJETIVO lo forma un espejo parabólico que 
+está colocado en el fondo de un tubo, y el reflejo de la luz de un 
+objeto se envía al OCULAR que está montado en la pared del tubo, por 
+medio de un espejo colocado en diagonal dentro del tubo. 
+
+Variantes  
+
+Existen muchos tipos de telescopios diferentes a los que hemos mencionado, pero son variantes o 
+mejoras de estos mismos. Los refractores por ejemplo, han evolucionado grandemente y la 
+descomposición de la luz que causaba problemas en las lentes primitivas, se ha logrado compensar 
+utilizando como objetivo no una lente simple, sino una combinación de 2 ó 3 lentes de cristales de 
+diferentes características ópticas que reducen o casi eliminan este defecto, conocido como 
+ABERRACIÓN CROMÁTICA, haciendo que este tipo de telescopios sean de muy alta precisión pero 
+también de alto costo.  
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+  
+
+Los telescopios de espejo se han mejorado colocando en lugar de 
+espejo diagonal, otro espejo especial de tipo hiperbólico, el cual refleja 
+hacia atrás la imagen del espejo primario y el ocular se coloca en la 
+parte de atrás del espejo objetivo, pasando la luz por un orificio en este 
+último. Tienen la ventaja de que el espejo hiperbólico aumenta la 
+distancia focal del telescopio, proporcionando un instrumento más 
+compacto. Estos son conocidos como telescopios Cassagrian en honor 
+de su inventor.
+
+Importancia del Tamaño del Objetivo  
+
+La cantidad de luz que recibe un telescopio es proporcional al área del 
+objetivo y se han construido grandes telescopios para poder captar la 
+mayor cantidad de luz posible; entre los telescopios refractores no hay 
+objetivos mayores de 1 mt. de diámetro, por las dificultades técnicas 
+para construir este tipo de telescopios de un tamaño mayor; en 
+cambio, existen dos telescopios reflectores mayores de 5 mts., porque 
+es más fácil construir los espejos de estos últimos.  
+
+Los telescopios astronómicos son muy sencillos ópticamente y las 
+imágenes que se observan están invertidas, pero esto no es un 
+problema serio, ya que por lo regular no se hacen observaciones 
+directas a ojo y se utilizan más bien fotografías, las que no hay 
+problema para invertir. Por otro lado, los telescopios terrestres y los 
+binoculares, son un tipo de telescopios más complejos en su óptica, ya 
+que contienen lentes intermedios adicionales para invertir nuevamente la imagen y mostrarla al 
+derecho en el ocular, pero con menos brillantez que los telescopios astronómicos en los que se 
+suprimen estas lentes extra, para aprovechar al máximo la poquísima luz que llega de cuerpos en 
+el espacio, que se encuentran a distancias tan enormes de nosotros que su luz tarda en llegar a 
+nosotros millones de años en muchos casos.  
+
+   
+
+  
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+La abertura del objetivo se mide normalmente en milímetros y es importante 
+este dato ya que a mayor diámetro, mayor será la cantidad de luz que 
+podemos captar de un cuerpo celeste, pero también nos da una idea de la 
+máxima amplificación que podemos obtener con él. En un telescopio hecho 
+por aficionados a la astronomía en casa, la mayor amplificación posible es 
+igual al diámetro del objetivo en mm, o sea, que una lente de 150 mm, sólo 
+podrá aumentar el tamaño de las cosas que vemos con él, 150 veces; en un 
+telescopio comercial de buena calidad, la máxima amplificación puede llegar 
+al doble de uno casero, o sea a unas 300 veces en el ejemplo anterior.
+
+La Amplificación  
+
+Para variar la amplificación de un telescopio, se cambian las lentes del ocular, y así se puede 
+utilizar un telescopio con diferentes grados de amplificación. Esto es importante ya que en algunas 
+ocasiones sólo te interesará ver un cuerpo grande completo, como un cometa, la luna o las 
+manchas solares, pero en otras ocasiones te interesará ver los anillos de Saturno o la mancha de 
+Júpiter.  
+
+Para ver la luna completa solo necesitarás de 20 a 40 aumentos, dependiendo de tu telescopio, 
+pero para ver los anillos de saturno, requerirás de más de 150 aumentos.  
+
+¿Cómo sabemos la amplificación de un telescopio o binoculares?; pues en el 
+caso de un telescopio, en el instructivo de uso te dice que amplificación se 
+puede obtener con cada uno de los oculares que traiga de fábrica con él, o 
+trae una placa dando este dato sobre el tubo del mismo; en el caso de los 
+binoculares, trae una clave que nos dice la amplificación de los mismos y el 
+diámetro del objetivo en mm. Si por ejemplo tus binoculares dicen: 7 X 50, la 
+amplificación será de 7 veces y el objetivo mide 50 mm de diámetro.  
+
+No es posible obtener grandes amplificaciones con objetivos pequeños debido 
+a que la luz recibida no es suficiente y se verían muy oscuros, por lo que hay 
+que tener alguna forma de saber qué tan brillante es un telescopio o 
+binoculares.  
+
+Si divides el diámetro del objetivo en mm, entre la amplificación, obtienes un 
+número conocido como PUPILA DE SALIDA que te dará una idea del brillo de 
+las imágenes que verás con él. Si este número es mayor que la medida de tu 
+pupila en la oscuridad -entre 5 y 7 mm más o menos- el brillo es más que 
+adecuado.
+
+   
+
+  
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Imagina que quieres ver los anillos de saturno y tienes un telescopio 
+de 150 mm y sabes que requerirás de 150 aumentos; dividiendo 150 
+entre 150, te dará 1, o sea que si logras verlo, será muy oscuro. En 
+cambio si tienes un telescopio de 750 mm, la pupila de salida será 
+muy oscura. En cambio si tienes un telescopio de 750 mm, la pupila 
+de salida será de 750/150= 5 mm, que son más que suficiente para 
+verlos con claridad.
+
+La Distancia Focal  
+
+Otro dato que dan los fabricantes de telescopios aparte de el 
+diámetro del objetivo es LA DISTANCIA FOCAL del mismo, la que 
+nos sirve también para calcular la ampliación del telescopio con 
+diferentes oculares, aunque no sean surtidos por el mismo 
+fabricante. Para esto basta con dividir la distancia focal del objetivo, 
+entre la distancia focal del ocular. Si por ejemplo tienes un 
+telescopio con una distancia focal de 125 cm, y tienes un ocular con 
+una distancia focal de 25 mm, primero conviertes todo a las mismas 
+unidades, 125 cm = 1,250 mm, y luego haces la división:  
+
+1,250/25 = 50 veces.  
+
+Cuando utilizas una lupa para concentrar la luz del sol sobre un objeto, la mayor intensidad se 
+logra cuando el objeto se encuentra a la distancia focal de la lupa, o sea que la distancia focal es a 
+la que cualquier lente concentra los rayos luminosos de un objeto muy distante en un punto o en 
+un área mínima.  
+
+El Factor de Brillo o Número "f"  
+
+Otra forma de calificar a los telescopios y lentes de cámaras fotográficas 
+es el NÚMERO "f", que resulta de dividir su distancia focal, entre su 
+diámetro, en las mismas unidades: por ejemplo si un espejo de un 
+telescopio tiene una distancia focal de 120 cm y su diámetro es de 15 
+cm, su número f es de: 120/15 = 8. Los telescopios de gran 
+amplificación son los que tienen un número f mayor de 10 y los f menor 
+que 6 se les conoce como de "campo amplio y gran brillo" o también 
+como "cazacometas".  
+
+Los de gran distancia focal se usan en astronomía seria, para ver 
+detalles de los planetas y objetos muy distantes, en tanto que los de distancia focal corta, son 
+usados para el estudio de grandes regiones del cielo, en el estudio de cometas cuando están 
+cercanos a la tierra y en el estudio de meteoritos.  
+
+Necesidad de Tripié  
+
+Cualquier telescopio o binoculares que tengan una amplificación mayor a 8 
+veces, es difícil de sostener simplemente con las manos, para obtener una 
+imagen clara y estable, y cansan mucho la vista si se intenta usarlos en esta 
+
+ forma, así que debes utilizar algún soporte adicional para evitar esto.  
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Lo mejor es utilizar un tripié fuerte y rígido para esto, sobre todo con 
+amplificaciones mayores de 50 veces. Los telescopios comerciales de gran 
+amplificación -y de gran precio- suelen venir con su propio tripié, ya sea para 
+colocarse en el piso o para colocarse sobre algún objeto rígido, como una 
+mesa. 
+
+ 
+
+Las Monturas  
+
+Los telescopios se colocan sobre los tripies con dos tipos de monturas 
+principalmente, las monturas ALTAZIMUTALES y las monturas ECUATORIALES.  
+
+Las primeras, como lo dice su nombre, permiten mover al telescopio hacia lo 
+alto y en derredor de direcciones azimutales, o sea que le permiten elevarlo e 
+independientemente también girar 360 grados con respecto a un eje vertical. 
+Estos son los más conocidos y son parecidos a los que se utilizan para las 
+cámaras fotográficas, las de televisión, las de cine y los teodolitos de los 
+topógrafos. 
+
+Las monturas ecuatorianas son utilizadas principalmente para los telescopios y 
+a las cámaras astronómicas, ya que permiten seguir con facilidad a los cuerpos 
+celestes, con un sólo movimiento del aparato y no dos como en las 
+altazimutales.  
+
+Las monturas ecuatoriales son esencialmente iguales a las altazimutales, sólo 
+que no giran sobre un eje vertical como las altazimutales, sino que giran sobre 
+un eje que es paralelo al eje terrestre y en un plano paralelo al terrestre.  
+
+Con una montura altazimutal, para ver un astro, primero tienes que fijar la 
+dirección del mismo y luego tienes que elevar o bajar el telescopio para 
+encontrarla, pero como el astro se está movimiento continuamente, habrás 
+de fijar nuevamente una dirección y una altura diferente; en cambio, con la 
+montura ecuatorial, fijas la dirección del astro o sea su ascensión recta y 
+luego su altura o sea su declinación, y luego cuando el astro se mueve, 
+únicamente tendrás que mover la dirección o ascensión recta. Muchos 
+telescopios comerciales vienen ya provistos de un motorcito que se puede 
+sincronizar a la velocidad en que se mueven las estrellas, planetas, la luna 
+o el sol y así únicamente se requiere de un ajuste; también vienen 
+provistos de una perilla de ajuste fino, que permite seguir a mano a los astros con mayor facilidad.  
+
+En esta era de las computadoras, algunos telescopios modernos tienen una montura del tipo 
+altazimutal, pero por medio de motores que son gobernados por una microcomputadora, se puede 
+seguir cualquier objeto celeste, incluyendo satélites artificiales u otros objetos que el hombre 
+coloca en el espacio.  
+
+Aberración Esférica  
+
+Otro defecto que presentan algunas lentes del objetivo es la ABERRACIÓN 
+ESFÉRICA y es común en muchos telescopios de bajo precio, en los que se trata 
+de eliminar o reducir por medio de una pantalla que se coloca frente o atrás del 
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+objetivo, con un orificio menor al del diámetro de la lente del objetivo, pero que 
+reduce el diámetro efectivo, haciendo al telescopio más oscuro de lo que 
+aparenta.  
+
+Si vas a comprar un telescopio de bajo precio o binoculares, revísalo con cuidado 
+y ve que no se vean halos de colores alrededor de las figuras, que sean 
+brillantes y bien definidas y que no tengan pantallas que te reduzcan el brillo. 
+
+Los Binoculares  
+
+Los binoculares en realidad son un tipo de telescopio doble y de un precio no tan alto como los 
+telescopios verdaderos, pero son muy convenientes para iniciarse en la astronomía, ya que los 
+puedes obtener o pedir prestados con mayor facilidad. Cuida mucho de no rayar las superficies de 
+las lentes del ocular y del objetivo, no limpiándolas con ningún objeto que las dañe; para esto 
+venden en las casas de óptica o de fotografía, sustancias, toallitas y gamuzas adecuadas. En caso 
+de duda es mejor preguntar.  
+
+  
+
+En los binoculares de mayor aumento, es común que se enfoquen por separado 
+cada uno de los dos telescopios, por medio de ajustes independientes, o que tengan 
+un ajuste común para los dos, pero que en el del ojo derecho haya ajuste 
+independiente. En este último caso, para ajustar a tus dos ojos el enfoque correcto, 
+primero tapa el objetivo del lado derecho y usa el enfoque central para lograr una 
+buena imagen. Luego tapa el objetivo izquierdo y sin mover el ajuste anterior del 
+enfoque central, mueve el ajuste del ojo derecho y fíjate en la marca en que lo 
+colocas, para que cuando los vuelvas a usar, simplemente coloques de antemano 
+en la marca y ya no tengas que volver a reenfocar. Si utilizas anteojos, fíjate en la 
+marca cuando los uses y también cuando no los uses.
+
+   
+
+   
+
+  
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Otro ajuste que tienen los binoculares es la distancia entre las pupilas y que es 
+diferente entre varias personas, por lo que hay que separar o acercar a los dos 
+telescopios, para lo cual giran sobre un eje al centro, simplemente 
+separándolos o apretándolos; también existe alguna clase de indicación en 
+este caso y por lo regular viene en mm. o en cm. (58 a 64 mm ó 5.8 a 6.4 cm 
+por ejemplo), o por medio de marcas de color en otros. Recuerda tu marca 
+cuando los uses, para que los puedas ajustar rápidamente sin necesidad de 
+repetir la calibración de nuevo.
+
+Ajustes en los Telescopios  
+
+Los telescopios tienen también ajustes que es necesario conocer para utilizarlos convenientemente. 
+Un círculo graduado en horas se utiliza para encontrar la ascensión recta de cualquier objeto 
+celeste, así como graduaciones en grados, tanto para la declinación, como la inclinación de las 
+monturas ecuatoriales y que deben de coincidir en este último caso, con la latitud del lugar.  
+
+Una forma fácil de ajustar la inclinación de la montura ecuatorial sin necesidad de conocer la latitud 
+del lugar en el hemisferio norte, es hacer uso de la estrella polar. Para esto, se coloca el ajuste de 
+la declinación en 90º y se mueve el ajuste de La latitud y el tripié se gira para que se vea a la 
+estrella polar al centro del ocular o del telescopio buscador auxiliar que llevan los telescopios de 
+gran tamaño para ayudar a apuntarlo.  
+
+Este ajuste no es muy bueno, porque la estrella polar no está 
+exactamente en el polo norte celeste, pero es suficiente con 
+telescopios de baja amplificación, sin embargo, es más que suficiente 
+en la mayoría de los casos.  
+
+Los binoculares te permiten aumentar la resolución de tus ojos, para 
+ver estrellas hasta de 8ª y 9ª magnitud, pero un telescopio puede 
+hacerte ver estrellas de magnitudes mayores, según su tamaño y 
+
+calidad. Por ejemplo, un telescopio de 32 cm de diámetro te permite ver estrellas de 158 magnitud 
+¡y podrás ver más de 30 millones de ellas!  
+
+Los atlas normales del cielo te muestran las estrellas visibles a 
+simple vista, en condiciones ideales hasta las de más magnitud; 
+para ver otras estrellas de magnitudes mayores, tendrás que 
+recurrir a otros atlas más completos que se anuncian en las revistas 
+especializadas en astronomía.  
+
+Como puedes ver, las ayudas visuales han ayudado al hombre a 
+comprender mejor en dónde vive y qué lo rodea.  
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+El Universo  
+
+  
+
+Cuando el hombre empezó a observar el cielo a través del telescopio se encontró con algo más que 
+no había considerado. Aquellas manchas como nubes que aparecen entre las estrellas y que son 
+visibles a simple vista en una noche oscura, eran también estrellas, pero en grandes cantidades y a 
+distancias tan grandes, que no se veían individualmente.  
+
+Las Galaxias y Cúmulos Estelares  
+
+Observando las estrellas a través del telescopio, se pueden ver que se 
+agrupan en conjuntos en forma de burbujas o en espirales que parecen 
+discos cuando se ven de lado y se les conoce como GALAXIAS, así tenemos 
+galaxias espirales, espirales barradas, cúmulos globulares y cúmulos 
+abiertos. 
+
+Las estrellas más visibles desde la tierra a simple vista, forman parte de 
+la galaxia conocida como VÍA LÁCTEA, que es una galaxia de tipo espiral 
+y la estrella que más cerca tenemos y que forma parte de ella es EL SOL. 
+Las estrellas más brillantes que vemos en el cielo son las que están ya 
+sea más cercanas o que son muy brillantes de por si.
+
+El Color de las Estrellas  
+
+Otra característica de las estrellas es su color y tiene que ver con su temperatura; así veremos 
+estrellas rojas como Antares, que son estrellas relativamente frías y grandes; estrellas blancas-
+azules como Espiga, que tienen una temperatura muy elevada y también estrellas amarillas como 
+el Sol, que tienen una temperatura intermedia entre Las rojas y azules. A simple vista todas las 
+estrellas nos parecen de un mismo color, pero con unos binoculares te darás cuenta que no es así.  
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Según su temperatura, las estrellas se clasifican en:  
+
+Tipo Color Temperatura º K Ejemplo
+
+B Azul-blanco 11,000 a 25,000 Rigel 
+A Blanco 7,500 a 11,000 Sirio 
+F Amarillo claro 6,000 a 7,500 Proción 
+G Amarillo 5,000 a 6,000 Sol 
+K Rojizo 3,500 a 5,000 Arturo 
+M Rojo 2,000 a 3,500 Antares 
+
+Algunas estrellas son más calientes y sólo emiten radiaciones cortas como las ultravioleta y los 
+rayos X, y otras más frías, no son visibles al telescopio.  
+
+La Magnitud  
+
+Desde la tierra, consideramos el brillo relativo de las estrellas de acuerdo a 
+como las vemos y los astrónomos empezaron a clasificarlas en MAGNITUDES, 
+así las más brillantes se dice que son de primera magnitud, a las que tienen la 
+mitad del brillo de las 1ª, se les llama de 2ª, y a las que tienen la mitad de las 
+de 2ª, se les conoce como de 3ª, y así sucesivamente hasta las de 6ª, que son 
+el límite de visibilidad en una noche muy oscura y despejada.  
+
+En realidad sólo existen unas 20 estrellas que podemos considerar de primera 
+magnitud y son:  
+
+Nombre Constelación Magnitud Color Asc. Recta Decl. 
+h  m º  ' 
+
+Achernar Erídano 0.6 blanco-azul 1 37 -57 19 
+Aldebarán Tauro 1.06 anaranjado 4 35 16 29 
+Rigel Orión 0.34 blanco-azul 5 14 -8 13 
+Capella Cochero 0.21 amarillo 5 16 45 59 
+Betelgeuse Orión 0.1 a -1.2 rojo 5 54 7 24 
+Canopus Quilla -0.86 amar-claro 6 24 -52 41 
+Sirio Can Mayor -1.58 blanco 6 45 -16 42 
+Proción Can Menor 0.48 amar-claro 7 39 5 17 
+Póllux Geminis 1.21 anaranjado 7 45 28 13 
+Régulo Leo 1.34 blanco-azul 10  8 12 2 
+Beta Cruz del Sur 1.5 blanco-azul 12 47 -59 37 
+Espiga Virgo 1.21 blanco-azul 13 24 -11 5 
+Agena Centauro 0.86 blanco-azul 14  3 -60 19 
+Arturo Boyero 0.24 blanco-azul 14 15 19 15 
+Rigel K Centauro 0.33 amarillo 14 39 -60 47 
+Antares Escorpio 1.22 rojo 16 20 38 46 
+Vega Lira 0.14 blanco 18 36 -26 24 
+Altair Águila 0.89 blanco 19 50 8 50 
+Deneb Cisne 1.33 blanco 20 41 45 14 
+Fomalhaut Pez Austral 1.29 blanco 22 57 -29 42 
+
+En la tabla anterior aparecen sus nombres con los que son conocidas, la constelación a la que 
+pertenecen, su magnitud aparente, su color y sus coordenadas celestes de ascensión recta, en 
+horas y minutos, así como su declinación en grados y minutos. Más estrellas brillantes y sus datos 
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+los puedes ver en el Anuario Astronómico de la UNAM.  
+
+Las magnitudes de las estrellas fueron establecidas desde antes que existieran instrumentos de 
+medición únicamente "a ojo", por lo que en realidad no son muy exactas, ya que la diferencia de 
+una magnitud a otra no es el doble, sino 2.51 veces, según los instrumentos.  
+
+En la tabla anterior habrás visto que algunas estrellas tienen magnitudes "negativas" o sea que 
+tienen un signo menos antes del número que indica su magnitud, como por ejemplo Sirio que tiene 
+una magnitud de -1.58, y que nos sirve para conocer qué astros tienen más brillo que una estrella 
+de 1ª magnitud. A Venus se le asigna una magnitud hasta de -4.7 cuando está a su mayor 
+brillantez e inclusive se le puede ver en pleno día, si se sabe buscarlo. La luna llena tiene una 
+magnitud de -12.5 y el sol una de -27.  
+
+Las Constelaciones  
+
+Las estrellas más cercanas a nosotros y que pertenecen a la Vía Láctea, 
+son las que vemos formar a las constelaciones. Oficialmente existen 88 
+constelaciones según los convenios internacionales, pero en la antigüedad 
+cada pueblo las describía en diferentes formas. Los chinos las agrupan en 
+lo que se conoce como ASTERISMOS y entre los Árabes en los que se 
+prohíbe la representación de figuras de seres, sólo se les conoce por sus 
+nombres a las estrellas más brillantes. 
+
+Las galaxias cercanas a la Vía Láctea, como son la de Andrómeda y las Nubes 
+de Magallanes, son visibles a simple vista en una noche oscura pero cuando 
+te asomas a un telescopio, encontrarás que aparte se pueden ver otras 
+muchas. Además de las galaxias se pueden ver nubes de polvo cósmico, que 
+algunas veces brillan por la luz de las estrellas a las que rodean y en otras 
+ocasiones son manchas oscuras que impiden llegar la luz de otras, por ser 
+opacas. A esas nubes las conocemos como NEBULOSAS.  
+
+En el Anuario del Observatorio Astronómico de la UNAM, puedes encontrar el 
+Catálogo de Messier, que lista muchas galaxias, cúmulos globulares y otros 
+objetos celestes interesantes para cualquier aficionado a la Astronomía, en el 
+que se dan sus coordenadas de ascensión recta y de declinación.  
+
+Messier era un apasionado de la Astronomía y se dedicó a buscar cometas 
+y logró identificar a más de una docena, por lo que hizo un catálogo de los 
+cuerpos celestes que pueden engañar a un astrónomo aficionado 
+¡haciéndolo creer que ya descubrió un cometa nuevo!  
+
+La Vía Láctea es una galaxia que mide unos 80 años luz de 
+ancho, por unos 20 de altura y el sol se encuentra en uno 
+de los brazos de la espiral de la galaxia, a unos 32 años 
+
+luz del centro de la misma. Es una galaxia de tamaño medio. Desde nuestro 
+planeta vemos el centro de la galaxia más o menos en dirección de la constelación 
+del Centauro.  
+
+Cuando hablamos de longitudes en años luz, nos referimos a la distancia que 
+recorre la luz en un año a razón de 300,000 km por segundo así que si quieres 
+imaginarte estas distancias, calcula cuantos segundos tiene un año y luego 
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+multiplícalos por 300,000, para conocer las longitudes que esto representa.  
+
+Estrellas Dobles y Múltiples.  
+
+Entre las estrellas cercanas podemos ver que muchas de ellas son dobles, como Mizar de la Osa 
+Mayor a simple vista, pero con el telescopio se encuentran infinidad de estrellas que viajan en 
+pares por el espacio y que inclusive en algunos casos, como la estrella Algol de la constelación de 
+Perseo, una oculta a la otra eclipsándola y parece a simple vista que su brillo es variable. Entre las 
+estrellas dobles más notables al telescopio tenemos a Cástor, la beta del Cisne que está formada 
+por dos estrellas de diferente color, una amarilla y la otra blanca-azulosa y que forma la parte de la 
+cabeza del Cisne, y también la estrella beta de la Lira.  
+
+  
+
+Estrellas Variables  
+
+Otras estrellas varían su brillantez notablemente, como el caso de Mira en 
+la constelación de la Ballena, que en ocasiones no se puede ver a simple 
+vista y luego aparece con un brillo de una magnitud de 2; o la estrella 
+Delta de Cefeo, que varía su brillo también, pero hay que tener gran 
+experiencia para detectar su cambio.  
+
+Las estrellas variables se les conoce como de períodos cortos, a las que su cambio se realiza en 
+cuestión de horas o pocos días y las de períodos largos, son las que varían en 10 días o más.  
+
+Novas y Supernovas  
+
+Otras estrellas notables son las NOVAS y las SUPERNOVAS, que aparecen de 
+pronto en el cielo con un gran brillo y sólo se distinguen porque las novas repiten 
+su ciclo con regularidad pero las supernovas estallan y sólo dejan restos de ellas 
+en el espacio en forma de nebulosas, como la clásica Nebulosa del Cangrejo que 
+se encuentra en la constelación de Tauro. Si tienes suerte, algún día podrás 
+observar alguna de ellas y hacerte famoso como muchos aficionados que han 
+descubierto la mayoría de ellas, porque ellos revisan todo el cielo y los grandes 
+telescopios están ocupados estudiando sólo una pequeña parte de la bóveda 
+celeste. 
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+El Sistema Solar  
+
+Desde tiempo inmemorable el sol le llamó la atención al hombre y se le consideraba 
+sagrado. Existe en muchas religiones antiguas alguna representación del sol como 
+Dios y no es excepción que en las religiones americanas se encontrara culto al 
+mismo. Ahora consideramos que en realidad el sol es una de tantas estrellas que 
+forman parte del universo y es el que nos provee en parte los medios para la vida, y 
+de ahí su importancia para nosotros.  
+
+Como una estrella ya vimos que se clasifica en las del tamaño medio y es de color amarillo, lo que 
+lo hace interesante es su corte de planetas que lo rodean y en uno de ellos vivimos nosotros. El 
+hombre pensaba que la tierra era el centro del universo, porque no podía imaginarse que la tierra 
+era una nave espacial, girando alrededor del sol y arrastrada con éste a su vez, por toda la galaxia. 
+
+  
+
+Los griegos empezaron a estudiar la geometría y por medio de ella descubrieron que la tierra era 
+esférica y no plana, pero tuvieron que pasar muchos siglos para que el hombre viera a través del 
+telescopio para que se convenciera de ello. A los planetas los llamaron así, ya que esta palabra se 
+reduce como "los vagabundos", porque no se rigen por el movimiento regular de las estrellas, a las 
+cuales se les consideraba "fijas" en una bóveda que rodeaba a la tierra.  
+
+Mercurio  
+
+Ahora sabemos que el sol está rodeado por 9 planetas y que el más cercano es 
+Mercurio, al cual vemos en pocas ocasiones con facilidad desde la tierra, porque sólo 
+es visible en ocasiones a la puesta y a la salida del sol, muy cerca del horizonte, 
+como una estrella de 1ª magnitud pero opacada por el equilibrio del sol. Está a una 
+distancia de unos 58 millones de km del sol en promedio.  
+
+Luego viene Venus que es más fácil de observar, ya que se ve a simple vista como 
+una estrella muy brillante, ya sea a la puesta o a la salida del sol y se le conoce 
+como "el lucero vespertino" o "matutino", según la época en que se observe. Al 
+telescopio muestra también otro aspecto interesante, ya que por ser un "planeta 
+
+interior", o sea que está entre nosotros y el sol, podemos observar fases como las de la luna.  
+
+Venus tiene el mayor brillo de todos los planetas, y su magnitud es de -4.4, 
+indicando el signo menos que es más brillante que las estrellas de primera 
+magnitud.  
+
+Está a una distancia media del sol de 108 millones de km. La altura máxima 
+que alcanza sobre el horizonte medida en grados es de 48º y en el anuario 
+Astronómico de la UNAM, podrás ver en qué fechas es visible como estrella 
+matutina o vespertina, según su elongación este u oeste. Por ser un planeta 
+interior, no puede ser visible durante toda la noche como los exteriores.  
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+La Tierra  
+
+Enseguida estamos nosotros sobre el planeta Tierra, a 
+unos 149.6 millones de km del sol en promedio y esta 
+distancia es muy importante en astronomía, ya que sirve 
+de base para hacer mediciones espaciales y se le conoce 
+como Unidad Astronómica, (UA), o sea como el metro que 
+nos sirve para medir en el espacio. Como astro no 
+podemos ver gran cosa, ya que viajamos sobre él, pero sí 
+podemos observar al gran satélite que la acompaña, que 
+es la Luna.  
+
+Marte  
+
+Marte es el primer planeta que queda fuera de la órbita terrestre y por lo 
+tanto sí lo podemos observar durante toda la noche en cierta época del año; 
+ya que tarda más en dar la vuelta al sol, la tierra lo alcanza en un punto 
+diferente cada año, por lo que es conveniente ver el Anuario astronómico 
+para ver en que época se puede ver mejor. Desde la tierra se distingue como 
+una estrella roja con magnitud de -2.8 y con un telescopio se observan 
+algunas manchas que en un tiempo fueron confundidas con canales y se 
+suponía que hablan sido hechos por seres inteligentes.  
+
+Sus dos lunas: Déimos y Fóbos sólo son visibles con telescopios muy 
+grandes, pero aún así es un espectáculo en telescopio pequeño. Se encuentra a una distancia 
+media del sol de 228 millones de km y tarda 1.9 años terrestres en dar la vuelta alrededor del sol. 
+Para verlo bien se requiere de unos 100 aumentos por lo menos en tu telescopio.  
+
+El Cinturón de Asteroides  
+
+Entre Marte y Júpiter, el siguiente planeta en el orden, se encuentran infinidad de rocas y 
+planetoides, que se supone que formaron parte o iban a formar a otro planeta intermedio, pero que 
+la gran masa de Júpiter impidió que se consolidara. En telescopios grandes se han identificado a los 
+mayores y en algunos casos se dan sus coordenadas celestes en revistas especializadas para 
+localizarlos, pero requiere de un telescopio de más de 30 cm de diámetro para verlos bien.  
+
+Júpiter  
+
+Júpiter es el planeta más espectacular en el telescopio, ya sea por su tamaño o 
+por sus bandas de colores que lo cruzan, por su mancha roja o por su corte de 
+lunas que giran a su derredor, así que aún con un telescopio de unos 50 a 100 
+aumentos es posible observarlo con claridad. Cuando está cercano a nosotros 
+su brillo es de -1.4 y el mínimo es de 2.5 aproximadamente, por lo que es muy 
+fácil de distinguirlo a simple vista y permanece más o menos un año en cada 
+constelación zodiacal.  
+
+Gira alrededor del sol en casi 12 años terrestre y está a unos 779 millones de 
+km del sol. Las investigaciones recientes con las sondas espaciales muestran 16 
+lunas a su alrededor, pero solamente las 4 más grandes son visibles con un telescopio pequeño 
+desde la tierra. Su posición se localiza por medio del Anuario Astronómico o en la sección de 
+astronomía de la revista bimestral "Ciencia y Desarrollo" del Conacyt.  
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+   
+
+Saturno  
+
+Saturno es otro espectáculo en un buen telescopio, ya que es notable su cinturón de anillos, que 
+fue confundido por Galileo por un "Planeta triple", ya que su pequeño telescopio y los defectos de 
+aberración lo hacían aparecer como tal. Otro problema que tuvo Galileo fue que después de cierto 
+tiempo ya no podía localizar a su planeta triple, pero en realidad lo que pasó fue que trató de 
+observarlo en una época en que los anillos estaban de canto hacia la tierra y ni el mejor de los 
+telescopios los puede ver, porque son extremadamente delgados.  
+
+Se requiere de un buen telescopio con un objetivo de 15 cm de diámetro y de 
+por lo menos unos 150 aumentos para observarlo bien, pero a simple vista se 
+ve como una estrella de magnitud -0.3, sólo superado por Sirio y Canopus. 
+Se encuentra a 1,427 millones de km del sol y ya que da la vuelta al sol en 
+29.5 años terrestres, dura unos 2 años en cada constelación zodiacal, 
+encontrándose en 1986 en Escorpión.  
+
+Las sondas espaciales mostraron hasta 17 satélites y una gran cantidad de 
+anillos que lo rodean, pero desde tierra sólo se pueden ver los 8 satélites 
+mayores y aparentemente solo 3 anillos muy anchos.  
+
+Urano  
+
+Urano estaba perdido entre las estrellas fijas para los observadores sin 
+telescopio, ya que tarda 84 años en dar una vuelta al sol y sólo se mueve 
+ligeramente entre las estrellas.  
+
+Desde la tierra aparece como una estrella de magnitud 5.5, o 
+sea en el limite de la visibilidad en un lugar oscuro, pero lo 
+puedes ver como un disco pequeño con un telescopio de 200 a 
+300 aumentos por lo menos. Tiene 5 satélites que sólo se 
+pueden observar con telescopios mayores de 30 cm de 
+diámetro.  
+
+Las sondas espaciales han descubierto que también tiene anillos como Saturno, 
+pero son de material oscuro y no se ven desde la tierra. Se encuentra a 2,820 
+millones de km del sol y fue descubierto por William Herschel accidentalmente, al 
+
+estar determinando la posición de algunas estrellas, ya que vio que se movía contra el fondo de 
+estrellas después de cierto tiempo. Dura unos 7 años en cada constelación del zodiaco y en 1986 
+se encontraba en la constelación de Ofiuco, entre Sagitario y Escorpión.  
+
+Neptuno  
+
+Neptuno está a 4,497 millones de km del sol y no es visible a simple vista, por 
+tener una magnitud de sólo 7.6 cuando está en su posición para observarse mejor, 
+así que es un planeta telescópico únicamente. Tiene 2 satélites y se requiere de un 
+telescopio con un objetivo de más de 30 cm para observarlo.  
+
+Tarda casi 165 años terrestres en dar una vuelta alrededor del sol y en 1986 
+estaba en la constelación de Sagitario.  
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Plutón  
+
+Plutón es el más exterior de los planetas, a veces, ya que su órbita es tan 
+excéntrica, que en ocasiones está más cerca del sol que Neptuno; además 
+su órbita está muy inclinada con respecto al plano de la órbita de 
+Neptuno, por lo que no hay posibilidad de que vayan a chocar. Se 
+encuentra a una distancia promedio de 5,899 km del sol y tarda 247.7 
+años terrestres en dar la vuelta al sol. Es poco brillante, ya que su 
+magnitud es sólo de 15, tiene un satélite y se requiere de un buen 
+telescopio para poder observarlo. En 1986 se encontraba en Libra y tarda 
+en pasar cada constelación zodiacal casi 21 años. 
+
+La Eclíptica  
+
+Habrás visto que mencionamos que los planetas se encuentran en determinadas constelaciones del 
+zodiaco, ya que es la región en que se ven circular aparentemente a los mismos, porque sus 
+órbitas están casi en un mismo plano, con excepción de la de Plutón, pero aún éste está muy 
+próximo a la misma región. Por esta región vemos pasar también a la luna y al sol, variando entre 
+las latitudes terrestres de 23.5º N y la de 23.5º S, que fijan los trópicos de Cáncer y el de 
+Capricornio.  
+
+Esto se debe a que el ecuador de la tierra tiene esta misma 
+inclinación con respecto al plano de su órbita alrededor del sol y por 
+lo tanto nos hace ver que el sol se mueve aparentemente más hacia 
+el sur en el invierno del hemisferio norte y más hacia el norte en el 
+verano.  
+
+A la región por donde vemos pasar el sol aparentemente se le 
+conoce como la ECLÍPTICA, ya que sirve también para determinar los 
+eclipses, y la puedes ver marcada en los mapas celestes cruzando a 
+las diferentes constelaciones del zodiaco.  
+
+Los días cercanos a los SOLSTICIOS, que quiere decir "sol parado", podrás observar que las 
+sombras no cambian mucho de un día a otro y aún en varios días, pero en los días cercanos a los 
+EQUINOCCIOS, éstas cambian notablemente.  
+
+  
+
+Otro efecto de la inclinación del eje terrestre es que el sol sale únicamente por el Oriente y se 
+oculta en el Poniente los días de los equinoccios y el día del solsticio de verano en el hemisferio 
+norte, sale más hacia el norte del punto en donde está ubicado el Este exactamente y se oculta 
+más hacia el Norte del punto en que se fija al Oeste; el día del solsticio de invierno en el hemisferio 
+norte, el sol sale y se oculta más hacia el Sur de los puntos del Este y Oeste respectivamente.  
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+  
+
+Si estuvieras en el Ecuador, el sol sale por el Este y se oculta por el Oeste sólo el 21 de marzo y el 
+20 de septiembre, pero los días de los solsticios, en el del 21 de junio, el sol sale a 23.5 grados al 
+norte del punto Este y se oculta también al mismo ángulo hacia el norte del Oeste, en cambio en el 
+del 21 de diciembre, verás que sale a 23.5 grados hacia el Sur del Este y se oculta a 23.5 grados al 
+Sur del Oeste.  
+
+  
+
+Esto sólo vale para el ecuador, ya que a otras latitudes el efecto es diferente, por el ángulo que 
+forma el horizonte del observador con la línea que presenta el horizonte en el ecuador. Por 
+ejemplo, en una latitud de 20º, el sol sale a 25º al Norte del Este el 21 de junio y a 25º al Sur del 
+Oeste el 21 de diciembre. Para una latitud de 45º el sol sale el 21 de junio a 34º al Norte del Este y 
+el 21 de diciembre, sale a 34º al Sur del Este.  
+
+En el polo norte, el sol circula alrededor del horizonte los días de los 
+equinoccios, se eleva a 23.5 grados sobre el horizonte el 21 de junio y estará 
+bajo el horizonte, durante la noche polar que dura 6 meses, durante el 
+invierno.  
+
+Otro efecto curioso es que los días y las noches duran lo mismo sólo los días 
+de los equinoccios, que quiere decir "noches iguales", pero en el verano, los 
+días duran más que las noches, excepto en el ecuador y en el invierno los días 
+son más cortos que las noches. Por ejemplo, en una latitud de 20 grados el día 
+dura unas 13 horas en el verano y la noche sólo 11 horas, en cambio en el 
+invierno sucede lo contrario, la noche es más larga y dura 13 horas y el día 
+solamente 11 horas.  
+
+Duración en horas del día y la noche el 21 de junio 
+Latitud norte día noche
+
+0º 12 12 
+20º 13 11 
+40º 15 9 
+60º 16 8 
+
+66.5º a 90º 24 0 
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Duración en horas del día y la noche el 21 de diciembre 
+Latitud norte día noche
+
+0º 12 12 
+20º 11 13 
+40º 9 15 
+60º 8 16 
+
+66.5º a 90º 0 24 
+
+La Luna  
+
+La luna, nuestro satélite natural, gira alrededor de la tierra haciendo una órbita 
+que se encuentra inclinada 5º con respecto a la eclíptica o sea el plano en que 
+gira la tierra con respecto al sol, por lo que vista de la tierra, la vemos pasar a 
+esa distancia máxima, medida en grados, desde la línea de la eclíptica que 
+aparece en los mapas celestes. Cuando la luna llena se acerca a la eclíptica, vista 
+desde nuestro observatorio, se presenta un eclipse de luna, si es la luna nueva lo 
+que lo hace, se presentará un eclipse solar. 
+
+ 
+
+ 
+
+Kepler descubrió que los planetas giran en torno al sol, no en círculos perfectos, 
+sino en órbitas elípticas, o sea "ovaladas", como las llamamos comúnmente, 
+además descubrió que no se mueven en sus órbitas con velocidad uniforme, sino 
+que se desplazan más rápidamente cuando se acercan al sol. Esto hace que la luna 
+esté en su punto más cercano a la tierra a 356,334 km, en un punto conocido como 
+PERIGEO; en cambio, cuando está a su máxima distancia de la tierra, en un punto 
+llamado APOGEO, está a 406,610 km. Se considera que la luna está a una distancia  
+media de la tierra de 384,400 km. 
+
+Cuando la luna está en su apogeo, la vemos ligeramente menor que al sol, pero en 
+su perigeo, aparece mayor que el sol. Si ocurre un eclipse solar, cercano al apogeo, 
+el eclipse únicamente podrá ser parcial; si el eclipse ocurre cercano al perigeo, el 
+eclipse será total, por que la luna se ve aparentemente mayor que el disco solar.   
+
+La luna se puede observar muy bien aún con binoculares, pero un telescopio puede 
+revelar detalles más interesantes. Ayuda mucho observarla durante los cuartos, en 
+la región cercana a la sombra, ya que esto nos ayuda a distinguir las sombras de 
+las montañas y el relieve; durante la luna llena, difícilmente se observan tantos 
+detalles. En algunos telescopios muy brillantes molesta mucho la intensidad de la  
+luz de la luna, por lo que se recomienda utilizar un filtro especial que viene con ellos 
+o colocar un cartón con un orificio menor que el del objetivo en la boca del 
+telescopio. 
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Cómo Observar los Eclipses  
+
+Al sol nunca se le debe observar directamente, ni con binoculares, ni con telescopios.  
+
+Para observar al sol en un eclipse o ver sus manchas, sólo se debe utilizar un filtro del tipo de 
+mascarilla para soldadura eléctrica de 12 ó de 14 sombras, que protegen no solo de la luz intensa 
+visible, sino también de la ultravioleta, que por no ser visible, causa más daños que la visible, ya 
+que no nos damos cuenta del daño que nos puede hacer.  
+
+Los filtros "improvisados" con película velada, con vidrio ahumado, con 
+papel o plástico metalizado con aluminio, no deben ser utilizados si no 
+se ha determinado por pruebas de laboratorio que son seguros. Es más 
+fácil ver al sol reflejado en un charco o en una bandeja oscura con 
+agua, ya que su brillantez es reducida a un nivel que no es peligroso.  
+
+Se venden también un tipo especial de filtros para cada telescopio en 
+particular y solamente deberán utilizarse los recomendados por los 
+fabricantes y no uno "prestado" de otro modelo parecido, ya que te 
+puedes quemar la retina de los ojos.  
+
+Lo mejor para ver las manchas solares o un eclipse solar, es utilizar 
+unos binoculares o el telescopio para proyectar la imagen del sol en una pantalla de cartón blanco, 
+ya que así lo pueden observar inclusive varias personas simultáneamente y sin ningún riesgo.  
+
+Los fabricantes de telescopios venden accesorios adecuados para hacer 
+esto, pero tú puedes hacer una cámara oscura sencilla para proyectarlo 
+con unos binoculares en caso necesario, como la de la figura.
+
+Los Cometas  
+
+Como parte de nuestro sistema solar existen otros cuerpos muy interesantes desde la antigüedad, 
+que causaban mucho miedo a quienes estaban acostumbrados a ver a los objetos celestes 
+"regulares", como son las estrellas y planetas, rompiendo "el concierto ordenado de la esfera 
+celeste", a los cuales se les da el nombre de COMETAS, o sea cuerpos errantes, que no se 
+presentaban aparentemente con un patrón fijo como el de los demás.  
+
+Hubo de pasar mucho tiempo para que Halley determinara que uno de tales 
+cuerpos era en realidad parecido a los planetas, pero tenía una órbita 
+tremendamente elíptica, que tenía un periodo regular de unos 76 años en su 
+viaje a través del espacio y alrededor del sol. Ahora conocemos una gran 
+cantidad de cometas regulares, algunos únicamente visibles por los grandes 
+telescopios, que circulan alrededor del sol, con órbitas más o menos elípticas 
+que les dan períodos de 3 a cientos de años de revolución alrededor del sol.  
+
+Algunos cometas vienen de fuera de nuestro sistema solar y son 
+vistos únicamente una sola vez, pero son excepcionales. La 
+teoría más aceptada actualmente, es que el sol tiene una 
+reserva de polvo, gases y rocas alrededor, a una gran distancia 
+del mismo, que permite que de vez en cuando se forme uno o 
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+varios cometas, que se desprendan de esa nube de reserva 
+hacia el sol, por la influencia del paso de estrellas cercanas, y que veamos un corneta nuevo.  
+
+   
+
+Meteoritos  
+
+Algunos cometas se han destruido, pero sus partículas componentes siguen circulando por la 
+misma órbita y cuando la tierra atraviesa esa región del espacio, es bombardeada por ellas, 
+formando las LLUVIAS DE ESTRELLAS, que son comunes el 22 de abril, en la constelación de la Lira 
+y las del 17 de noviembre, de la constelación de Leo entre otras. Las partículas pequeñas forman 
+trazas de luz como rayas en el cielo y las de gran tamaño excepcionalmente llegan a tierra y las 
+conocemos como METEORITOS. Algunos meteoritos no son necesariamente restos de un cometa en 
+muchos casos, ya que pueden ser cuerpos aislados que lleguen a la atmósfera terrestre y algunos 
+de gran tamaño han causado grandes explosiones o cráteres.  
+
+  
+
+Los cometas están formados según las últimas teorías, por masas de rocas 
+y polvo cósmico, conteniendo principalmente hierro y níquel, así como agua 
+en forma de hielo y gases que se licúan en el frío espacial, pero que cuando 
+se acercan al sol, se evaporan formando una nube fluorescente de gases 
+alrededor del núcleo de rocas, conocida como COMA, y la presión del viento 
+solar, o sea las partículas de alta velocidad que salen despedidas del sol, 
+empujan hacia atrás del núcleo, formando la cola o cauda de los cometas.  
+
+La coma de algunos cometas se ha desarrollo tanto, que supera en tamaño 
+la órbita de venus y se han visto aún de día, pero la mayor parte son 
+telescópicos, o por lo menos deben verse con binoculares, como fue el caso 
+del cometa de Halley, que en esta ocasión de 1985-1986, paso tan lejos de 
+la tierra, que únicamente fue visible en lugares muy oscuros a simple vista, 
+pero que pudo ser observado en muchos lugares por medio de binoculares.  
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+  
+
+Como ves, el sistema solar es un candidato ideal para aprender astronomía, si aprendes a utilizar 
+tu sistema de coordenadas celestes, tu Anuario Astronómico y tus binoculares o telescopio, y 
+aparte te servirá como referencia para observar otros cuerpos interesantes.  
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+¿Para qué nos sirve?  
+
+Muy bien, hasta ahora hemos visto cosas curiosas e interesantes, pero 
+ahora te preguntarás, ¿para qué me sirve esto?; si quieres ser buen 
+explorador, debes aprender a utilizar lo que vimos para orientarte, para 
+conocer la hora, para ubicarte o ¡para divertirte!  
+
+Ya vimos que las estrellas salen y se ocultan en los mismos lugares 
+todas las noches, sólo que lo hacen a diferente hora. Esto sólo es 
+aparente, ya que las estrellas también están en movimiento como 
+nuestro sol a través del espacio, pero como se mueven tan poco, 
+podemos considerar que no se mueven para fines prácticos.  
+
+Para Orientarle  
+
+Si aprendes algunas constelaciones brillantes y conoces cuales son visibles cada época del año, te 
+será facilísimo orientarte por las noches, aún sin la ayuda de la brújula. Inténtalo en tu siguiente 
+campamento y verás que es más fácil de lo que parece. Ayúdate con un mapa celeste como los del 
+Atlas Cósmico del Conacyt, o con algún otro mapa que puedas conseguir de la bóveda celeste.  
+
+Recuerda también que el sol, la luna, los planetas y las estrellas que se encuentran en la región del 
+zodiaco y en el ecuador celeste, siempre se ven moverse de este a oeste aparentemente, por lo 
+que se puede ver su trayectoria, comparándola con algún objeto "fijo", como la punta de un árbol, 
+un cerro u otro parecido, esto siempre que lo observes desde un lugar fijo también. El 
+desplazamiento del astro será siempre hacia el oeste.  
+
+  
+
+Si estás en el hemisferio norte, la estrella polar será una marca segura de la 
+dirección norte, pero en el hemisferio sur, no existe ninguna estrella 
+brillante sobre el mismo que te sirva de referencia segura de la dirección 
+sur, por lo que es más conveniente conocer las constelaciones para evitarle 
+problemas.  
+
+Si estás en un lugar en el que no puedes ver el cielo totalmente, por estar 
+éste nublado u oculto por árboles, pero puedes ver algún astro, bastará con 
+observar su posición con respecto a un objeto fijo y después de unos 10 
+minutos volver a observarlo, para ver en que dirección se movió, y si es un 
+astro cercano al ecuador celeste, la dirección será hacia el oeste.  
+
+Si el astro está cercano al horizonte, si se mueve hacia arriba, estarás 
+viendo hacia el este, pero si se baja y se oculta, estarás viendo hacia el 
+oeste. Si el astro se mueve hacia la derecha o a la izquierda, tendrás que 
+tener cuidado de ver en qué forma se mueve para saber si estás viendo en 
+dirección norte o sur.  
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Si estuvieras en el polo norte, los astros cercanos al 
+horizonte se estarían moviendo a tu alrededor hacia la 
+derecha y en cambio, en el polo sur, girarían hacia tu 
+izquierda, ya que en esos lugares no hay este ni oeste.  
+
+Si te encuentras en el hemisferio norte, en una latitud en 
+donde se puedan ver estrellas o constelaciones 
+circumpolares, podrás ver que las estrellas que están por 
+encima de la polar, siempre giran hacia la izquierda, porque 
+el giro de la bóveda celeste se centra en el polo, pero las 
+estrellas por abajo de la polar, se estarán moviendo hacia la 
+derecha.  
+
+Si desde esa latitud observas en dirección del polo sur, 
+encontrarás que las estrellas giran hacia la derecha, pero 
+habrá una diferencia entre las que se encuentran hacia el 
+norte, ya que estarán haciendo un arco hacia abajo, en tanto que las estrellas que giran por abajo 
+de la polar y también hacia la derecha, estarán haciendo un arco hacia arriba.  
+
+Si te encontraras en el hemisferio sur, sucedería algo parecido, sólo que a la 
+inversa, ya que en este lugar, las estrellas hacia el sur cercanas al horizonte, 
+se estarán moviendo hacia la izquierda, pero haciendo arco hacia arriba y en 
+cambio, las estrellas que verías cerca del horizonte y hacia el norte, aunque 
+también se mueven hacia la izquierda, harían arco hacia abajo. Como puedes 
+ver, es importante conocer el mecanismo de giro de la bóveda celeste para 
+no perderla innecesariamente.
+
+Para Ubicarte  
+
+Ya vimos en el capítulo del Sistema Solar que el día no tiene la misma duración, tanto por la 
+inclinación del eje de giro de la tierra como por que la órbita terrestre no es un círculo perfecto. 
+Esto complica un poco la medida del tiempo, ya que si dividimos la duración del tiempo en que 
+brilla el sol en 12 partes iguales, o sea en horas, la duración de las horas sería igual únicamente en 
+el ecuador, ya que a otras latitudes, el día y la noche tienen diferente duración en el invierno y en 
+el verano.  
+
+Esto no preocupaba grandemente a nuestros antepasados, ya que las 
+labores de trabajo se realizaban sólo con luz solar, pero cuando se empezó 
+a navegar, se volvió importante la determinación del lugar en que se 
+encontraba un barco, por lo que se hizo uso del hecho que el sol gira 
+aparentemente a nuestro alrededor en 24 horas.  
+
+Si ves los mapas antiguos de América o de Europa en tiempos de Colón, 
+podrás ver que son muy parecidos a los actuales, sólo en dirección Norte-
+Sur, ya que aprendieron a calcular la latitud viendo la altura de la estrella 
+polar sobre el horizonte simplemente, sin embargo en dirección Este-
+Oeste, eran muy deformes, porque era muy difícil conocer la longitud 
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+geográfica.  
+
+Para esto se buscó una forma de dividir en partes iguales al día y de ahí se creó 
+la necesidad de inventar un reloj más exacto que los que se conocían entonces. 
+Así, si un barco llevaba la hora de un lugar, podía saber que longitud había 
+caminado en grados, comparando la hora a la que pasa el sol exactamente hacia 
+el mediodía en ese lugar, ya que se considera que si el sol da una vuelta a la 
+tierra en 24 horas, recorrerá 360º, por lo que en una hora, el sol recorrerá 
+360º/24 hrs= 15º por h.  
+
+Esto no resultó tan sencillo como se esperaba, ya que el sol no recorre 
+exactamente 15º por hora, sino que varía con la posición de la tierra sobre la 
+órbita alrededor del sol y de su inclinación relativa, por lo que hubo necesidad de 
+
+hacer alguna corrección y se debe añadir o restar cierta cantidad de tiempo a la hora del paso del 
+sol al mediodía para compensar esto. En realidad ésta es la razón por la que los relojes solares 
+llegan a adelantarse o atrasarse en hasta 16 minutos con respecto a los relojes de tiempo regular 
+que utilizamos.  
+
+Lo que tuvieron que hacer los astrónomos fue medir la duración de todos los días de un año y 
+sacar el promedio de ellos, para inventar un día ideal de 24 horas, que es el que manejamos 
+diariamente.  
+
+Los Husos Horarios  
+
+Otro problema que hubo de resolverse, era que cada lugar 
+establecía su hora particular del mediodía, a la hora que 
+pasaba el sol por cada uno, lo que sería una complicación 
+para las comunicaciones rápidas actuales, por lo que se 
+establecieron zonas de 15º de ancho, en las que se toma 
+como referencia la hora del meridiano central, a las que se les 
+llama HUSOS HORARIOS, y dentro de las cuales todas las 
+poblaciones usan la misma hora.  
+
+Esto es impráctico en algunos casos y se toleran ciertas 
+desviaciones de este patrón, ya que de ser así, la Cd. de México, la de Morelia, Zacatecas y otras 
+muchas, serían regidas por la hora del uso de 105º, pero se rigen por el del meridiano 90º para 
+ahorrar energía eléctrica y uniformar el horario de una gran parte de la república.  
+
+Baja California Sur, Sonora, Sinaloa y Nayarit se rigen por la hora del 
+meridiano 105º y en Baja California Norte se utiliza la hora del meridiano 
+120º en el invierno y la del 105º en el verano, para ahorrar energía 
+eléctrica. Los países de latitudes mayores a los 30º en los que la duración 
+del día en el verano es mucho más grande que en el nuestro, aprovechan 
+esto y adelantan una hora los relojes, desde el último domingo de abril, 
+hasta el último domingo de octubre.  
+
+Así tenemos que existen diferentes formas de medir el tiempo, como lo son la hora solar, que es la 
+que marca un reloj solar; la hora civil o legal, que es la que marcan nuestros relojes y la hora 
+propia de un lugar determinado, independientemente del huso al que pertenece. Así, cuando en el 
+meridiano 90º son las 12 del día, en la Cd. de México serán las 11 hs con 24 minutos, o sea que en 
+realidad se tiene un adelanto de 36 minutos con respecto al tiempo real del lugar, porque la Cd. de 
+México se encuentra en el meridiano 99º y el sol tardará en recorrer los 9º la diferencia de 36 
+minutos.  
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Si en una hora recorre 15º el sol, en un minuto recorrerá: 15º/60’ = 1/4 de grado por minuto.  
+
+Por lo tanto, en 36 minutos recorrerá 36’ X 1/4º por min.= 9º, que es la diferencia de longitud 
+entre la Cd. de México y el meridiano 90º.  
+
+Ésta es la forma en que los marinos ubican su longitud en el mar, sin 
+necesidad de referencias fijas como las que utilizamos en tierra.  
+
+Puesto que el sol no sale de noche, te preguntarás ¿qué hacen los marinos 
+en la noche para ubicarse?  
+
+Pues recurren a las estrellas, las que pueden fijar tu posición con gran 
+precisión si utilizas el instrumento adecuado. Si estuvieras en tierra, 
+conociendo las coordenadas de ascensión recta, de latitud y la hora de un 
+huso meridiano cualquiera, podrías utilizar un teodolito y un poco de 
+trigonometría esférica, para ubicar tu posición. Pero como esto es muy 
+complicado, sólo se utiliza en el caso de fijar con mucha precisión la 
+ubicación de lugares específicos, como para ser usados en la confección de 
+mapas o deslindar un terreno con exactitud.  
+
+El Astrolabio y el Sextante  
+
+Los árabes inventaron un instrumento sencillo y portátil para poder 
+ubicarse, sobre todo en el desierto, en donde no hay marcas muy 
+claras en el terreno y se le conoció como el ASTROLABIO. Es un 
+instrumento que permite medir con cierta aproximación el ángulo de 
+elevación de un astro en el cielo. Si se toma la altura cuando un astro 
+pasa al mediodía y se conoce qué astro es y sus coordenadas 
+celestes, es posible por medio de tablas adecuadas, conocer la latitud 
+de un lugar. Si además se cuenta con un reloj que marque la hora de 
+un meridiano de referencia, por medio de otro juego de tablas, se 
+puede conocer también la longitud.  
+
+Los marinos sofisticaron el astrolabio y lo convirtieron en un 
+instrumento más preciso, al añadirle un pequeño telescopio, un juego 
+de espejos y un divisor de precisión de tipo Vernier, para poder ubicar 
+un lugar con más precisión que con un astrolabio, utilizando las 
+
+mismas técnicas básicas; dicho instrumento recibe el nombre de SEXTANTE.  
+
+En la actualidad ya no se utilizan prácticamente ni el astrolabio ni el 
+sextante en los grandes buques ni en los aviones, ya que en el estado 
+actual de la tecnología, van provistos de receptores especiales a los que 
+envía una señal un satélite de órbita que pasa por los polos geográficos, 
+para que el buque o el avión conozcan su longitud y latitud casi 
+instantáneamente, con un error no mayor a unos 200 metros.  
+
+Cómo hacer un Astrolabio  
+
+No es muy difícil hacer un astrolabio si conocemos el mecanismo de giro de la bóveda celeste y lo 
+podremos utilizar para practicar en el campo, si contamos con un buen reloj, más o menos exacto, 
+como los que se consiguen muy baratos actualmente y un Anuario Astronómico de la UNAM o algún 
+otro equivalente, del año en curso.  
+
+Para hacerlo, requieres material barato, accesible y mucho cuidado para que te funcione bien. 
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Requieres: un transportador de plástico transparente, como los que usan en la primaria; un par de 
+clavos de un mm de grueso; pegamento de tipo epóxico, que viene en dos tubitos separados y que 
+se mezclan en proporciones iguales, de preferencia de endurecimiento rápido (5 minutos), un hilo y 
+contrapeso.  
+
+  
+
+En la figura siguiente puedes ver cómo se hace y cómo se utiliza para "visar" al sol, la luna o las 
+estrellas. Recuerda que al sol no debes verlo directamente.  
+
+1. Primero córtale la cabeza a uno de los clavos, que te servirá 
+como broca para taladrar el plástico.  
+
+2. Colócalo en un taladro manual y haz dos 
+agujeritos con el mismo clavo, uno en la cruz 
+que marca el centro del transportador y el otro 
+en la línea de 0º, como puedes ver en la figura.  
+
+3. Corta los dos clavos a 5 mm de la punta para hacer dos "pínulas" o mirillas 
+como se ve en el dibujo y pégalas con adhesivo epóxico. Procurando que 
+queden verticales con respecto a la base de plástico y en el lugar exacto, 
+porque de esto depende la precisión de tu astrolabio.  
+
+4. Ata un contrapeso cualquiera, de unos 100 gramos, (puedes ser una 
+piedra), un hilo de coser o a un sedal de pescar delgado, de unos 25 a 30 cm 
+de largo, y haz una gaza con un nudo no corredizo como el de As de guía en el 
+otro extremo del hilo.  
+
+Cuando endurezca el pegamento, (es mejor esperar 24 horas), ya está listo tu 
+astrolabio.  
+
+Para utilizarlo es muy sencillo, simplemente sostén el transportador en la 
+forma que te indica la figura y coloca la gaza del hilo con el contrapeso en la 
+
+pínula que está en el centro del transportador luego, alínea las dos puntas con un astro que se 
+encuentre exactamente al sur, al que le quieres medir su declinación con respecto al cenit del lugar 
+en que tú te encuentras, para poder conocer la latitud del lugar en donde tu estás.  
+
+Si te fijas bien, cuando el hilo está en la marca de 90º, las pínulas 
+apuntarán hacia cualquier objeto en el horizonte, siempre que no haya 
+obstrucciones como edificios o montañas, y cuando el hilo pasa por la marca 
+de 0º, o sea sobre la pínula, estarás apuntando hacia el cenit, que es el 
+punto más alto que puedes ver sobre tu cabeza.  
+
+Suponiendo que tienes a Sirio exactamente al sur y que mides el ángulo con 
+tu astrolabio y te indica 36º 30’; como sirio está a 16º 42’ al sur del 
+ecuador celeste, tu te encontrarás a: 
+36º 30’- 16º 42’ + 19º 47’ al norte del ecuador aproximadamente.  
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Si por otro lado Sirio estuviera exactamente al norte, formando el mismo ángulo de 36º 30’, tú 
+estarías en el hemisferio sur, ya que Sirio está al sur del ecuador, por lo que en este caso, sumas 
+los ángulos de Sirio y el del astrolabio, lo que te da: 
+36º 30’ + 16º 42’ = 43º 12’ al sur del ecuador.  
+
+No es necesario que sea Sirio exactamente la que se use para medir la latitud en esta forma, ya 
+que se puede utilizar cualquier astro visible, al sol, la luna o estrellas, del cual se conozca su 
+declinación que se puede obtener de los Almanaques Náuticos o del Anuario Astronómico de la 
+UNAM, y que se encuentre exactamente al sur o al norte, dependiendo del hemisferio en que te 
+encuentres.  
+
+Para medir el ángulo que forma el sol. NO LO VEAS DIRECTAMENTE, sino que observa de lado, que 
+la sombra de la pínula central, caiga sobre la pínula del lado de los 180º; el ángulo que forma el 
+sol, se puede encontrar en el Anuario Astronómico de la UNAM, para cada día del año.  
+
+Si necesitas medir alguna distancia entre dos astros, o su altura sobre el 
+horizonte, puedes utilizar tu astrolabio, pero en muchas ocasiones no lo 
+tendrás a mano, por lo que conviene utilizar otra forma sencilla de apreciar 
+estas distancias angulares. Los marinos encontraron que si extiendes tu 
+brazo enfrente de tus ojos, se pueden apreciar aproximadamente algunos 
+ángulos con facilidad.  
+
+Entre el pulgar y el meñique se aprecia un 
+ángulo de 20º; entre el pulgar y el índice, uno 
+de 15º; un puño cerrado mide unos 10º; y el 
+grueso del meñique representa un ángulo de 1.5 
+aproximadamente. Recuerda que estos ángulos sólo son aproximados y 
+que deberás estirar tu brazo a todo su largo.  
+
+Esto te parecerá un juego, pero gracias a este truco tan simple, un 
+aviador perdido en el pacifico del sur, pudo ser localizado por otro avión 
+de pasajeros que recibió su mensaje de auxilio, cuando se quedó sin 
+brújula e instrumentos de navegación.  
+
+   
+
+Un Reloj Estelar  
+
+También puedes utilizar las estrellas como reloj, solamente que se mueven aparentemente más 
+rápido que el sol, ya que cualquier estrella aparece en el mismo punto cada noche, en 23 horas y 
+56 minutos aproximadamente, por lo que es equivalente a un reloj que se adelante un poco menos 
+de 4 minutos al día. El tiempo que tarda una estrella cualquiera en promedio de dar una vuelta a la 
+tierra aparentemente, se le conoce como DÍA SIDERAL y es más corto que el solar en esos casi 4 
+minutos.  
+
+Esta diferencia se debe a que el año dura 365.25 días aproximadamente, por lo 
+que si se considerara un adelanto de 4 minutos al día, nos daría 24 horas en 
+360 días, o sea casi un año para fines prácticos.  
+
+Si ves a la estrella beta de Casiopea, conocida como Caph, que está cerca de la 
+polar, el 23 de septiembre de cada año se encuentra a la medianoche 
+exactamente sobre la estrella polar. Si la observas al día siguiente, podrás ver 
+que estará en la misma posición a las 11 h con 56 mm aproximadamente y así 
+se irá adelantando casi 4 minutos al día y al cabo de medio mes, estará 
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+colocada en el mismo punto una hora antes.  
+
+Si imaginamos que la estrella polar es el centro de la carátula de un reloj y la estrella Caph es la 
+punta de la manecilla de las horas, nos indicará la hora exacta únicamente el 23 de septiembre a 
+las 24 horas.  
+
+Sin embargo, si consideramos el tiempo de adelanto de nuestro reloj estelar, 
+podemos utilizarlo convenientemente.  
+
+Para hacerlo, ve la posición de Caph sobre una carátula imaginaria y considerar 
+el día en que haces la observación. Recuerda que estamos usando un reloj que 
+se adelanta casi 4 minutos al día, 1 hora en medio mes, 2 horas al mes y 24 
+horas al año.  
+
+Suponiendo que observas a Caph el 10 de julio de un año cualquiera en 
+una posición de nuestra carátula aparente de las 3, desde el 23 de 
+septiembre han transcurrido 9 meses y 17 días Considerando que han 
+transcurrido 9 meses, lo que equivale a 9 X 2hs = l8 horas, y 17 días, lo 
+que equivale a medio mes, (15 días), más dos días, o sea 1 hora del 
+medio mes, más 2 X 4 min = 8 minutos de los dos días, equivale a un 
+adelanto de 19 hrs y 8 min en total.  
+
+Nuestra carátula aparente es de 12 horas, pero en realidad el giro de la tierra se hace en 24 horas, 
+por lo que habrá que multiplicar por 2 la hora aparente de la estrella Caph, que en este ejemplo 
+son las 3, lo que nos da 6 horas realmente. Si lo sumamos al tiempo adelantado en los 9 meses y 
+días adicionales que fue de 19 hrs y 8 mm, tendremos un total de: 
+6 + 19:08 = 25:08 horas  
+
+Este resultado es el adelanto de nuestro reloj estelar, por lo que para convertirlo a la hora actual, 
+lo restamos de 24:00 horas, si es menor que 24, o de 48:00 si es mayor de 24, como en este caso. 
+Así tendremos: 
+48 h 00 min -25 h 08 m = 22 h 52 m  
+
+Este resultado nos indica que son las 22 horas con 52 minutos en el lugar en el que estamos.  
+
+Como no es posible ver a Casiopea durante todo el año en la latitud de la 
+República Mexicana, tenemos que escoger otra estrella alterna para usar 
+nuestro reloj. Para esto es conveniente utilizar como puntero horario, a Dube 
+o Merak de la Osa Mayor, que son visibles cuando Caph no lo es, únicamente 
+observando que están en la parte superior de la polar el 7 de marzo a las 24 
+horas, en lugar de Caph que lo hace el 23 de septiembre, por lo que hay que 
+contar el tiempo desde el 7 de marzo en el caso de Dube o Merak.  
+
+Aún así, tu reloj mecánico marcará hora diferente, ya que es la hora del 
+meridiano en que te encuentres en ese momento, por lo que deberás 
+considerar el tiempo de adelanto o atraso, según la longitud en que vivas con 
+respecto al meridiano de referencia que uses.  
+
+Por ejemplo, la Cd. de Mérida se encuentra en el meridiano 89.5º y la hora de referencia en esa 
+ciudad es la del meridiano 90º, por lo que la hora así obtenida, casi coincide con la real.  
+
+En cambio, si estás en la Cd. de Morelia, en el meridiano 101º, tu reloj aparecerá como si estuviera 
+atrasado en 44 minutos, que es lo que tarda un astro en recorrer los 101º -90º = 11 grados de 
+diferencia con el meridiano de referencia que es también el de 90º.  
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+  
+
+Si consideras que un astro en general se mueve unos 15 grados por hora sobre la bóveda celeste, 
+en esta forma se puede determinar la longitud de un lugar, sólo que hay que utilizar un teodolito o 
+sextante para hacer una medición más precisa.  
+
+Seguramente te habrás dado cuenta de la gran utilidad de conocer un poco de astronomía, para 
+utilizar adecuadamente durante tus campamentos y excursiones, así como desde tu casa o de 
+algún club u organización que exista en tu localidad, que te ayudará a aprender más de esta 
+apasionante actividad.  
+
+  
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+ALGO MÁS  
+
+La inquietud y curiosidad del hombre no ha sido satisfecha y sigue investigando 
+y curioseando al universo, en lo poco que puede ver, para buscar en él la 
+explicación de su origen entre otras cosas.  
+
+Hasta ahora se ha valido no sólo de la observación visual, que es lo que 
+tratamos de ver en forma sencilla en este libro, sino que ha recurrido a otras 
+técnicas para sondear al universo; entre otras cosas se ha utilizado la 
+fotografía, que ha permitido "extender" la capacidad visual normal del hombre, 
+para registrar objetos que son imposibles de ver aún en los mejores 
+telescopios, lo que originó la ASTRO FOTOGRAFÍA.  
+
+Si dispones de un buen telescopio y de una cámara fotográfica de calidad, 
+podrás obtener mayor satisfacción que si utilizas únicamente tu telescopio, y 
+quizá tengas oportunidad de registrar algún evento estelar interesante.  
+
+Actualmente se trabaja con amplificadores electrónicos de luz, en lugar de las películas fotográficas 
+ya que se puede aumentar muchísimo la sensibilidad de los telescopios, sin necesidad de ser de 
+gran tamaño, porque se pueden interconectar varios telescopios pequeños e independientes, para 
+trabajar como uno de mayor tamaño.  
+
+Otro tipo de telescopio que ha permitido obtener datos de los objetos estelares es el 
+RADIOTELESCOPIO, que recibe señales de radiofrecuencias, que no son visibles, pero que pueden 
+verse como imágenes de los cuerpos estelares si se utilizan los equipos adecuados conectados a los 
+mismos y que permiten ver otro aspecto del universo.  
+
+  
+
+Durante la segunda guerra mundial, al intentar escuchar las conversaciones de los pilotos que iban 
+a atacar a Inglaterra, por accidente se descubrió que había algunas señales que provenían del 
+espacio, de lugares muy específicos, que luego se identificaron como estrellas, nebulosas y 
+también algunos cuerpos opacos a los telescopios ópticos.  
+
+Como la atmósfera que nos cobija de radiaciones indeseables impide ver objetos 
+que emiten radiaciones infrarroja, ultravioleta y rayos "X", el hombre ha colocado 
+telescopios en órbita terrestre, que permiten ver estas radiaciones por medio de 
+aparatos que las convierten en imágenes visibles ya en tierra y que son enviadas 
+por los instrumentos electrónicos que lleva el telescopio en órbita, por medio de 
+ondas de radio.  
+
+Además nuestra atmósfera impide ver con claridad, al moverse y hacer variar las 
+imágenes, como las que se ven en un día caliente sobre el pavimento caliente o el 
+techo de los automóviles al sol, por lo que es inútil hacer telescopios ópticos 
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+mayores que los que existen actualmente en uso, por lo que ha enviado naves 
+espaciales o sondas, que van equipadas con cámaras de televisión para poder ver de cerca los 
+planetas y sus satélites, con mayor detalle.  
+
+Todo esto está fuera del alcance de un aficionado a la astronomía lógicamente, pero tú puedes 
+divertirte en grande aun si sólo aprendes el movimiento de la bóveda celeste, lo que puedes 
+aprovechar para orientare en tus excursiones nocturnas.  
+
+   
+
+Cómo Hacer tu Propio Telescopio  
+
+No es necesario gastar grandes cantidades de dinero para hacerte de un buen telescopio, ya que 
+muchos muchachos han construido el suyo ellos mismos, asesorados por personas o clubes que 
+dan la información necesaria para hacerlos. En las revistas Información Científica y Tecnológica del 
+Conacyt de junio a octubre de 1985, del número 105 a 109, volumen No. 7 se publicó la forma de 
+hacer un telescopio sencillo, con un espejo pulido a mano de 120 mm y con distancia focal de 1.20 
+m.  
+
+Si tienes la inquietud de fabricarlo, puedes seguir las direcciones que se 
+indican en dichas revistas para hacerlo, incluyendo su montura 
+ecuatorial y los cuidados que hay que tener con el mismo, ya que es un 
+instrumento de precisión, cuando se cuida adecuadamente.  
+
+Si requieres que alguien te asesore, busca en tu 
+localidad alguna persona u óptica que te pueda 
+ayudar a hacerlo; en la Cd. de México te puedes 
+afiliar a la Sociedad Astronómica de México, donde 
+con gusto te ayudarán a hacerlo y a gozarlo.  
+
+Visita los planetarios a los que puedas asistir y recuerda que continuamente 
+están cambiando sus programas para abarcar nuevas cosas y descubrimientos 
+del hombre.  
+
+Carreras  
+
+La astronomía requiere de equipos multidisciplinarios para funcionar y si te interesa trabajar en 
+esto, estudia carreras de ciencias tales como Física, Matemáticas, Química, Ingenierías Mecánica, 
+Electrónica y otras más que están involucradas con la astronomía. En México no existe como 
+carrera específica, pero de cualquiera de las carreras mencionadas podrás tener acceso a estudios 
+superiores de maestría o doctorado en astronomía o ciencias afines.  
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Bibliografía  
+
+Aquí en este libro te presentamos únicamente los elementos de lo que llama la Astronomía 
+Observacional, pero si eres inquieto te encontrarás infinidad de libros más profundos o específicos 
+de algún tema. Por lo pronto te recomendamos los siguientes para empezar.  
+
+ASTRONOMÍA STARS 
+Por Terry Maloney Por Hebert 5. Zim y A. H. Baker. 
+Enciclopedia de Temas Básicos, Tomo 10 Guias de oro 
+Instituto Parramón Ediciones. Golden Press. Nueva York 
+Barcelona. 
+
+ATLAS DE ASTRONOMÍA 
+ASTRONOMY Por Ignacio Puig. S. I. 
+Por Terry Maloney Ediciones Jover S.A. Barcelona  
+MacDonald Educational Ltd. 
+Londres Incluye la forma de hacer un telescopio 
+Versión original en inglés del libro anterior. refractor sencillo, con un objetivo de más 
+Contiene la forma de construir un telescopio con de 40 mm de diámetro y una distancia 
+espejo para la latitud de 51º en que se encuentra focal de 1.20 m.  
+Londres; un planetario para la misma latitud; y la 
+forma de retratar a las estrellas.  INICIACIÓN A LA ASTRONOMÍA 
+
+Por Fred Hoyle 
+LOS AMANTES DE LA ASTRONOMÍA Editorial CONACYT. México 
+Por Collin A. Ronan Bueno para el que se interese en esta 
+Editorial Blume. Barcelona.  ciencia y muy accesible.  
+
+THE PRACTICAL ASTRONOMER ASTRONOMÍA 
+Por Colin A. Ronan Por Theodore G. Mehlin 
+Roxby Press Lim. Londres Cia. Editorial Continental, CECSA. México  
+Versión original en inglés del libro anterior. 
+Es un libro que muestra varios experimentos y ASTRONOMY 
+mediciones que puede hacer un muchacho, para Por Theodore G. Mehlin 
+entender mejor al universo y cómo se construyen, Editorial John Wiley & Sons. 
+entre otras cosas, los relojes solares.  Nueva York 
+
+Versión original en inglés del anterior. 
+LA OBSERVACIÓN DEL CIELO Sirve como libro de texto de la materia en 
+Por R. Newton Mayal y otros. las escuelas de enseñanza media y 
+Pequeña Biblioteca Daimón. superior, por lo que es más profunda. 
+Barcelona  
+
+THE SKY OBSERVER’S GUIDE 
+Por R. Newton Mayal y otros. 
+Guía de oro 
+Golden Press. Nueva York 
+Versión original en inglés del anterior. 
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 3 - Astronomía
+
+Publicaciones Periódicas  
+
+CIENCIA Y DESARROLLO CALENDARIO DEL MÁS ANTIGUO DE GALVÁN 
+Editada bimestralmente por el CONACYT Publicación anual que incluye los eventos 
+Ver la sección "Descubrimiento el Universo". astronómicos más interesantes en el año.
+ANUARIO DEL OBSERVATORIO HISTORIA DE LA ASTRONOMÍA EN MÉXICO 
+ASTRONÓMICO NACIONAL Colección la ciencia desde México No. 4 
+Publicación anual Varios autores, compilados por Marco A. Moreno 
+Se adquiere directamente en el Instituto de Corral. 
+Astronomía de la UNAM Editado por: Secretaria de Educ. Pública, Fondo de 
+Apartado Postal: 70-264 Cultura Económica CONACYT.
+México, D.F. 04510
+
+http://www.siemprescout.org
