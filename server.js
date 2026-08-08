@@ -17,6 +17,7 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
+const crypto = require("crypto");
 const fetch = require("node-fetch");
 const multer = require("multer");
 const pdfParse = require("pdf-parse");
@@ -45,6 +46,28 @@ const GEMINI_MODEL = "gemini-3.5-flash-lite";
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 const LOG_FILE = path.join(__dirname, "questions-log.jsonl");
+
+// ---------- Documentos sugeridos por visitantes, pendientes de aprobación ----------
+const PENDING_DIR = path.join(__dirname, "pending");
+const PENDING_FILES_DIR = path.join(PENDING_DIR, "files");
+const PENDING_META_FILE = path.join(PENDING_DIR, "pending.json");
+
+if (!fs.existsSync(PENDING_FILES_DIR)) {
+  fs.mkdirSync(PENDING_FILES_DIR, { recursive: true });
+}
+
+function loadPending() {
+  if (!fs.existsSync(PENDING_META_FILE)) return [];
+  try {
+    return JSON.parse(fs.readFileSync(PENDING_META_FILE, "utf-8"));
+  } catch {
+    return [];
+  }
+}
+
+function savePending(list) {
+  fs.writeFileSync(PENDING_META_FILE, JSON.stringify(list, null, 2), "utf-8");
+}
 
 // Carga el índice de búsqueda al arrancar el servidor.
 try {
@@ -142,6 +165,50 @@ app.post("/api/chat", async (req, res) => {
   } catch (err) {
     console.error("Error procesando la pregunta:", err);
     res.status(500).json({ error: "Ocurrió un error inesperado." });
+  }
+});
+
+// ---------- Endpoint público: sugerir un documento (queda pendiente de aprobación) ----------
+const ALLOWED_EXTENSIONS = [".pdf", ".docx", ".txt"];
+
+app.post("/api/submit-document", upload.single("file"), (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ error: "No se recibió ningún archivo." });
+    }
+
+    const ext = path.extname(req.file.originalname).toLowerCase();
+    if (!ALLOWED_EXTENSIONS.includes(ext)) {
+      return res.status(400).json({
+        error: "Formato no permitido. Sube un PDF, Word (.docx) o texto (.txt).",
+      });
+    }
+
+    const note = typeof req.body.note === "string" ? req.body.note.slice(0, 500) : "";
+
+    const id = crypto.randomUUID();
+    const safeOriginalName = req.file.originalname.replace(/[^a-zA-Z0-9_\-.áéíóúñÁÉÍÓÚÑ ]/g, "");
+    const storedFileName = `${id}__${safeOriginalName}`;
+
+    fs.writeFileSync(path.join(PENDING_FILES_DIR, storedFileName), req.file.buffer);
+
+    const pending = loadPending();
+    pending.push({
+      id,
+      originalName: req.file.originalname,
+      storedFileName,
+      note,
+      submittedAt: new Date().toISOString(),
+      size: req.file.size,
+    });
+    savePending(pending);
+
+    res.json({
+      message: "¡Gracias! Tu documento quedó enviado para revisión de un administrador.",
+    });
+  } catch (err) {
+    console.error("Error recibiendo documento sugerido:", err);
+    res.status(500).json({ error: "No se pudo recibir el archivo. Intenta de nuevo." });
   }
 });
 
@@ -249,6 +316,84 @@ app.get("/api/admin/logs", checkAdminPassword, (req, res) => {
   } catch (err) {
     res.status(500).json({ error: "No se pudo leer el registro." });
   }
+});
+
+// Lista los documentos pendientes de aprobación.
+app.get("/api/admin/pending", checkAdminPassword, (req, res) => {
+  const pending = loadPending();
+  res.json({ pending: pending.slice().reverse() });
+});
+
+// Descarga el archivo original de un documento pendiente, para revisarlo.
+app.get("/api/admin/pending/:id/download", checkAdminPassword, (req, res) => {
+  const pending = loadPending();
+  const item = pending.find((p) => p.id === req.params.id);
+  if (!item) return res.status(404).json({ error: "No se encontró ese documento pendiente." });
+
+  const filePath = path.join(PENDING_FILES_DIR, item.storedFileName);
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).json({ error: "El archivo ya no está disponible en el servidor." });
+  }
+
+  res.download(filePath, item.originalName);
+});
+
+// Aprueba un documento pendiente: lo agrega oficialmente al chatbot.
+app.post("/api/admin/pending/:id/approve", checkAdminPassword, async (req, res) => {
+  try {
+    const pending = loadPending();
+    const item = pending.find((p) => p.id === req.params.id);
+    if (!item) return res.status(404).json({ error: "No se encontró ese documento pendiente." });
+
+    const filePath = path.join(PENDING_FILES_DIR, item.storedFileName);
+    if (!fs.existsSync(filePath)) {
+      return res.status(404).json({ error: "El archivo ya no está disponible en el servidor." });
+    }
+
+    const buffer = fs.readFileSync(filePath);
+    const text = await extractText({ originalname: item.originalName, buffer });
+
+    if (!text || text.trim().length < 20) {
+      return res.status(400).json({
+        error: "No se pudo extraer texto legible de ese archivo. Revísalo manualmente antes de aprobarlo.",
+      });
+    }
+
+    const sourceName = path
+      .basename(item.originalName, path.extname(item.originalName))
+      .replace(/[^a-zA-Z0-9_\-áéíóúñÁÉÍÓÚÑ ]/g, "")
+      .trim()
+      .replace(/\s+/g, "_");
+
+    const fragments = addDocument(sourceName || `documento_${Date.now()}`, text);
+
+    // Ya quedó incorporado al índice oficial (y respaldado en /knowledge),
+    // así que se quita de la lista de pendientes.
+    fs.unlinkSync(filePath);
+    savePending(pending.filter((p) => p.id !== item.id));
+
+    res.json({
+      message: `Documento aprobado y agregado: ${fragments} fragmentos indexados.`,
+      documents: listSources(),
+    });
+  } catch (err) {
+    console.error("Error aprobando documento:", err);
+    res.status(500).json({ error: err.message || "No se pudo aprobar el documento." });
+  }
+});
+
+// Rechaza (elimina) un documento pendiente sin agregarlo al chatbot.
+app.delete("/api/admin/pending/:id", checkAdminPassword, (req, res) => {
+  const pending = loadPending();
+  const item = pending.find((p) => p.id === req.params.id);
+  if (!item) return res.status(404).json({ error: "No se encontró ese documento pendiente." });
+
+  const filePath = path.join(PENDING_FILES_DIR, item.storedFileName);
+  if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
+
+  savePending(pending.filter((p) => p.id !== item.id));
+
+  res.json({ message: "Documento rechazado y eliminado." });
 });
 
 app.get("/health", (req, res) => {
