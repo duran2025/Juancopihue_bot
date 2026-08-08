@@ -4,40 +4,16 @@
 // las partes más relevantes de tus manuales cuando alguien pregunta algo.
 //
 // Uso: npm run build-index
-// (hay que correrlo de nuevo cada vez que agregues o cambies documentos)
+// (hay que correrlo de nuevo cada vez que agregues o cambies documentos
+// manualmente en /knowledge; los documentos subidos desde el panel de
+// administración se agregan automáticamente sin necesidad de este paso)
 
 const fs = require("fs");
 const path = require("path");
+const { chunkText } = require("./lib/chunk");
 
 const KNOWLEDGE_DIR = path.join(__dirname, "knowledge");
 const OUTPUT_FILE = path.join(__dirname, "index.json");
-
-// Tamaño de cada fragmento (en palabras) y superposición entre fragmentos
-// para no cortar ideas a la mitad.
-const CHUNK_SIZE = 220;
-const CHUNK_OVERLAP = 40;
-
-function chunkText(text, sourceName) {
-  const words = text.split(/\s+/).filter(Boolean);
-  const chunks = [];
-  let start = 0;
-  let chunkIndex = 0;
-
-  while (start < words.length) {
-    const end = Math.min(start + CHUNK_SIZE, words.length);
-    const chunkWords = words.slice(start, end);
-    chunks.push({
-      id: `${sourceName}#${chunkIndex}`,
-      source: sourceName,
-      text: chunkWords.join(" "),
-    });
-    chunkIndex++;
-    if (end === words.length) break;
-    start = end - CHUNK_OVERLAP;
-  }
-
-  return chunks;
-}
 
 function main() {
   if (!fs.existsSync(KNOWLEDGE_DIR)) {
