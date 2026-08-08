@@ -1,0 +1,2329 @@
+﻿Scout 2 - Meteorología
+
+ Scout 2 
+Meteorología 
+
+Prólogo
+Prólogo a la segunda edición
+Introducción
+Presión atmosférica
+El viento
+La temperatura
+La humedad del aire
+Las nubes
+Otros fenómenos atmosféricos
+La estación meteorológica
+El barómetro  
+La veleta  
+El anemómetro  
+El termómetro  
+El sicrómetro  
+El pluviómetro  
+La meteorología en la actualidad
+El pronóstico
+Algo más sobre el mismo tema
+
+Este título forma parte de la Colección Scout, literatura de apoyo para muchachos 
+Autor: Juan José Martínez de la Rosa 
+
+Editado por la Gerencia de Publicaciones de la 
+Asociación de Scouts de México, A.C. 
+
+Este libro no puede ser reproducido, total o parcialmente, sin la autorización escrita del editor.  
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+Prólogo  
+
+La intención de este libro es la de servir como auxiliar al programa 
+de las Tropas de la Asociación de Scouts de México, incluyendo 
+material que puede ser usado en los retos de la Senda de la 
+Exploración o sea, en la obtención de las Insignias Kon-Tiki, Everest 
+y Apolo. Se recomienda utilizarlo como guía y no como "libro de 
+texto".  
+
+El material incluido está adaptado a la meterología tropical, en la 
+región de los vientos alisios, a diferencia de la de los países de 
+Europa y de América del Norte, que están en la región de los 
+contralisios y son vientos dominantes del Oeste.  
+
+Se procuró incluir instrumentos básicos y de construcción sencilla, 
+para hacerlo más didáctico, aprovechando materiales desechables 
+que se pueden encontrar en casi cualquier lugar.  
+
+El material también puede ser útil a los interesados en los 
+fenómenos que permiten hacer un pronóstico del tiempo, utilizando 
+principios sencillos, la observación de la naturaleza y mediciones 
+que son fáciles de hacer por cualquier persona, sin pretender ser un 
+tratado de Meteorología.  
+
+Juan José Martínez R., 
+Subcomisión Nacional de Tropas. 
+
+   
+
+Prólogo a la segunda edición  
+
+Una segunda edición de un libro sin correcciones, puede ser el ideal de un escritor de novelas o de 
+un poeta, pero no para nosotros que tratamos un tema tan cambiante como el tiempo 
+meteorológico.  
+
+En esta segunda edición se incluyen cambios que pretenden simplificar y mejorar el libro y los 
+instrumentos que se pueden construir, derivados del intercambio con los mismos Scouts que han 
+utilizado la primera edición y de especialistas en el tema.  
+
+La complicada orografía de la República Mexicana, es la que nos provee de un laboratorio muy 
+diverso de climas, afortunadamente, por lo que su conocimiento es un reto para ti, como 
+descubridor de nuevos horizontes para tus campamentos y excursiones.  
+
+Juan José Martínez de la R. 
+Miembro de la Sub-Comísión 
+Nacional de Tropas  
+
+Septiembre de 1987  
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+INTRODUCCIÓN  
+
+La Meteorología es una rama de la Física que estudia los fenómenos que aparecen en la atmósfera. 
+La capa inferior de la misma, en la que se desarrollan los fenómenos vitales, se conoce como la 
+Tropósfera y en las regiones ecuatoriales tienen una altura de 18 a 20 Km., pero en las regiones 
+polares solamente llega a 8 Km.  
+
+El Scout, cuando excursiona o acampa, está sujeto a los cambios del tiempo en el lugar en que se 
+encuentra y debe preveerlos para su comodidad y seguridad.  
+
+El hombre, observando la naturaleza, aprendió a predecir los cambios del tiempo por la 
+observación de los fenómenos atmosféricos y por el comportamiento de los animales plantas y 
+cosas que le rodean; este conocimiento empírico, permite al hombre del campo y a los que están 
+en contacto con la naturaleza, predecir los cambios que lo dañan o benefician, con asombrosa 
+precisión y sin utilizar instrumentos adicionales; sin embargo sus apreciaciones son sólo locales y 
+no funcionan fuera de su región, por no ser leyes universales.  
+
+El hombre de las ciudades, aislado de la naturaleza, ha desarrollado extensiones de sus sentidos, 
+que son los instrumentos meteorológicos, que le permiten medir, registrar y procesar la 
+información que se obtiene, para hacer la predicción del tiempo, sin necesidad de hacer 
+observaciones directas.  
+
+El Scout en el campo puede sacar ventaja de los dos métodos, de observar y medir, los cambios 
+del tiempo que preceden a una situación incómoda o de peligro.  
+
+Antes de entrar en materia es conveniente aclarar algunos conceptos para que sea más fácil el 
+ingreso a nuestra nueva aventura.  
+
+Existen diferentes fenómenos que se confunden y que conviene aclarar:  
+
+El Clima, las Estaciones, el Tiempo  
+
+El clima lo determinan:  
+
+a) La altitud de un lugar. 
+b) Su altura sobre el nivel del mar. 
+e) Su distancia a las grandes masas de agua. 
+d) Su orología.  
+
+El clima no cambia mucho durante cientos o miles de años.  
+
+Las estaciones son regulares y están determinadas por la inclinación del 
+eje terrestre, respecto a la órbita que realiza alrededor del Sol y es de 
+23º27'.  
+
+El tiempo se refiere a los cambios rápidos que se 
+presentan en la atmósfera en cosa de días u horas en 
+un lugar.  
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+Factores del Tiempo  
+
+Se consideran elementos o factores del tiempo:  
+
+l LA PRESIÓN ATMOSFÉRICA 
+
+l EL VIENTO  
+
+l LA TEMPERATURA  
+
+l LA HUMEDAD DEL AIRE  
+
+La observación del cambio de los factores del clima y además: el color del 
+cielo, la cantidad de cielo cubierta por las nubes, la cantidad de tiempo en 
+que calienta el Sol, la cantidad de lluvia en un día y otros fenómenos, 
+ayudarán a pronosticar las condiciones que nos afectarán en las próximas 
+horas. Aunque en la actualidad se pueden conseguir buenos pronósticos 
+del tiempo por medio de la radio, televisión y los periódicos, en el campo 
+es difícil o imposible tener acceso a los mismos.  
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+La Presión Atmosférica  
+
+Galileo Galilei sugirió a Torricelli un experimento para comprobar si todos los 
+objetos que están sumergidos en la atmósfera, sufren una presión debida al peso 
+del aire. Este experimento lo realizó Viviani tomando un tubo de vidrio de 80cm. 
+de largo cerrado por un extremo, lo llenó de mercurio y luego de tapar el otro 
+extremo con el pulgar, lo sumergió en una cubeta de mercurio sin dejar entrar 
+nada de aire. Si el experimento se realiza al nivel del mar, a una latitud de 450 y 
+a una temperatura de 800, la altura del mercurio sobre el nivel de la cubeta, será 
+de 760 mm.  
+
+Si se considera que el mercurio tiene una densidad de 13.59 g 
+por cm3, una altura de 760 mm. o 76 cm., representan una presión de 1,032.8 
+g por cm2. Si ascendemos una montaña, a una altura de 5,500 m., el 
+barómetro indica sólo 380 mm. o sea que la presión se reduce a la mitad; a una 
+altura de 11,000 m. se reduce nuevamente a la mitad y sólo nos indica unos 
+190 mm.  
+
+En la siguiente ilustración podemos ver cómo cambia la presión con respecto a 
+la altura del nivel del mar en que nos encontremos.  
+
+  
+
+   
+Nivel del mar Ciudad de México 2240 m. Altura de 5,500 m 
+
+El barómetro original se calibraba en milímetros o en pulgadas, pero en la actualidad se calibra en 
+unidades de presión conocidas como milibares (mb) y es la forma científica de medir la presión 
+atmosférica. Una presión de 760 mm. de mercurio es equivalente a una presión de 1,013.25 mb.  
+
+Aparte de los barómetros de mercurio, Vidí desarrolló otro basado en la 
+deformación de unas cajitas de metal, a las cuales se les extrae parcialmente 
+el aire y se les añade un resorte interno, para evitar que la presión 
+atmosférica las aplaste. A éstos se les conoce como barómetros aneróides y 
+son más cómodos de llevar, por no tener ningún liquido que se derrame.  
+
+Los barómetros comerciales vienen graduados en milibares y en 
+pulgadas o milímetros de mercurio; además tienen marcas como 
+"LLUVIA", "VIENTO" VARIABLE", "BUEN TIEMPO", etc. pero no tienen 
+gran significado, porque la aguja no se mueve sobre ellas para indicar 
+
+la condición marcada ahí.  
+
+En general, si el barómetro indica una presión alta es por que habrá buen tiempo y si la 
+presión baja, sobre todo rápidamente, probablemente se presentará una condición de mal 
+tiempo.  
+
+La mayoría de los barómetros sólo están calibrados entre 935 y 950 como presión mínima y entre 
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+1,050 y 1,060 como máxima. En realidad el movimiento diario de la aguja del barómetro es muy 
+pequeño y es de sólo 3 milibares en condiciones estables, al nivel del mar; de 3 a 5 mb indica un 
+cambio probable en las próximas 24 a 36 horas; de 5 a 10 mb indica un cambio en menos de 24 
+horas; de 10 a 16 indica la vecindad de una tormenta y más de 16 mb sólo se moverá en el caso 
+de un huracán en las cercanías. Para observar los pequeños cambios, los barómetros de carátula 
+tienen otra aguja que se ajusta manualmente y que sirve como referencia.  
+
+ 
+PRINCIPIO DE FUNCIONAMIENTO 
+DE UN BARÓMETRO ANERÓIDE  
+
+Cuando compres un barómetro, asegúrate de que pueda operar a la altitud de la ciudad en que 
+vives, porque la mayoría solo puede calibrarse a una altitud máxima de 1,000 m. Para eso, los 
+barómetros aneróides tienen en la parte trasera un tornillo de ajuste.  
+
+Un día normal, la presión atmosférica alcanza un valor mínimo a 
+las 4 hr., sube a un máximo a las 10 hr., aja a un nuevo mínimo 
+a las 16 hr., sube a otro máximo a las 22 hr. y vuelve a bajar a 
+un valor mínimo a las 4 hr. del día siguiente para cerrar el ciclo. 
+Estas condiciones son generales y se repiten regularmente. 
+También observarás que las presiones son más altas en invierno 
+que en verano, debido a que el aire frío pesa más que el 
+caliente.  
+
+Si un instrumento que mide la presión 
+atmosférica se calibra en metros de altitud, en lugar de milibares, se convierte 
+en un altímetro y nos sirve para conocer la altura sobre el nivel del mar de 
+cualquier lugar del planeta. Por ejemplo: la ciudad de México está situada a 
+2,240 m. sobre el nivel del mar y tiene una preón atmosférica media de 780 mb 
+únicamente.  
+
+La capa inferior de la atmósfera, hasta unos 75 Km. de altura, está formada 
+por:  
+
+78% de nitrógeno 
+21% de oxígeno 
+1% de otros gases  
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+  
+
+Entre los gases adicionales se encuentran el bióxido de carbono, el hélio, el 
+hidrógeno, el vapor de agua y otros muchos.  
+
+Un metro cúbico de aire al nivel del mar contiene 210 litros de oxígeno mientras 
+que a la altura de la ciudad de México, sólo contiene 163 litros; a una altura de 
+5,500 m. hay solo 105 litros y por eso se hace difícil respirar a mayor altura. En 
+general, los efectos de la altura sobre la respiración se hacen molestos cuando uno 
+asciende a mas de 3,000 m. del lugar en que uno vive, pero si se aclimata a la 
+altura durante un tiempo, se quita el malestar. Esto permitió a los escaladores 
+contemporáneos hacer ascensos al Everest sin utilizar tanques de oxígeno 
+adicionales.  
+
+Las personas que habitan ciudades a más de 4,000 m. de altitud, compensan la 
+poca cantidad de oxigeno, con mayor capacidad pulmonar y un mayor número de 
+glóbulos rojos en su sangre.  
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+El Viento  
+
+Los gases que forman la atmósfera terrestre son transparentes, lo que 
+permite a los rayos solares llegar hasta la superficie del planeta, 
+calentando a la tierra o las aguas. El aire en contacto con las superficies 
+calientes también se calienta y al hacerlo, se vuelve más ligero por lo 
+que tiende a ascender (Ley de Boyle-Mariotte). Al subir deja un vacio 
+que es llenado por el aire circundante que está más frío, creando lo que 
+conocemos como el viento o sea el aire en movimiento. Al ascender el 
+aire se enfría y vuelve a descender en otro lugar, creando un 
+movimiento llamado de convección.  
+
+Como los rayos solares caen más verticales en el ecuador que en los 
+polos, el aire caliente ecuatorial ascendería, circularía por arriba hacia los 
+polos en los que descendería, por ser la región más fría y regresaría 
+cercano a la superficie de la tierra cerrando el ciclo.  
+
+Los vientos serían del Polo Norte y del Polo Sur hacia el ecuador al nivel 
+del suelo, pero al estar girando la tierra, darían la impresión de venir del 
+Noroeste en el hemisfério Norte y del Suroeste en el hemisfério Sur.  
+
+Sin embargo, esta circulación simple se complica por el hecho de que la tierra no gira alrededor del 
+sol en su eje perpendicular a su órbita, lo que hace que la zona más caliente no sea siempre el 
+ecuador sino una banda caliente que se mueve hacia arribay hacia abajo del mismo unos 10 grados 
+siguiendo el movimiento aparente del sol, creando las estaciones. Otra complicación consiste en 
+que la distribución de las tierras y de las aguas no es igual en los dos hemisferios, creando 
+diferencias en su calentamiento. Por último, la orografía (montañas) modifica la dirección de los 
+vientos dominantes.  
+
+  
+
+En general se consideran los vientos dominantes que se muestran en la figura, sin considerar los 
+particulares de cada zona.  
+
+La República Mexicana está incluida en parte en la región de los vientos alisios y de no existir las 
+cadenas montañosas, los vientos serían del NE en la región al sur del trópico de cáncer y del SO al 
+norte del mismo. Las montañas y los valles, tienden a desviar a los vientos dominantes lo que crea 
+variaciones sobre los mismos. Por ejemplo: en el Golfo de México los vientos dominantes son del E 
+casi todo el año, con excepción de los Nortes que se presentan en el Invierno, cuando invade al 
+golfo alguna masa de aire frío: en cambio en el pacifico, los vientos dominantes son del NO en la 
+región norte, del SO en la región restante y los vientos ciclónicos son del SE.  
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+Es conveniente que observes los vientos dominantes en la región en que 
+vives, sobre todo en la época de lluvias, para que veas de donde sopla 
+cuando se avecina un cambio del tiempo. Un buen indicador lo encontrarás 
+en el aeropuerto local, ya que los aviones siempre despegan y aterrizan 
+contra los vientos dominantes, por esto las pistas están dirigidas al rumbo 
+de los vientos dominantes.
+
+La dirección del viento se observa por medio de las veletas que nos 
+indican la dirección de la que provienen y que se marca por 32 
+rumbos a los que se les conoce como ROSA DE LOS VIENTOS. 
+
+Sin embargo ya es de poco uso esta forma para fines de transmisión 
+de datos en navegación aérea y científica, sustituyéndose por la 
+Rosa de los Vientos circular de 360º o por lo menos de 36 sectores 
+de 10º cada uno. Para su uso práctico es suficiente considerar 
+solamente 8 rumbos, los 4 cardinales y 4 laterales N, NE, E, SE, S, 
+SW, W y NW.  
+
+ROSA DE LOS VIENTOS PARA USO 
+PRÁCTICO 
+
+La velocidad del viento se mide con instrumentos llamados ANEMÓMETROS, los 
+que vienen calibrados en metros por segundo para las aplicaciones científicas, en 
+nudos los que se usan en navegación marítima y aérea, y en kilómetros o millas 
+por hora, para su uso en tierra. 
+
+En el campo se puede apreciar la dirección del viento por su efecto en la punta de 
+los árboles, las banderas, soltando un puño de tierra o por el método indio de 
+mojarse un dedo y levantarlo sobre la cabeza y del lado del que sopla el viento se 
+siente frío.  
+
+La velocidad del viento se puede medir con un anemómetro portátil o por el efecto 
+sobre los árboles, banderas, aguas estancadas, olas en mares o lagos, etc. para lo 
+que se puede utilizar la escala de BEAUFORT que fué desarrollada por un 
+almirante inglés de ese apellido; originalmente para ser usada en el mar, pero fué 
+adaptada posteriormente para su uso en tierra. 
+
+ESCALA DE BEAUFORT PARA LA VELOCIDAD DEL VIENTO 
+GRADO NUDO DENOMINACIÓN CARACTERÍSTICAS CARACTERÍSTICAS 
+
+BEAUFORT KM/H 
+
+0 0-1 0-1 Calma El humo sube vertical.
+
+1 1-3 2-6 Aire ligero El humo se empieza a inclinar en la 
+dirección del viento.
+
+2 Brisa suave Se siente en la cara; mueve las 
+hojas de los árboles; aparecen rizos 
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+4-6 7-12 en el agua; las olas son pequeñas y 
+sin espuma.
+
+Las ramitas, hojas y banderines se 
+3-
+
+3 7-
+Brisa ligera mueven contínuamente; olas con 
+
+10 19
+algunas crestas de espuma.
+
+Levanta el polvo y papeles; agita 
+20-
+
+4 11-
+Brisa moderada ramitas aún sin hojas; olas con 
+
+16 30
+crestas de espuma regulares.
+
+Agita árboles pequeños, hojas y 
+ramas medianas sin hojas; las 
+
+31-
+5 17- banderas y banderfnes ondean bien 
+
+Brisa regular 
+21 39 extendidos; se forman olas 
+
+regulares; en los lagos se forman 
+crestas espumosas regularmente.
+
+Mueve ramas gruesas y árboles 
+pequeños; el viento silba alrededor 
+
+40-
+6 22-
+
+Brisa fuerte de objetos fijos como casas y 
+27 50
+
+edificios; olas con espuma blanca 
+en las crestas y salpicaduras.
+
+GRADO NUDO DENOMINACIÓN CARACTERÍSTICAS CARACTERÍSTICAS 
+BEAUFORT KM/H 
+
+Agita fuertemente los árboles 
+medianos; forma muchas crestas 
+
+51- Viento 
+7 28- blancas en las olas; es molesto 
+
+33 61 moderado caminar contra el viento; la espuma 
+de las olas deja un rastro visible en 
+dirección del viento.
+
+Mueve árboles gruesos; desgajando 
+62-
+
+8 34-
+Viento regular ramas pequeñas; es muy difícil 
+
+40 74
+caminar contra el viento.
+
+Desjaga ramas medianas; produce 
+daños ligeros en casas, edificios y 
+
+75-
+9 41-
+
+Viento fuerte anuncios; rastros numerosos de 
+47 87
+
+espuma sobre las olas de lagos en 
+dirección del viento.
+
+Arranca o rompe árboles completos; 
+10 48- 88-
+
+Ventarrón produce daños grandes a 
+55 102
+
+construcciones.
+
+Grandes destrozos; las 
+103-
+
+11 56-
+Tormenta embarcacionmes pequeñas se 
+
+63 117 pierden entre las olas; nuy raro 
+cerca de las costas, tierrra adentro.
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+Destrucción catastrófica; el mar se 
+12 64- 118-
+
+Huracán cubre totalmente de espuma; 
+71 131
+
+visibilidad muy pobre.
+
+Más de 71 
+
+12 a 17 Nudos 
+Huracanes Sólo en el mar se observan 
+
+ó 131 velocidades tan altas.
+Km/hr. 
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+La Temperatura  
+
+La temperatura en un lugar sobre la superficie terrestre está determinada por la verticalidad con 
+que llegan los rayos solares y por el tiempo que dura brillando el Sol durante el día. En el ecuador 
+el día dura 12 hr. cualquier día del año, pero en los polos dura 6 meses. Entre esos dos extremos, 
+a una latitud de 50º, el día dura 8 hr. en el invierno y en el verano dura 16 hr. A esto se debe que 
+en esa latitud los climas son extremosos. En cambio a la latitud de 19º de la ciudad de México el 
+día más largo del verano dura 13 hr. y 20 mm. y el día más corto en invierno dura 11 hr. 
+aproximadamente; en el día más largo, el Sol está casi en el cenit al mediodía y en el día más 
+corto del invierno, el Sol envía sus rayos con una inclinación de unos 42.5º y a esto se debe la 
+diferencia de temperaturas entre el verano y el invierno.  
+
+  
+Equinoccio de Primavera Solsticio de Verano 
+
+  
+Equinoccio de Otoño Solsticio de Invierno 
+
+LA TIERRA VISTA DESDE EL SOL 
+
+Los rayos del Sol que atraviesan la atmósfera, chocan con las tierras y las aguas calentándolas, 
+pero las tierras se calientan más rápidamente que las aguas; por otra parte, por la noche, las 
+tierras se enfrían más rápidamente que las aguas. El calor que proporciona el Sol se perdería 
+completamente durante la noche de no ser por el vapor de agua que contiene el aire y también en 
+forma de nubes de gotitas de agua en estado líquido, que actúan como una cubierta de protección. 
+En general, las nubes cubren permanentemente un 52% del cielo como se puede observar en las 
+imágenes de satélites. El efecto se observa claramente en un día nublado por la mañana, porque al 
+estar tapado el Sol, la sensación de frío es muy notable, en cambio en la madrugada de un día 
+despejado en Invierno se presentan las heladas, pero tan pronto sale el Sol se siente el calor 
+rápidamente, a pesar de que la temperatura mínima es menor que en una mañana nublada.  
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+ 
+VARIACIÓN DE LA TEMPERATURA  
+
+En las montañas las variaciones entre la temperatura mínima y máxima llegan a unos 20ºC en un 
+mismo día.  
+
+ 
+VARIACIÓN DE LA TEMPERATURA  
+
+En las costas la variación llega a sólo unos 10ºC.  
+
+ 
+VARIACIÓN DE LA TEMPERATURA  
+
+En los valles de tierra adentro y lejos de masas grandes de agua, la variación llega a ser de 20ºC.  
+
+El calentamiento rápido de los flancos de las colinas 
+por los rayos del Sol, hace que el aire en contacto con 
+ellos, se eleve creando una corriente del valle hacia las 
+montañas por las mañanas.
+
+ 
+
+En cambio por la noche al enfriarse más 
+rápidamente los flancos que el valle, la 
+brisa bajará al valle desde la montaña.
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+En las costas, la tierra se calienta más rápido que el 
+mar y esto provoca que el aire sobre tierra se eleve, 
+viniendo a tomar su lugar el que está sobre el mar, 
+creando lo que se conoce como "brisa marina".
+
+En cambio durante la noche al enfriarse 
+más rápido la tierra que el agua del mar, 
+se invierte la dirección del viento o "brisa 
+de tierra".
+
+ 
+
+Estos son vientos locales producidos por causas diferentes a las atmosféricas que crean a los 
+vientos dominantes, que son los que predominan en una región pero no a nivel del suelo.  
+
+Es importante conocer las variaciones diarias de la temperatura, ya que permite evaluar el cambio 
+del tiempo. La temperatura mínima de un día se presenta normalmente cercana a la salida del sol 
+y la máxima entre las 14 y 16 hr., y no al mediodía como podría suponerse ya que es la mayor 
+verticalidad de los rayos solares.  
+
+  
+
+Esto se debe a que el calor se va acumulando en los objetos que calienta el sol poco a poco. Un 
+efecto parecido se nota en las estaciones, ya que el mes más caliente no es junio sino a fines de 
+julio y principios de agosto; en cambio el mes más frío no es diciembre sino enero para el 
+hemisferio norte.  
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+  
+
+Para medir la temperatura se usan 
+TERMÓMETROS, los que deben colocarse en 
+contacto con el aire pero a la sombra, ya que si 
+el sol les dá, se calientan más que el aire y dan 
+una lectura errónea.
+
+Aparte de los termómetros convencionales, se 
+coloca también otro tipo especial de 
+termómetros, que permiten registrar la mínima 
+y máxima temperatura de un día cualquiera o de 
+una larga temporada, sin importar la hora en 
+que sucedan.
+
+TERMÓMETRO 
+DE MÍNIMA Y 
+
+ MÁXIMA.
+
+En los observatorios meteorológicos, se colocan los termómetros dentro de 
+casetas de madera con persianas para que penetre libremente el aire y 
+normalmente se colocan a 2 m. del suelo en un lugar despejado cubierto de 
+pasto. 
+
+Cuando se obtienen las temperaturas mínima y máxima se mueven los 
+indicadores hasta que hacen contacto con la columna del termómetro, para 
+empezar un nuevo ciclo de lectura.  
+
+Cuando no se cuenta con termómetro de máximas y mínimas, se toman 
+lecturas a las 6 de la mañana y a las 15 hr., para tener una idea de la máxima 
+y mínima del día. En los observatorios se cuenta con instrumentos 
+registradores de la temperatura, que dan la variación total de la temperatura 
+en todo un día, de una semana o de todo un mes  
+
+ 
+CASETA DE MADERA 
+
+Los valores de temperatura máxima y mínima diaria se promedian, para DE UN 
+obtener lo que se conoce como "temperatura media diaria". El promedio de las OBSERVATORIO 
+
+temperaturas medias diarias, de todo un mes se conoce como "temperatura METEOROLÓGICO 
+media mensual" y el promedio de las temperaturas medias mensuales de un 
+año se conoce como "temperatura media anual". Si además se promedian 
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+durante varios años, por lo menos 10, sirve para conocer el clima de una 
+región. 
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+La Humedad del Aire  
+
+La nubecita que 
+sale de tu boca 
+en un día frío, o 
+de un recipiente 
+de agua 
+hirviente, 
+desaparece 
+rápidamente al 
+disolverse en el 
+aire. 
+Aparentemente el agua evaporada 
+desaparece, pero si ponemos enfrente de 
+nuestra boca o arriba del recipiente de 
+agua hirviendo una superficie fría, como 
+un espejo o un plato, veremos que se 
+forma una delgada película de agua que 
+lo empaña.  
+
+Esto nos demuestra que el vapor de agua, que está invisible en la atmósfera, puede convertirse en 
+agua en estado líquido. La razón de esto es que el aire puede retener solamente cierta cantidad de 
+agua en estado de vapor, y que si se rebasa dicha cantidad, se saturará y aparecerá en forma de 
+pequeñísimas gotas de agua y forman una nube.  
+
+  
+
+Otro detalle importante es que el aire puede retener vapor de agua en mayor cantidad sin 
+saturarse a mayor temperatura. Por ejemplo: el aire al nivel del mar y a una temperatura de 30ºC, 
+puede retener 30.4 g. por metro cúbico de vapor de agua y en cambio, a 0ºC, sólo puede retener 
+4.85 g. por metro cúbico.  
+
+Si el aire a 30ºC está saturado de vapor de agua y se le enfría a0ºC, se deshace de poco más de 
+25 g. de vapor de agua, transformándose en agua en estado líquido, lo que puede producir rocío a 
+nivel del suelo, sobre los objetos más fríos, produce neblina en la capa inferior de la atmósfera por 
+las mañanas o nubes en las capas altas.  
+
+Este fenómeno es el responsable de que los vidrios de los automóviles 
+se empañen al atravesar por una zona fría; cuando sacas un 
+recipiente del refrigerador y al poco tiempo parece que "suda" o que 
+cuando te bañas con agua muy caliente, las pareces de azulejo del 
+baño y el espejo. se empañen o se mojen.  
+
+La formación de las nubes se debe al mismo fenómeno, ya que el aire 
+al ascender, se enfría y pierde capacidad de retener al vapor de agua, 
+por lo que a cierta altura, se empiezan a formar las nubes.  
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+Debido a que el aire varía su capacidad de retener vapor de agua con la temperatura, si tiene el 
+máximo de vapor posible a una temperatura dada, se dice que está saturado, o que su humedad 
+relativa es de un 100%. Por ejemplo, el aire está con una humedad relativa del 100% si está a una 
+temperatura de 30ºC y contiene 30.4 g. por metro cúbico de vapor de agua; también estará con 
+una humedad relativadel 100% si sólocontiene 4.85 g. por metro cúbico y está a sólo 0ºC.  
+
+  
+
+Si el aire a 30ºC contiene sólo 15.2 g. por metro cúbico, tendrá una humedad relativa de 50%; 
+pero si contiene 7.6 g. por metro cúbico únicamente, su humedad relativa será de 25%. Si el aire a 
+0ºC contiene 2.42 g. por metro cúbico, su humedad relativa será de 50%.  
+
+El conocimiento de la humedad relativa es importante para fines vitales y 
+para la comodidad. Nosotros nos sentimos cómodos cuando la humedad 
+relativa está entre un 40 y 70%. En invierno el aire frío contiene muy poco 
+vapor de agua y por lo tanto, si se calienta una habitación, la humedad 
+relativa puede ser muy baja, por lo que se recomienda poner un recipiente de 
+agua sobre el calentador, para así aumentar la humedad a un valor 
+confortable. Por otra parte, el enfriar el aire en un clima caliente, se requiere 
+que se le retire humedad, para no sentirse incómodo; para esto, los 
+acondicionadores de aire, incluyen un deshumidificador.  
+
+Si la humedad relativa es alta por las mañanas, se formará niebla y si es 
+baja, en las mañanas de invierno, habrá peligro de heladas.  
+
+El agua se evapora de las masas de agua, por la transpiración de los seres vivos y si el aire que la 
+contiene se eleva, formará las nubes. Éstas a su vez, empujadas por el viento, caerán en forma de 
+nieve o lluvia, la que retornará a los lugares más bajos o se evaporará nuevamente, cerrando lo 
+que se conoce como "El ciclo de agua".  
+
+  
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+Para medir la humedad del aire, se utilizan instrumentos llamados 
+HIGRÓMETROS, que están basados en la propiedad que tienen 
+algunas fibras naturales o sintéticas, de alargarse o acortarse de 
+acuerdo con el contenido de vapor del aire. En muchos 
+instrumentos se utiliza un haz de cabellos humanos bien lavados y 
+desengrasados (sobre todo cabellos rubios, que son los más 
+sensibles).
+
+ 
+HIGRÓMETRO 
+
+Existen también indicadores químicos que cambian de color con la humedad 
+del aire. Sin embargo la forma más precisa, consiste en medir la 
+temperatura del aire con un termómetro se mide la cantidad de grados que 
+se reduce la temperatura al evaporarse el agua de una mecha que rodea al 
+bulbo del segundo. Estos datos se llevan a una tabla en la que se puede 
+encontrar el valor de la humedad relativa y que se derivan de una fórmula 
+matemática.  
+
+Un instrumentro construido en esta forma para medir la 
+humedad relativa en forma indirecta, se le conoce como 
+SICRÓMETRO.
+
+ 
+SICRÓMETRO 
+
+La humedad del aire es la culpable de que se hinche la madera y 
+que las puertas se atoren; de que la sal se moje dentro de los 
+saleros y no salga; de que la ropa no se seque rápidamente en 
+tiempo húmedo; que los tensores de la tienda de campaña se 
+aflojen.  
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+Las Nubes  
+
+El aire en contacto con el agua o la tierra caliente, asciende y se vuelve 
+a enfriar: si al ascender lleva consigo humedad, llegará a una altura en 
+la que por enfriarse, perderá capacidad para retener la humedad en 
+forma de vapor de agua, y al saturarse al 100%, aparecerán gotitas de 
+agua visibles y formarán una nube.  
+
+La formación de las nubes se puede observar cualquier día soleado en 
+que la humedad es alta. Poco después del mediodía, aparecen pequeñas 
+nubes en forma de coliflor o de copos de algodón.  
+
+Poco a poco empiezan a crecer y pueden llegar a ser de gran tamaño. A estas nubes se les conoce 
+como CÚMULOS, que quiere decir "montón" o "amontonamiento".  
+
+Si los cúmulos son reunidos por el viento y forman una 
+sola capa o manto, se conoce a esta formación como 
+ESTRATOCÚMULOS o sea "capa de cúmulos".  
+
+Si por las tardes estas nubes crecen mucho en las 
+crestas de las montañas, o en la tarde y noche en los 
+valles bajo las montañas, dan origen a grandes nubes de 
+hasta 20 Km. de altura y se convierten en nubes de 
+tormenta que se conocen como CÚMULONIMBOS. sobre todo en el verano.  
+
+Estas nubes tienen tal altura. que en la parte superior se forman cristales 
+de hielo que a veces el viento desgarra en forma de un penacho o cabeza 
+de yunque. 
+
+La parte inferior de la nube es desgarrada por la lluvia y es muy obscura. 
+
+Los cristales en la parte superior de los cúmulonimbos, son arrastrados 
+por el viento y dan origen a las nubes conocidas como CIRROS.
+
+Las nubes muy densas y sin una forma 
+definida y que producen lluvia, se conocen 
+como NIMBOS.
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+Los tres tipos básicos de nubes son cúmulos, cirros y nimbos. Si se reunen en capas se formarán 
+ESTRATOCÚMULOS, CIRROSTRATOS o NIMBOSTRATOS.  
+
+  
+
+Por su altitud, las nubes se clasifican en: nubes altas, nubes intermedias y nubes bajas. En las 
+regiones tropicales las nubes altas son las que están a más de 6 u 8 Km. de altura, las nubes 
+intermedias son las que se encuentran entre 2 y 8 Km.; las nubes bajas son las que están desde el 
+suelo hasta 2 Km. de altura.  
+
+Las nubes altas, que están formadas por cristales de hielo son CIRROS, CIRROSTRATOS Y 
+CIRROCÚMULOS.  
+
+  
+
+Las nubes medias, formadas por gotitas de agua son: ALTOCÚMULOS, ALTOSTRATOS y 
+NIMBOSTRATOS.  
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+  
+
+Las nubes bajas son: CÚMULOS, ESTRATOCÚMLOS y ESTRATOS.  
+
+  
+
+Entre las nubes bajas también se consideran a los CÚMULONIMBOS, a pesar de que son muy altas, 
+porque su base se encuentra entre 500 y 1,000 m. de altura.  
+
+éstos son los 10 géneros de nubes que se pueden reconocer con facilidad.  
+
+Aunque los 10 géneros de nubes se pueden distinguir entre sí, en la 
+práctica encontrarás que en cielo aparecen mezclados, diferentes 
+géneros al mismo tiempo. En otras ocasiones, encontrarás que una 
+parte del cielo está ocupada por un tipo de nubes y otra parte 
+despejada u ocupada por otras.  
+
+Cuando aprendas a distinguir y veas la dirección en que las lleva el 
+viento, aprenderás a pronosticar los cambios del tiempo con más 
+facilitad. Obsérvalas sobre todo en la temporada de lluvias para que 
+veas en dónde se desarrollan las nubes de tormenta, a qué hora y 
+en qué dirección las lleva el viento. Cuando vayas a una región que tú no conoces, investiga con 
+las personas que viven ahí, para que te digan las condiciones en que se presentan las tormentas y 
+no te pesquen desprevenido.  
+
+Uno de los peligros de las tormentas son los rayos, por lo que en caso de que estés al descubierto, 
+te protejas en una construcción segura si hay; recuerda que los árboles aislados son muy buenos 
+pararrayos, por lo que no debes refugiarte en uno de ellos.  
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+  
+
+Dentro de un automóvil o camión de techo metálico estarás seguro, pero no si tiene techo de 
+plástico o de lona.  
+
+Es riesgoso nadar en un lago o el mar en caso de 
+tormenta, así como estar en un barco o lancha 
+pequeños, si no tienen un mástil metálico conectado al 
+agua a través de un cable grueso, para servir de 
+pararrayos.
+
+ 
+
+Otros sitios peligrosos pueden ser; una 
+colina aislada; las laderas de las 
+montanas. Un terreno llano, sin objetos 
+altos, también es peligroso.
+
+En general, si te pesca una tormenta al aire libre, sin ninguna protección, aléjate de cosas 
+metálicas grandes como postes, cercas de alambre, torres de energía eléctrica, etc. Salte del agua 
+si estás nadando o de la regadera si te estás bañando; tírate al piso si estás al aire libre para que 
+no te conviertas en el objeto más atractivo para pararrayos.  
+
+Recuerda que las tormentas eléctricas pasan rápidamente (no más de 10 minutos), 
+por lo que más vale una buena mojada y no que un mal rayo te toque. 
+
+No escales montañas en época de tormenta y respeta las reglas de seguridad que 
+se marcan en cada lugar para evitar accidentes, pero si te pesca una tormenta 
+eléctrica inesperada en una montana, aléjate de los cursos de agua ya que los 
+rayos siguen este camino: busca lugares bajos o colócate por lo menos entre dos 
+rocas grandes.  
+
+Si al estar en la montaña se te eriza el pelo, los bigotes o los vellos, o si te saltan 
+chispas de la punta del piolet, hay una condición que genera energía eléctrica 
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+estática, que puede desencadenar un rayo, si hay nubes de tormenta. No te dejes 
+llevar por el pánico y piensa calmadamente, para actuar con seguridad. 
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+Otros Fenómenos Atmosféricos  
+
+Hemos visto la mayor parte de los fenómenos que nos interesan para poder pronosticar el cambio 
+del tiempo, pero existe una gran variedad de otros fenómenos que se presentan en la atmósfera.  
+
+Entre los fenómenos visibles están el ARCOIRIS y los HALOS. El arcoiris se forma cuando la lluvia 
+fina que cae de nubes como nimbos o altostratos, refleja la luz del sol y la descompone en sus 
+colores básicos. Se observa cuando una persona está colocada entre una zona de lluvia y el sol, por 
+la mañana o por la tarde. De la cima de las montañas se puede observar un círculo completo, así 
+como de un avión en vuelo. En ocasiones se presenta otro arcoiris exterior y más grandes, sus 
+colores en orden inverso al normal.  
+
+  
+ 
+Los HALOS, son formaciones parecidas al arcoiris, que se presentan alrededor del 
+sol o de la luna, cuando se ven a través de nubes del tipo cirrocúmulos, formadas 
+por cristalitos de hielo, que actúan como prismas y descomponen la luz.  
+
+Los espejismos se pueden observar en días muy calientes, cuando las arenas del 
+desierto calientan las capas de aire en contacto con ellas excesivamente, dando la 
+sensación de agua por el movimiento de convección rápido del aire y al cambiar 
+bruscamente la densidad del aire, actúa como un espejo y refleja los objetos 
+lejanos invertidos.  
+
+  
+
+En algunos casos habrás observado el fenómeno en pequeña escala, cuando en un día soleado, 
+parece que la carretera adelante está encharcada.  
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+  
+
+Otros fenómenos son audibles, como el TRUENO, que se produce al pasar un rayo y desplazar al 
+aire y calentarlo; al dejar de pasar el rayo, el aire se recupera rápidamente y genera el sonido del 
+trueno.  
+
+  
+
+Entre los fenómenos eléctricos de la atmósfera se encuentran. aparte del rayo: las 
+centellas, que son rayos en forma de esferas y que saltan de una nube a otra; 
+también se presentan en los lugares desérticos. como esferas que flotan en el aire, 
+y están formadas por gases en estado de plasma y a muy alta temperatura; se les 
+conoce como "brujas" en algunas regiones de México. Otro fenómeno eléctrico 
+impresionante y que se observa sólo en tardes obscuras o de noche es el FUEGO 
+DE SAN TELMO; se produce en la punta de los mástiles de barcos, en las puntas de 
+los pararrayos, en los vellos, pelo o bigotes de los escaladores de montañas, sobre 
+torres y postes metálicos de alumbrado o energía eléctrica. Es una descarga lenta 
+de una nube de tormenta que no llega a romper como un rayo; normalmente es 
+una flama de color azul, pero en ocasiones es rojiza también.  
+
+Existen otros fenómenos en la atmósfera, que no mencionaremos, por no ser 
+importantes en la evaluación del tiempo.  
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+La Estación Metereológica  
+
+Tal vez hayas tenido oportunidad de pasar por una estación meteorológica o has visitado alguna. 
+En ellas se encuentran los sensores meteorológicos que permiten hacer el pronóstico del tiempo. 
+Los más importantes son:  
+
+* VELETA Y ANEMÓMETRO 
+
+* BAROMETRO  
+
+* TERMÓMETROS DE MÁXIMA Y DE MÍNIMA 
+
+* HIGRÓMETRO 
+
+Éstos son los más importantes, pero también puede haber:  
+
+* PLUVIÓMETRO 
+
+* EVAPORÍMETRO  
+
+* INDICADOR DE INSOLACIÓN 
+
+* RADIÓMETRO  
+
+* OTROS 
+
+Los instrumentos pueden ser sólo indicadores, por lo que hay que leer y anotar sus lecturas en un 
+libro o tabla.  
+
+Otros instrumentos son registradores, o sea, pintan la variación de las lecturas en una 
+tira de papel durante un día, una semana o un mes.  
+
+Otros registran en una cinta magnética los datos y se pueden leer por medio de una 
+computadora para procesarlos rápidamente.  
+
+Algunas estaciones meteorológicas están en lugares inhóspitos y envían su información 
+por línea telefónica, radio o vía satélite a una oficina central.  
+
+Los instrumentos básicos para hacer tus propias mediciones y observaciones 
+meteorológicas, son muy sencillos por lo que los puedes adquirir a precio bajo o mejor 
+aún, los puedes construir casi todos con materiales simples y además de aprender te 
+diviertes.  
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+El Barómetro  
+
+Los barómetros de mercurio son caros, delicados y riesgosos de manejar, pero los podrás sustituir 
+por uno de agua.  
+
+Para construirlo necesitarás:  
+
+a) Un trozo de tubo de vidrio de 1 cm de diámetro interior y de 30 a 40 cm de largo.  
+
+b) Un frasco chico de unos 140 cm cúbicos.  
+
+c) Una tablita de triplay con un largo mayor en unos 3 cm, a tu tubo de vidrio, y de 7 cm de ancho. 
+
+d) Dos taquetes de madera de 2x2 cm y de 3.5 cm de largo.  
+
+e) Una tablita de 7x7 cm de 1 cm de gruesa.  
+
+f) Un tapón de hule.  
+
+g) Un trozo de bolsa de plástico grueso.  
+
+h) Agua, tinta, clavos, pegamento, pintura y ligas.  
+
+Para hacerlo observa las siguientes figuras que te dan una idea de 
+cómo se construye. Pega y clava los taquetes, que tienen un corte 
+especial, y la tablita de base a la tabla grande y píntala o barnízala 
+para protegerlas.
+
+Coloca el tapón de hule al tubo con mucho cuidado y no lo fuerces para 
+evitar que se te rompa el tubo. Si no consigues un tapón de hule, tapa el 
+extremo del tubo con cera, un tapón de corcho encerado o hule de silicón 
+para sello de peceras. 
+
+Llena el frasquito hasta unas tres cuartas partes de agua y añádele una 
+poca de tinta para colorearla si quieres. Llena con agua del frasco al tubo 
+de vidrio y luego inviértelo dentro del frasquito rápidamente; si el tubo se 
+vacía después de un rato, es que el tapón no sella bien, así que vacía el 
+agua y séllalo correctamente. No importa si se va una burbuja de aire en 
+este caso.  
+
+Si ya no se vacía, levántalo un poco para que entren burbujas de aire al 
+extremo superior del tubo, hasta que el nivel del agua quede a unos 10 cm 
+del fondo del tapón y déjalo reposar una hora.  
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+Ahora prepara una etiqueta con adhesivo y hazle marcas cada mm con un 
+bolígrafo negro, midiendo con una regla y haciendo más largas las marcas 
+cada 5 mm como se ve en la figura correspondiente.  
+
+Fija el frasquito en la tabla de base con 
+pegamento de contacto amarillo o con 
+pegamento epóxico y sujeta el tubo a los 
+taquetes como se ve en la figura, utilizando 
+ligas. Si el nivel de 10 cm bajo el tapón no 
+ha cambiado, puedes pasar a calibrarlo 
+
+Coloca la etiqueta como se ve en la figura, 
+procurando que el cero coincida más o menos con el 
+nivel actual de agua y ya está listo para utilizarse. 
+Como precaución colócale una tapa suelta de 
+plástico de la bolsa recortado en forma de rondana, 
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+para evitar que entre polvo al agua y retardar la 
+evaporación del agua en días secos.
+
+ 
+
+Conviene colocar otra etiqueta sobre el frasco para revisar el 
+nivel de agua de vez en cuando ya que si se evapora el agua se 
+cambia la calibración de tu aparato.  
+
+Ahora sólo colócalo en un lugar en que no varíe mucho la 
+temperatura ni haya corrientes de aire dentro de tu casa ya que 
+es sensible a la temperatura, como los de mercurio, y obsérvalo 
+trabajar. Es conveniente que lo observes diariamente a la misma 
+hora y cuando lo veas descender muy rápidamente, verás que 
+pronto llegará viento fuerte y un cambio en el tiempo.  
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+La Veleta  
+
+La dirección de donde soplan los vientos se puede observar por medio de una veleta. En sí no es 
+más que una flecha o indicador que puede ser girado con facilitad por el viento, por lo que debe ser 
+liviana y girar sobre un eje con poca fricción.  
+
+Para construir una necesitarás:  
+
+a) Una caja de leche de un litro.  
+
+b) Un gotero.  
+
+c) Un balín de acero.  
+
+d) Un gancho de ropa de alambre.  
+
+e) Una moneda.  
+
+f) Pegamento amarillo de contacto.  
+
+g) Pintura blanca de interperie.  
+
+Las figuras te mostrarán la forma de cortar, pegar y armar 
+la veleta. Una vez terminada, colócada en su eje en forma 
+horizontal y verás que la cola pesa más que la punta; para 
+evitar esto, coloca la moneda en la punta hasta que quede 
+bien balanceada, porque de esto depende que funcione sin 
+atorarse; pega la moneda en su lugar con cemento de 
+contacto y dale unas manos de pintura para hacerla 
+resistente al sol y el agua.
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+  
+
+Colócala en un lugar elevado y observa a horas regulares todos los días, la 
+dirección de donde viene el viento. En tu registro, notarás que el viento 
+cambia de dirección antes de los cambios del tiempo aún 24 horas en algunos 
+casos. 
+
+Es suficiente hacer una observación diaria de la dirección del viento para tu 
+informe, sobre todo si la haces después del medio día. Deberás anotar la 
+dirección utilizando 8 rumbos, los 4 cardinales y 4 laterales, N, NE, E, SE, S, 
+SW, W, y NW, que son fáciles de apreciar. 
+
+ 
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+En algunos casos podrás observar que las nubes viajan en una 
+dirección diferente a la del viento y en ocasiones en sentido 
+contrario, sobre todo cuando amenaza una tormenta.
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+El Anemómetro  
+
+Otro dato importante del viento es su velocidad y se mide con el anemómetro.  
+
+Para construir uno se requiere:  
+
+a) Una caja de leche de un litro.  
+
+b) Tres vasitos de papel o moldes semiesféricos de gelatina de unos 6 cm. de diámetro.  
+
+e) Un gotero.  
+
+d) Un balín de acero.  
+
+e) Un gancho de ropa de alambre.  
+
+f) Una tapa de un frasco de café.  
+
+g) Pegamento amarillo de contacto.  
+
+h) Pintura blanca de internperie.  
+
+ 
+Corta 3 Esquinas  
+
+Las figuras te guiarán para ensamblarlo y no olvides pintarlo al 
+final. Colócalo en un sitio alto en el que el viento llegue libremente 
+sin obstrucciones importantes de árboles o edificios. La altura 
+patrón que se utiliza en los observatorios meteorológicos es de 10 
+m., pero si no lo puedes colocar a esta altura, no es tan grave, si 
+siempre lo colocas en el mismo lugar.
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+ 
+
+Para usarlo no olvides poner la marca 
+negra en el lugar que se muestra en la 
+figura y será la que te permita medir la 
+velocidad del viento. Si tienes las medidas 
+del dibujo, contando las vueltas que da en 
+10 segundos de tu reloj, obtendrás 
+aproximadamente la velocidad del viento 
+en km/hr. Por ejemplo: si da 17 vueltas 
+en 10 segundos, la velocidad del viento 
+será de 17 km/hr. más o menos.
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+  
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+El Termómetro  
+
+La construcción de un termómetro y su calibración son complejas y 
+tediosas, pero afortunadamente son relativamente baratos, por lo 
+que te recomendamos que mejor lo compres. Para la mayor parte 
+de la República, es suficiente uno que cubra desde -20 a 50ºC, con 
+excepción de algunos lugares del noroeste que tienen temperaturas 
+extremas de -22ºC en el invierno y de 53ºC en el verano.
+
+Si puedes darte el lujo de comprar un termómetro de máxima y 
+mínima temperaturas, te será más fácil el trabajo de llevar tu 
+informe de las variaciones del tiempo y más útil. Colócalo en un 
+lugar a la intemperie pero a cubierto de los rayos directos del sol.
+
+Para usarlo, anota la temperatura mínima del día a la hora en 
+que te levantes, lo más cercano a la salida del sol o a las 6 de 
+la mañana; anota la temperatura máxima del día entre las 14 
+y 16 hr., que es más o menos la hora en que se presenta; 
+lleva tus datos a tu gráfica del mes que aparece 
+posteriormente en este libro y calcula la temperatura media 
+entre la máxima y mínima, para que también la anotes.
+
+ 
+
+Cortar y lavar bien la agujeta.  
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+El Sicrómetro  
+
+Para construir un medidor de la humedad, utilizaremos el sicrómetro, para facilitar la calibración y 
+obtener más precisión.  
+
+Para construirlo necesitarás:  
+
+a) Dos termómetros de -20º a 5OºC.  
+
+b) Una agujeta blanca de algodón.  
+
+c) Una tablita de 7 por 25 cm. de Triplay.  
+
+d) Un trozo de palo de escoba de 12 a 15 cm.  
+
+e) Un clavo de 7.5 cm.  
+
+f) Dos rondanas.  
+
+g) Pintura al gusto.  
+
+h) Una tabla sicrométrica.  
+
+En las figuras podrás ver cómo se arma; antes de colocar la agujeta, lávala bien para quitarle el 
+almidón que tiene; pon un poco de grasa o aceite en el clavo, para que gire libremente.  
+
+Para utilizarlo, moja bien la agujeta, gira el aparato al aire libre y en la sombra, por lo menos un 
+minuto; anota la temperatura que indica el termómetro de bulbo seco, anota la del termómetro del 
+bulbo húmedo; resta la segunda de la primera; con el valor de la temperatura del bulbo seco, 
+recorre el renglón correspondíente, hasta llegar a la columna correspondiente a la diferencia de 
+temperaturas y en el cruce encontrarás el valor de la humedad relativa en este momento.  
+
+ 
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+Este dato lo deberás tomar todos los días al mediodía de preferencia, pero 
+si no lo puedes tomar a esa hora, toma el dato a la hora en que tomas la 
+temperatura mínima de la mañana y también el dato a la hora en que 
+tomas la temperatura máxima del día para aprovechar, y luego calcular el 
+promedio, para anotarlo en tus datos. 
+
+Por ejemplo, si la temperatura del termómetro es de 20ºC y la del 
+húmedo es de 11ºC, la diferencia es de 9ºC; si buscas en tu tabla, 
+encontrarás que corresponde a una humedad relativa de un 30%. 
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+TABLA PARA SICRÓMETRO 
+Diferencia de Bulbo Húmedo 
+
+y Bulbo Seco en ºC  
+
+1 2 3 4 5 6 7 8 9 10 11 12 13
+
+T -10 57 26 10 0          
+e -9 69 38 16 0         
+m 
+p -8 71 42 20 0
+e -7 74 49 24 3 0
+r 
+a -6 75 52 28 7 0
+t -5 77 54 32 11 0
+u 
+r -4 78 57 36 15 0
+a -3 79 59 39 19 3 0
+
+d -2 80 61 42 23 7 0
+e -1 81 63 45 27 11 0
+
+B 0 82 64 47 31 1 40
+u 1 83 66 50 34 18 4 0
+l 
+b 2 84 68 52 37 2 28 0
+o 3 84 69 54 40 25 12 0
+
+4 85 70 56 42 28 16 3 0
+S 
+e 5 86 72 58 45 32 19 7 0
+c 6 86 73 60 47 35 23 11 0
+o 
+
+7 87 75 61 49 37 26 14 4 0
+
+8 87 75 62 51 40 29 18 7 0
+
+9 88 76 64 53 42 31 21 11 1 0
+
+10 88 77 65 55 44 34 24 14 5 0
+
+11 88 77 66 56 46 36 26 17 8 0
+
+12 89 78 68 57 48 38 29 20 11 3 0
+
+13 89 79 69 59 49 40 31 23 14 6 0
+
+1 3 3 4 5 6 7 8 9 10 11 12 13 
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+TABLA PARA SICRÓMETRO 
+(continuación)  
+
+1 2 3 4 5 6 7 8 9 10 11 12 13
+
+14 90 79 70 60 51 42 33 25 17 9 1 0
+
+15 90 80 71 61 53 44 35 27 20 12 4 0
+
+16 90 81 71 62 54 46 37 30 22 15 7 1 0
+
+17 90 81 72 63 55 47 39 32 24 17 10 3 0
+
+18 91 82 73 65 57 49 41 34 27 20 13 6 1
+
+19 91 82 74 65 58 50 43 36 29 22 15 9 3
+
+20 91 83 74 66 59 51 44 37 31 24 17 11 5
+
+21 91 83 75 67 60 52 45 39 32 26 19 13 8
+
+22 92 83 75 68 61 54 47 40 34 28 21 16 10
+
+23 92 84 76 69 62 55 48 42 36 30 23 17 12
+
+24 92 84 77 70 62 56 49 43 37 31 25 19 14
+
+25 92 85 77 70 63 57 51 44 39 33 27 21 16
+
+26 92 85 78 71 64 58 51 45 40 34 28 23 18
+
+27 93 85 78 71 65 59 53 47 41 36 30 25 20
+
+28 93 86 79 72 65 59 53 48 42 37 31 26 22
+
+29 93 86 79 73 66 60 54 49 43 38 33 29 23
+
+30 93 86 79 73 67 61 55 50 44 39 34 29 25
+
+31 93 87 79 73 67 62 55 55 45 39 35 30 26
+
+32 94 87 80 73 67 62 56 50 46 40 36 32 27
+
+33 94 87 80 74 68 63 57 51 47 41 37 33 29
+
+34 94 88 80 74 68 63 57 52 47 42 38 34 30
+
+35 94 88 81 74 69 64 58 52 48 43 39 35 31
+
+36 94 88 81 75 69 64 59 53 49 44 40 36 32
+
+37 95 89 81 75 70 65 60 54 50 45 41 37 33
+
+1 2 3 4 5 6 7 8 9 10 11 12 13
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+El Pluviómetro  
+
+La cantidad de lluvia que cae en un lugar deberá conocerse para hacer 
+pronósticos del tiempo. Cuando en la época de lluvias cae mucha agua, 
+podemos pronosticar que habrá más días de lluvia, debido a que la misma 
+agua se estará evaporando y cayendo nuevamente como lluvia. Por la mañana 
+verás que se forma bruma o niebla y esto hace que la visiblidad sea muy 
+pobre; si al medio día el sol brilla, mejora la visibilidad y se empiezan a 
+formar nubes del tipo cúmulos, las que reunidas por el viento por la tarde, 
+producirán lluvia nuevamente.  
+
+Para medir la cantidad de lluvia se utiliza el pluviómetro, que en su forma más 
+sencilla, consiste en un recipiente en forma de un prisma regular y por lo 
+regular es un cilindro; el pluviómetro está graduado en milímetros o en litros 
+por metro cuadrado ya que son equivalentes.  
+
+Para construir uno necesitarás:  
+
+a) Un envase de leche de cartón, de 1 ó 2 litros.  
+
+b) Una regla de madera sin barnizar, graduada cada milímetro.  
+
+c) Una tabla de 20 cm. por lado, cuadrada.  
+
+d) Pegamento amarillo de contacto.  
+
+e) Pintura blanca, para intemperie.  
+
+Las figuras te mostrarán cómo hacerlo: si tu regla no tiene el cero en el 
+extremo, córtala a esa altura para que no te cause error de medida. 
+
+Para utilizarlo, colócalo en un lugar despejado, en el que la lluvia le caiga 
+libremente sin paredes o árboles cercanos. Coloca unas piedras o cosas 
+pesadas sobre La tabla, para que el viento no lo volteé o se lo lleve. 
+Todos los días toma la lectura de la cantidad de lluvia que se deposita en 
+él y anótalo en tu libreta o gráfica meteorológica. Si no puedes hacerlo 
+diariamente, anota el valor de la lluvia que se haya acumulado en varios 
+días, pero procura que no se te llene. En los días calurosos se puede 
+evaporar parte del agua. por lo que te recomendamos anotar 
+diariamente. Al final de un mes, suma las cantidades diarias y anota este 
+dato, para que veas en qué meses tienes que usar impermeable en tus 
+excursiones. 
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+ 
+
+  
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+La Meteorología en la Actualidad  
+
+Las estaciones meteorológicas que se encuentran por todos los confines de nuestro planeta, 
+proporcionan datos que son enviados a los observatorios meteorológicos, al Servicio Meteorológico 
+Nacional y a grandes centros mundiales en los que se procesa la información en computadoras 
+para afinar y hacer más rápido el pronóstico del tiempo.  
+
+Actualmente se cuenta con satélites meteorológicos que envían valiosa 
+información sobre el clima e imágenes que permiten observar los 
+cambios en la cubierta de nubes de todo el planeta. Los informes de 
+aviones y barcos mercantes en ruta, también son muy valiosos, así como 
+las estaciones polares y de barcos estacionados en determinados lugares 
+en el mar que envían datos más completos a los centros de información. 
+Los informes y diagramas o imágenes procesadas, son enviados a los 
+servicios meteorológicos de todo el mundo, por medio de radiofotos y 
+teletipos, de los que toman los observatorios datos para hacer el 
+pronóstico local: los periódicos y estaciones de radio y televisión, 
+proporcionan al público en general un resumen de toda esta información. 
+
+En México, el Servicio Meteorológico Nacional, la Secretaria de Marina, la 
+Secretaria de Agricultura y Recursos Hidráulicos, el Centro de Estudios de 
+la Atmósfera de la UNAM y otras instituciones. hacen mediciones 
+meteorológicas a nivel nacional.  
+
+El pronóstico para las siguientes 24 horas es muy confiable, pero el 
+pronóstico a una semana o más, no es muy exacto aún a nivel mundial, 
+debido a que el comportamiento de la atmósfera sigue siendo un reto 
+para los cientificos y meteorólogos. Los fenómenos violentos como 
+huracanes, tormentas tropicales, tornados, nortes, etc., son seguidos por 
+el radar meteorológico y los satélites, para dar la advertencia a tiempo a 
+
+los lugares que pueder ser afectados; sin embargo, algunos fenómenos de desarrollo rápido como 
+las tormentas, granizadas, mangas y otros parecidos, son muy dificiles de pronosticar.  
+
+De cualquier manera, hay que recordar que nada sustituye a la observación directa de los 
+fenómenos naturales y sólo con el tiempo obtendrás la experiencia necesaria para que tus 
+pronósticos sean buenos.  
+
+  
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+El Pronóstico  
+
+Ya hemos visto cómo observar y medir los diferentes factores del tiempo por separado, pero 
+también es importante la relación que guardan entre sí, para poder hacer un pronóstico del tiempo 
+que vendrá después. Veamos unos ejemplos:  
+
+Si la temperatura y la humedad relativa se 
+miden a la hora en que se presenta la 
+temperatura mínima en la mañana, veremos que 
+la humedad tiene un valor máximo; en cambio, 
+si medimos a la hora de la temperatura máxima, 
+que es por lo regular entre las 14 y las 16 horas, 
+veremos que el valor de la humedad relativa 
+tiene su valor mínimo.
+
+ 
+
+Cuando la visibilidad es buena, la humedad es 
+baja y al contrario, la visibilidad es mala con 
+una humedad alta. Si el barómetro baja 
+rápidamente, habrá un cambio en el tiempo, 
+siempre y cuando también se presente un 
+cambio en la dirección del viento. Si el 
+barómetro está alto, permanecerá el tiempo 
+actual, ya sea bueno o malo.
+
+Si va a llover, por lo regular la humedad aumenta y llega a su mayor 
+valor después de las lluvias. Las nubes altas, como cirros o 
+cirrocúmulos, no producen lluvia, pero previenen un cambio del tiempo 
+en 24 o 48 horas; los altostratos, estratocúmulos y nimbos producen 
+lluvias ligeras y prolongadas pero los cúmulonimbos, producen lluvias 
+intensas de corta duración o granizadas. En general, en el verano caen 
+aguaceros por las tardes y en el otoño e inverno se producen lluvias a 
+cualquier hora.  
+
+El rocío y la escarcha se presentan por la madrugada, cuando al bajar la 
+temperatura del aire en contacto con los objetos que se enfrian por la irradiación nocturna de calor 
+hacia el espacio, alcanza una saturación del 100% y deposita humedad en forma de gotitas de 
+agua o cristales de hielo sobre ellos. Las heladas se presentan a finales del otoño, durante el 
+invierno y a principios de la primavera, cuando está el cielo despejado por la madrugada y haber 
+una pérdida de calor hacia el espacio, al no haber una cubierta de nubes que impida esto.  
+
+Las tormentas con rayos se producen cuando una masa de aire frío 
+empuja a otra de aire caliente con gran velocidad, lo que se nota porque 
+se forman grandes cumulonimbos, por el cambio brusco de la 
+temperatura y también en la intensidad y dirección del viento.  
+
+Todos estos "síntomas" los conocerás poco a poco y te serán útiles para 
+pronosticar el tiempo. Una forma práctica y fácil de observar las 
+relaciones que guardan entre si los cambios de los factores del tiempo 
+consiste en llevar un registro simultáneo de todos los datos que obtienes 
+con tus sensores. A continuación te presentamos una forma que puede 
+
+ser de utilidad.  
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+  
+
+En la forma se incluyen los datos más importantes que conviene observar y medir: es importante 
+anotar la fecha y lugar en que se haga la observación, para que sea más útil y no se te olvide. Te 
+sugerimos que hagas tus observaciones a las mismas horas todos los dias, porque así es más útil; 
+por ejemplo, puedes hacer una observación por la mañana temprano al levantarse, de preferencia 
+a las 6 de la mañana; otra observación la puedes hacer al medio día y otra a las 15 hrs. La del 
+medio dia es difícil para muchos. pero por lo menos haz las de las 6 y 15 hrs. de todo un mes 
+completo.  
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+despejado
+
+nubes 
+aisladas
+
+La cantidad de cielo cubierto por las nubes se observa a las 15 hr. y se 
+nublado 1/4 N anota en los círculos con la clave que aparece abajo; esto te permitirá 
+de cielo U después observar que un día nublado es más frío que uno despejado, 
+
+B pero con menos variación entre la temperatura mínima y máxima del 
+O 
+
+nublado 1/2 día. 
+S  
+
+cielo I 
+D La dirección del viento se indica con una raya sobre el círculo de la 
+
+nublado 3/4 A nubosidad y la velocidad en Km/hr. se anota en el renglón 
+de cielo D correspondiente y estos datos se toman al medio día o a las 15 hr., lo 
+
+que te sea más fácil, pero siempre a la misma hora. 
+claros 
+aislados
+
+cubierto
+
+ 
+ Cielo medio cubierto 
+
+Despejado Viento NE Viento W 
+
+ 
+Cielo casi cubierto sólo  
+
+Cielo cubierto 3/4 
+con claros aislados viento SE 
+
+viento del N 
+
+Es suficiente anotar el valor de la humedad relativa díaríarnente al medio día, pero si no lo puedes 
+hacer a esta hora, toma el valor máximo en la mañana cuando tomes tu temperatura mínima y 
+luego toma el valor mínimo a las 15 hr., cuando tomes el valor máximo de la temperatura.  
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+llovizna
+
+lluvia
+
+nieve
+Diariamente mide la cantidad de lluvia que se acumule en tu pluviómetro 
+
+T 
+relámpagos I temprano en la mañana y tira el agua acumulada para que te sirva para 
+
+tomar la luvia del día que empieza; recuerda que este dato corresponde 
+E  al día anterior, pero si no puedes tomarla durante dos o más días, anota 
+
+tormenta M 
+P el total en el día anterior. Al final del mes, conviene que sumes todos los 
+
+milímetros que cayeron en tu pluviómetro, para que veas en qué meses 
+arcoiris O llueve más y puedas llevar el equipo necesario a tus salidas al campo.
+
+niebla
+
+rocío
+
+escarcha
+
+B 
+subió A 
+
+R En el renglón marcado "Barómetro", sólo anota si está subiendo, 
+ Ó bajando o estable, todos los días a la misma hora, de preferencia a 
+
+estable M  las 15 hr. Para esto, deberás anotar en qué marca de tu barómetro 
+E se encuentra tu nivel del agua o de la aguja, si tienes un aneroide 
+T y compararlo al día siguiente.
+
+bajó R 
+O 
+
+ 
+
+En el renglón marcado "Tiempo". se anotan los datos adicionales que pueden ayudar a interpretar 
+y pronosticar el tiempo que aparecen en la clave inferior. Verás que en algunos casos la lluvia o 
+llovizna es muy poca para registrarse en el pluviómetro, pero en este renglón la registrarás de 
+cualquier manera.  
+
+La temperatura se anota sobre las líneas de cada día con un puntito. Al final del mes, se unen 
+todos las puntos de la temperatura mínima, con una línea de preferencia de color azul y todos los 
+valores máximos con otra línea de preferencia roja, para poder observar más claramente la 
+variación. La temperatura mínima se considerará la de las 6 hr. y la máxima la de las 15 hr., a 
+menos de que dispongas de un termómetro de máxima y mínima, en cuyo caso, sólo tendrás que 
+esperar hasta después de las 16 hr., para poder anotar dichos valores, sin importar a qué hora se 
+presentaron.  
+
+Los valores medios de la temperatura y de la humedad relativa. en caso de que puedas registrar la 
+humedad al medio día, se pueden calcular si se hace la siguiente serie de operaciones:  
+
+1) Resta al valor máximo el valor mínimo.  
+
+2) La diferencia divídela entre dos.  
+
+3) Suma el cociente al valor mínimo.  
+
+4) El resultado de la suma será el valor medio  
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+Por ejemplo, si el valor máximo de la temperatura fue de 28ºC y la mínima de 15ºC, la diferencia 
+será de 13ºC: 13 dividido entre 2 nos dará 6.5 como cociente y sumado a 15ºC, nos dará 21.5ºC 
+como la temperatura media.  
+
+Al final de un mes, podrás observar y analizar los cambios que precedieron al 
+tiempo 24, 48 y probablemente hasta 72 hr. Es importante observar los cambios 
+locales primero, para que después aprendas a hacer tu propio pronóstico del 
+tiempo. No te preocupes si no das una al principio, pero recuerda que nada 
+sustituye a la observación directa de la naturaleza y a la experiencia que ganarás 
+con el tiempo; si haces tus observaciones con regularidad y paciencia, a la larga 
+te será recompensado al darte cuenta de que tus pronósticos son cada vez más 
+acertados.
+
+Los periódicos, la radio y la televisión, proporcionan pronósticos del tiempo, que puedes comparar 
+con los tuyos. Además la imagen de satélite y mapas meteorológicos de los periódicos y la 
+televisión, te pueden ayudar mucho si aprendes a relacionarla con tus observaciones, pero es una 
+facilidad que no tendrás en un campamento.  
+
+Los pronósticos en general tienen un grado de confiabilidad de hasta 95% para las próximas 24 
+hrs; de un 6O% para tres días posteriores y de sólo un 30% para una semana o más, por lo que no 
+intentes predecir lo que sucederá en una semana en que se realizará tu siguiente campamento. a 
+menos de que cuentes con una buena bola de cristal o alga parecido.  
+
+Lo más importante de esto consiste en aprender algo nuevo cada día y sobre todo  
+
+DIVIÉRTETE.  
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+Algo Más Sobre el Mismo Tema  
+
+Es difícil tratar todos los aspectos importantes de la Metereología en una publicacion como ésta, 
+por lo que si quieres conocer a fondo alguno en particular o profundizar más tus estudios, te 
+recomendamos recurrir a libros especializados.  
+
+Para los que les interese la Metereología como un pasatiempo, existen libros de bolsillo y otros de 
+fácil lectura que pueden complementar lo que se ha visto en éste. Entre los más populares se 
+encuentran:  
+
+"ATLAS DE METEOROLOGÍA" "METEOROLOGÍA" 
+De Farél Cande) Vila. Günter D. Roth. 
+Ediciones Jover. SA.: Ediciones Omega, S.A.. 
+Barcelona, España. Barcelona. España.
+"WEATHERZ" (En inglés) "EL TIEMPO Y CÓMO SE PREDICE" 
+Paul E. Lehr, R. Will Brunety y Herbert S. Zim. Heman Schneider 
+Golden Nature Guides. Colección La Ciencia Moderna No. 10 
+Western Publishing Co. Inc. Editorial Ramón Sopena, 
+Nueva York, U.S.A. Barcelona, España.
+"METEOROLOGÍA" "FIELD BOOK" (En inglés) 
+(Traducción del anterior) Mismos autores de Boy Scouts of America 
+"WATHER" North Brunswick, N.J., U.S.A.
+Pequeña biblioteca Daimón 
+No. 123 
+Ediciones Daimón, 
+Manuel Tamayo, 
+Barcelona, Esp.
+
+Datos valiosos sobre la Climatología de México se pueden obtener en:  
+
+"TORMENTAS" "GEOGRAFÍA MODERNA DE MÉXICO" 
+"Algunos tipos de tormentas Jorge L. Tamayo 
+eléctricas observadas en México" Editorial Trillas, México.
+José Merino y Coronado 
+Anales del Instituto de Geofísica, UNAM 
+Volúmen 25, 1979-1980, 
+páginas 159 a 183.
+
+Y para los interesados en la Meteorología como una cosa seria a nivel profesional:  
+
+"LA CIENCIA DE LA METEOROLOGÍA" "METEOROLOGÍA PARA AVIADORES" 
+O. G. Sutton Willy Eichenberger 
+Revista de Occidente, Editorial Paraninfo, 
+Madrid, España. Madrid, España.
+
+"METEOROLOGÍA Y OCEANOGRAFÍA" 
+Santiago Hernández Izal. 
+Editorial Cadi, 
+Barcelona, España.
+
+   
+
+http://www.siemprescout.org
+
+
+
+Scout 2 - Meteorología
+
+   
+
+La Meteorología en México es importante en la navegación marítima y aérea, por lo que se puede 
+estudiar como carrera profesional y a nivel técnico. También es importante para la predicción de 
+fenómenos que afectan a la Agricultura y a las Obras Hidráulicas. Si tienes interés de estudiar a 
+nivel profesional y a nivel técnico, encontrarás que en tu región hay necesidad creciente de 
+meteorólogos y con la tecnificación de la Agricultura se ha incrementado el uso de información 
+meteorológica más confiable cada día.
+
+http://www.siemprescout.org
