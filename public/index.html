@@ -140,6 +140,52 @@
     opacity: 0.6;
     cursor: not-allowed;
   }
+  #suggest-toggle {
+    display: block;
+    text-align: center;
+    padding: 8px;
+    font-size: 12.5px;
+    color: var(--verde-claro);
+    cursor: pointer;
+    background: white;
+    border-top: 1px solid #eee;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  #suggest-panel {
+    display: none;
+    max-width: 760px;
+    margin: 0 auto;
+    background: white;
+    padding: 14px 20px;
+    border-top: 1px solid #eee;
+  }
+  #suggest-panel.open { display: block; }
+  #suggest-panel p { font-size: 12.5px; color: #666; margin: 0 0 10px 0; }
+  #suggest-panel input[type="file"],
+  #suggest-panel textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    margin-bottom: 8px;
+    font-family: inherit;
+  }
+  #suggest-panel textarea { resize: vertical; min-height: 50px; }
+  #suggest-panel button {
+    background: var(--verde);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  #suggest-msg { font-size: 12.5px; margin-top: 8px; }
+  #suggest-msg.ok { color: #2e7d32; }
+  #suggest-msg.error { color: #c62828; }
 </style>
 </head>
 <body>
@@ -160,6 +206,19 @@
   <input id="input" type="text" placeholder="Escribe tu pregunta..." autocomplete="off" />
   <button id="send" type="submit">Enviar</button>
 </form>
+
+<div id="suggest-toggle">📎 ¿Falta un documento? Súgierelo aquí</div>
+<div id="suggest-panel">
+  <p>Sube un manual o reglamento que creas que falta. Un administrador lo va a revisar antes de agregarlo al chatbot.</p>
+  <input id="suggestFile" type="file" accept=".pdf,.docx,.txt" />
+  <textarea id="suggestNote" placeholder="Comentario opcional (ej: de qué trata, por qué es importante)"></textarea>
+  <button id="suggestBtn">Enviar para aprobación</button>
+  <div id="suggest-msg"></div>
+</div>
+
+<div style="text-align:center; padding: 6px; font-size: 11px;">
+  <a href="/admin.html" style="color:#999;">Panel de administración</a>
+</div>
 
 <script>
   const chat = document.getElementById("chat");
@@ -199,6 +258,53 @@
     const el = document.getElementById("typing-indicator");
     if (el) el.remove();
   }
+
+  const suggestToggle = document.getElementById("suggest-toggle");
+  const suggestPanel = document.getElementById("suggest-panel");
+  suggestToggle.addEventListener("click", () => {
+    suggestPanel.classList.toggle("open");
+  });
+
+  document.getElementById("suggestBtn").addEventListener("click", async () => {
+    const fileInput = document.getElementById("suggestFile");
+    const note = document.getElementById("suggestNote").value;
+    const msg = document.getElementById("suggest-msg");
+
+    if (!fileInput.files.length) {
+      msg.className = "error";
+      msg.textContent = "Elige un archivo primero.";
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", fileInput.files[0]);
+    formData.append("note", note);
+
+    msg.className = "";
+    msg.textContent = "Enviando...";
+
+    try {
+      const res = await fetch("/api/submit-document", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        msg.className = "error";
+        msg.textContent = data.error || "Ocurrió un error.";
+        return;
+      }
+
+      msg.className = "ok";
+      msg.textContent = data.message;
+      fileInput.value = "";
+      document.getElementById("suggestNote").value = "";
+    } catch (err) {
+      msg.className = "error";
+      msg.textContent = "No se pudo conectar con el servidor.";
+    }
+  });
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
