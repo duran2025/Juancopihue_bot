@@ -175,9 +175,25 @@ app.post("/api/chat", async (req, res) => {
     // Si la pregunta menciona "Artículo N", buscamos esa coincidencia EXACTA
     // en todos los documentos y la ponemos primero — la búsqueda por
     // palabras clave sola puede fallar con términos tan cortos y comunes.
-    const articleMatch = message.match(/art[ií]culo\s+(\d+)/i);
-    if (articleMatch) {
-      const exactMatches = findArticleChunks(articleMatch[1], 3);
+    let articleNumber = null;
+    const directMatch = message.match(/art[ií]culo\s+(\d+)/i);
+    if (directMatch) {
+      articleNumber = directMatch[1];
+    } else {
+      // Preguntas de seguimiento cortas ("y el 2", "el 3", "2?") solo tienen
+      // sentido como "siguiente artículo" si la conversación reciente ya
+      // venía hablando de un artículo específico.
+      const followUpMatch = message.match(/^\s*(?:y\s+)?(?:el\s+)?(\d+)\s*\??\s*$/i);
+      const recentlyTalkedAboutArticles = history
+        .slice(-4)
+        .some((m) => /art[ií]culo/i.test(m.content || ""));
+      if (followUpMatch && recentlyTalkedAboutArticles) {
+        articleNumber = followUpMatch[1];
+      }
+    }
+
+    if (articleNumber) {
+      const exactMatches = findArticleChunks(articleNumber, 3);
       const seen = new Set(exactMatches.map((c) => c.id));
       relevantChunks = [
         ...exactMatches,
@@ -189,8 +205,13 @@ app.post("/api/chat", async (req, res) => {
       .map((c) => `[Fuente: ${c.source}]\n${c.text}`)
       .join("\n\n---\n\n");
 
+    const followUpHint =
+      articleNumber && !directMatch
+        ? `\n\n(Nota: interpreté "${message}" como una pregunta de seguimiento pidiendo el Artículo ${articleNumber}, continuando la conversación anterior. Si hay varios artículos con ese número en distintos libros/documentos, prioriza el mismo libro/documento del que veníamos hablando.)`
+        : "";
+
     const userMessage = context
-      ? `Contexto de los manuales:\n\n${context}\n\nPregunta del usuario: ${message}`
+      ? `Contexto de los manuales:\n\n${context}\n\nPregunta del usuario: ${message}${followUpHint}`
       : `No se encontró contexto relevante en los manuales para esta pregunta.\n\nPregunta del usuario: ${message}`;
 
     const geminiHistory = history.slice(-6).map((m) => ({
