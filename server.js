@@ -22,7 +22,7 @@ const fetch = require("node-fetch");
 const multer = require("multer");
 const pdfParse = require("pdf-parse");
 const mammoth = require("mammoth");
-const { search, loadIndex, addDocument, removeDocument, listSources, findArticleChunks } = require("./retrieval");
+const { search, loadIndex, addDocument, removeDocument, listSources, findArticleChunks, searchKeyword } = require("./retrieval");
 
 const app = express();
 app.use(express.json());
@@ -551,11 +551,12 @@ app.delete("/api/admin/media/:id", checkAdminPassword, (req, res) => {
   res.json({ message: "Imagen eliminada." });
 });
 
-// Verificador: busca coincidencias exactas de "Artículo N" y devuelve el
-// texto real indexado, sin pasar por la IA — para confirmar con certeza
-// si un artículo específico quedó bien indexado.
-app.get("/api/admin/verify-article/:number", checkAdminPassword, (req, res) => {
-  const matches = findArticleChunks(req.params.number, 10);
+// Verificador: busca coincidencias literales de palabras clave y devuelve
+// el texto real indexado, sin pasar por la IA — para confirmar con certeza
+// si algo específico quedó bien indexado.
+app.get("/api/admin/verify-keyword", checkAdminPassword, (req, res) => {
+  const query = typeof req.query.q === "string" ? req.query.q : "";
+  const matches = searchKeyword(query, 10);
   res.json({
     found: matches.length > 0,
     matches: matches.map((c) => ({ source: c.source, text: c.text })),

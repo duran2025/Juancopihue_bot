@@ -106,6 +106,15 @@ function listSources() {
   }));
 }
 
+// Quita tildes/acentos para comparar texto sin que las tildes afecten la búsqueda.
+function normalizeText(str) {
+  return str
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+}
+
 // Busca coincidencias EXACTAS de "Artículo N" en todos los fragmentos.
 // Esto complementa la búsqueda por palabras clave (TF-IDF), que puede fallar
 // con términos cortos y comunes como "artículo 1" (aparecen en casi todos
@@ -115,4 +124,27 @@ function findArticleChunks(number, maxResults = 3) {
   return chunks.filter((c) => pattern.test(c.text)).slice(0, maxResults);
 }
 
-module.exports = { loadIndex, search, addDocument, removeDocument, listSources, findArticleChunks };
+// Busca fragmentos cuyo texto contenga TODAS las palabras de la búsqueda
+// (comparación literal, sin IA de por medio) — sirve para confirmar si algo
+// específico quedó bien indexado.
+function searchKeyword(query, maxResults = 10) {
+  const words = normalizeText(query).split(/\s+/).filter((w) => w.length > 1);
+  if (words.length === 0) return [];
+
+  return chunks
+    .filter((c) => {
+      const normalizedText = normalizeText(c.text);
+      return words.every((w) => normalizedText.includes(w));
+    })
+    .slice(0, maxResults);
+}
+
+module.exports = {
+  loadIndex,
+  search,
+  addDocument,
+  removeDocument,
+  listSources,
+  findArticleChunks,
+  searchKeyword,
+};
