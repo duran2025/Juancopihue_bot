@@ -106,4 +106,13 @@ function listSources() {
   }));
 }
 
-module.exports = { loadIndex, search, addDocument, removeDocument, listSources };
+// Busca coincidencias EXACTAS de "Artículo N" en todos los fragmentos.
+// Esto complementa la búsqueda por palabras clave (TF-IDF), que puede fallar
+// con términos cortos y comunes como "artículo 1" (aparecen en casi todos
+// los documentos, así que el puntaje de relevancia no los distingue bien).
+function findArticleChunks(number, maxResults = 3) {
+  const pattern = new RegExp(`art[ií]culo\\s+0*${number}(?!\\d)`, "i");
+  return chunks.filter((c) => pattern.test(c.text)).slice(0, maxResults);
+}
+
+module.exports = { loadIndex, search, addDocument, removeDocument, listSources, findArticleChunks };

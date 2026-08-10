@@ -22,7 +22,7 @@ const fetch = require("node-fetch");
 const multer = require("multer");
 const pdfParse = require("pdf-parse");
 const mammoth = require("mammoth");
-const { search, loadIndex, addDocument, removeDocument, listSources } = require("./retrieval");
+const { search, loadIndex, addDocument, removeDocument, listSources, findArticleChunks } = require("./retrieval");
 
 const app = express();
 app.use(express.json());
@@ -67,6 +67,59 @@ function loadPending() {
 
 function savePending(list) {
   fs.writeFileSync(PENDING_META_FILE, JSON.stringify(list, null, 2), "utf-8");
+}
+
+// ---------- Biblioteca de imágenes (nudos, señas, insignias, etc.) ----------
+const MEDIA_DIR = path.join(__dirname, "media");
+const MEDIA_FILES_DIR = path.join(MEDIA_DIR, "files");
+const MEDIA_META_FILE = path.join(MEDIA_DIR, "media.json");
+const MEDIA_ALLOWED_EXTENSIONS = [".png", ".jpg", ".jpeg", ".webp", ".gif"];
+
+if (!fs.existsSync(MEDIA_FILES_DIR)) {
+  fs.mkdirSync(MEDIA_FILES_DIR, { recursive: true });
+}
+
+// Las imágenes de la biblioteca se sirven como archivos estáticos normales.
+app.use("/media-files", express.static(MEDIA_FILES_DIR));
+
+function loadMedia() {
+  if (!fs.existsSync(MEDIA_META_FILE)) return [];
+  try {
+    return JSON.parse(fs.readFileSync(MEDIA_META_FILE, "utf-8"));
+  } catch {
+    return [];
+  }
+}
+
+function saveMedia(list) {
+  fs.writeFileSync(MEDIA_META_FILE, JSON.stringify(list, null, 2), "utf-8");
+}
+
+// Quita tildes/acentos para que la comparación de palabras no falle por eso.
+function normalizeText(str) {
+  return str
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+}
+
+// Busca en la biblioteca las imágenes cuyas etiquetas coincidan con la pregunta.
+function findMatchingImages(question, maxResults = 2) {
+  const media = loadMedia();
+  if (media.length === 0) return [];
+
+  const normalizedQuestion = normalizeText(question);
+
+  const matches = media.filter((item) => {
+    const tags = (item.tags || "").split(",").map((t) => normalizeText(t)).filter(Boolean);
+    return tags.some((tag) => tag.length > 2 && normalizedQuestion.includes(tag));
+  });
+
+  return matches.slice(0, maxResults).map((item) => ({
+    url: `/media-files/${item.storedFileName}`,
+    description: item.description || "",
+  }));
 }
 
 // Carga el índice de búsqueda al arrancar el servidor.
@@ -117,7 +170,20 @@ app.post("/api/chat", async (req, res) => {
       return res.status(400).json({ error: "Falta el mensaje." });
     }
 
-    const relevantChunks = search(message, 5);
+    let relevantChunks = search(message, 5);
+
+    // Si la pregunta menciona "Artículo N", buscamos esa coincidencia EXACTA
+    // en todos los documentos y la ponemos primero — la búsqueda por
+    // palabras clave sola puede fallar con términos tan cortos y comunes.
+    const articleMatch = message.match(/art[ií]culo\s+(\d+)/i);
+    if (articleMatch) {
+      const exactMatches = findArticleChunks(articleMatch[1], 3);
+      const seen = new Set(exactMatches.map((c) => c.id));
+      relevantChunks = [
+        ...exactMatches,
+        ...relevantChunks.filter((c) => !seen.has(c.id)),
+      ].slice(0, 6);
+    }
 
     const context = relevantChunks
       .map((c) => `[Fuente: ${c.source}]\n${c.text}`)
@@ -161,10 +227,11 @@ app.post("/api/chat", async (req, res) => {
       "No pude generar una respuesta, intenta reformular tu pregunta.";
 
     const sources = [...new Set(relevantChunks.map((c) => c.source))];
+    const images = findMatchingImages(message);
 
     logQuestion(message, answer, sources);
 
-    res.json({ answer, sources });
+    res.json({ answer, sources, images });
   } catch (err) {
     console.error("Error procesando la pregunta:", err);
     res.status(500).json({ error: "Ocurrió un error inesperado." });
@@ -397,6 +464,70 @@ app.delete("/api/admin/pending/:id", checkAdminPassword, (req, res) => {
   savePending(pending.filter((p) => p.id !== item.id));
 
   res.json({ message: "Documento rechazado y eliminado." });
+});
+
+// Lista las imágenes de la biblioteca (nudos, señas, etc.).
+app.get("/api/admin/media", checkAdminPassword, (req, res) => {
+  res.json({ media: loadMedia().slice().reverse() });
+});
+
+// Sube una imagen nueva a la biblioteca, con etiquetas para que el bot la encuentre.
+app.post("/api/admin/media", checkAdminPassword, upload.single("file"), (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ error: "No se recibió ninguna imagen." });
+    }
+
+    const ext = path.extname(req.file.originalname).toLowerCase();
+    if (!MEDIA_ALLOWED_EXTENSIONS.includes(ext)) {
+      return res.status(400).json({
+        error: "Formato no permitido. Sube una imagen JPG, PNG, WEBP o GIF.",
+      });
+    }
+
+    const tags = typeof req.body.tags === "string" ? req.body.tags.slice(0, 300) : "";
+    if (!tags.trim()) {
+      return res.status(400).json({
+        error: "Escribe al menos una etiqueta (ej: 'nudo as de guía, as de guia') para que el bot sepa cuándo mostrarla.",
+      });
+    }
+
+    const description = typeof req.body.description === "string" ? req.body.description.slice(0, 300) : "";
+
+    const id = crypto.randomUUID();
+    const storedFileName = `${id}${ext}`;
+    fs.writeFileSync(path.join(MEDIA_FILES_DIR, storedFileName), req.file.buffer);
+
+    const media = loadMedia();
+    media.push({
+      id,
+      storedFileName,
+      originalName: req.file.originalname,
+      tags,
+      description,
+      uploadedAt: new Date().toISOString(),
+    });
+    saveMedia(media);
+
+    res.json({ message: "Imagen agregada a la biblioteca.", media: media.slice().reverse() });
+  } catch (err) {
+    console.error("Error subiendo imagen a la biblioteca:", err);
+    res.status(500).json({ error: "No se pudo subir la imagen." });
+  }
+});
+
+// Elimina una imagen de la biblioteca.
+app.delete("/api/admin/media/:id", checkAdminPassword, (req, res) => {
+  const media = loadMedia();
+  const item = media.find((m) => m.id === req.params.id);
+  if (!item) return res.status(404).json({ error: "No se encontró esa imagen." });
+
+  const filePath = path.join(MEDIA_FILES_DIR, item.storedFileName);
+  if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
+
+  saveMedia(media.filter((m) => m.id !== item.id));
+
+  res.json({ message: "Imagen eliminada." });
 });
 
 app.get("/health", (req, res) => {
