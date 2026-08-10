@@ -150,9 +150,9 @@
   </div>
 
   <div class="card">
-    <h2>Verificar si un artículo está indexado</h2>
-    <small>Escribe un número de artículo para ver el texto REAL que tiene guardado el bot (sin pasar por la IA) — así confirmas si está bien indexado o no.</small><br /><br />
-    <input id="verifyNumber" type="text" placeholder="Ej: 1" style="max-width:120px; display:inline-block;" />
+    <h2>Verificar si algo está indexado (por palabra clave)</h2>
+    <small>Escribe una palabra o frase (ej: "artículo 1", "nudo as de guia", "uniforme") para ver el texto REAL que tiene guardado el bot, sin pasar por la IA — así confirmas si está bien indexado o no.</small><br /><br />
+    <input id="verifyNumber" type="text" placeholder="Ej: artículo 1, uniforme, nudo as de guia" />
     <button id="verifyBtn">Verificar</button>
     <div id="verifyResult" style="margin-top:12px;"></div>
   </div>
@@ -434,23 +434,23 @@
   });
 
   document.getElementById("verifyBtn").addEventListener("click", async () => {
-    const number = document.getElementById("verifyNumber").value.trim();
+    const query = document.getElementById("verifyNumber").value.trim();
     const result = document.getElementById("verifyResult");
 
-    if (!number) {
-      result.innerHTML = '<small style="color:#c62828;">Escribe un número de artículo.</small>';
+    if (!query) {
+      result.innerHTML = '<small style="color:#c62828;">Escribe una palabra o frase para buscar.</small>';
       return;
     }
 
     result.innerHTML = "<small>Buscando...</small>";
 
-    const res = await fetch(`/api/admin/verify-article/${encodeURIComponent(number)}`, {
+    const res = await fetch(`/api/admin/verify-keyword?q=${encodeURIComponent(query)}`, {
       headers: { "x-admin-password": password },
     });
     const data = await res.json();
 
     if (!data.found) {
-      result.innerHTML = `<small style="color:#c62828;">No se encontró "Artículo ${number}" en ningún documento indexado. Puede que ese documento no esté cargado, o que el texto no se haya extraído bien (revisa si es un PDF escaneado).</small>`;
+      result.innerHTML = `<small style="color:#c62828;">No se encontró "${query}" en ningún documento indexado. Puede que ese documento no esté cargado, o que el texto no se haya extraído bien (revisa si es un PDF escaneado).</small>`;
       return;
     }
 
