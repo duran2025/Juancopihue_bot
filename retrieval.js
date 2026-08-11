@@ -17,12 +17,23 @@ const { chunkText } = require("./lib/chunk");
 const INDEX_FILE = path.join(__dirname, "index.json");
 const KNOWLEDGE_DIR = path.join(__dirname, "knowledge");
 
-// Máximo de fragmentos que puede aportar UN MISMO documento dentro de los
-// resultados de una sola búsqueda. Sin este límite, un documento muy largo
-// (con muchos fragmentos en el índice) puede terminar ocupando todos los
-// lugares del top-N solo por ser extenso, dejando afuera a documentos más
-// cortos que también son relevantes. Aplica igual para todos los documentos.
+// Máximo de fragmentos que puede aportar un documento que NO es
+// claramente el más relevante de esta búsqueda. Evita que un documento
+// largo con coincidencias débiles o casuales acapare todo el contexto.
 const MAX_CHUNKS_PER_SOURCE = 2;
+
+// Cuando un documento es notoriamente el más relevante para esta pregunta
+// en particular (su mejor fragmento supera bastante al resto), se le
+// permite aportar más fragmentos seguidos — así, si la respuesta correcta
+// es una lista larga contenida en un solo documento (por ejemplo, un
+// listado completo de algo), no se corta a la mitad. Qué documento recibe
+// este trato más flexible se decide en cada pregunta según su puntaje real,
+// nunca por su nombre — para la siguiente pregunta puede ser otro distinto,
+// o ninguno si no hay un documento claramente dominante.
+const MAX_CHUNKS_TOP_SOURCE = 6;
+// Qué tan por delante debe ir el mejor documento del segundo mejor para
+// considerarlo "claramente dominante" (1.5 = al menos 50% más relevante).
+const DOMINANCE_RATIO = 1.5;
 
 // Una pregunta puede traer resultados con puntaje > 0 que en realidad son
 // ruido (coincidencias muy débiles). Descartamos los que queden muy por
@@ -89,16 +100,28 @@ function search(query, topN = 5) {
   );
 
   // Recorremos los resultados ya ordenados por relevancia y los vamos
-  // tomando, pero sin dejar que un mismo documento ocupe más de
-  // MAX_CHUNKS_PER_SOURCE lugares — así el contexto queda más diverso en
-  // vez de venir todo de un solo documento largo.
+  // tomando, con un límite de fragmentos por documento — más flexible para
+  // el documento que domina claramente esta búsqueda, más estricto para el
+  // resto, así el contexto queda diverso salvo que un solo documento sea
+  // obviamente la fuente correcta (por ejemplo, un listado completo).
+  const bestSourceForThisQuery = chunks[filtered[0].index].source;
+  const secondBestScore = filtered.find(
+    (s) => chunks[s.index].source !== bestSourceForThisQuery
+  )?.score;
+  const isDominant =
+    !secondBestScore || topScore >= secondBestScore * DOMINANCE_RATIO;
+
   const perSourceCount = {};
   const picked = [];
 
   for (const s of filtered) {
     const chunk = chunks[s.index];
+    const limit =
+      isDominant && chunk.source === bestSourceForThisQuery
+        ? MAX_CHUNKS_TOP_SOURCE
+        : MAX_CHUNKS_PER_SOURCE;
     const count = perSourceCount[chunk.source] || 0;
-    if (count >= MAX_CHUNKS_PER_SOURCE) continue;
+    if (count >= limit) continue;
     perSourceCount[chunk.source] = count + 1;
     picked.push(chunk);
     if (picked.length >= topN) break;

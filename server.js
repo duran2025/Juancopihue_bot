@@ -170,11 +170,11 @@ app.post("/api/chat", async (req, res) => {
       return res.status(400).json({ error: "Falta el mensaje." });
     }
 
-    // Pedimos un poco más de contexto que antes (8 en vez de 5): como
-    // retrieval.js ahora limita cuántos fragmentos puede aportar un mismo
-    // documento, este número extra ayuda a que entren fragmentos de más
-    // de un documento relevante, no menos.
-    let relevantChunks = search(message, 8);
+    // Pedimos hasta 10 fragmentos: si un documento domina claramente la
+    // pregunta (por ejemplo, es una lista completa), retrieval.js le
+    // permite ocupar más espacio; si no, el resto se reparte entre varios
+    // documentos relevantes.
+    let relevantChunks = search(message, 10);
 
     // Si la pregunta menciona "Artículo N", buscamos esa coincidencia EXACTA
     // en todos los documentos y la ponemos primero — la búsqueda por
