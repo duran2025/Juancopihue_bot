@@ -24,6 +24,14 @@
     display: flex;
     flex-direction: column;
   }
+  /* En pantallas angostas (celulares) usamos la versión vertical del
+     fondo, hecha a medida para ese formato — la horizontal se ve mal
+     recortada en una pantalla tan alta y angosta. */
+  @media (max-width: 768px) {
+    body {
+      background-image: url("images/fondo-campamento-movil.png");
+    }
+  }
   header {
     background: var(--verde);
     color: white;
