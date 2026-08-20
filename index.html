@@ -3,343 +3,448 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Administración - Asistente Scout</title>
+<title>Juan Copihue Bot</title>
+<link rel="icon" type="image/png" href="/images/icono.png" />
 <style>
+  :root {
+    --verde: #1b5e20;
+    --verde-claro: #2e7d32;
+    --fondo: #ffffff;
+    --burbuja-usuario: #1b5e20;
+    --burbuja-bot: #ffffff;
+    --texto: #1a1a1a;
+  }
   * { box-sizing: border-box; }
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: #f4f6f4;
-    color: #1a1a1a;
-    padding: 20px;
+    background: var(--fondo) url("images/fondo-campamento.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: var(--texto);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
-  .wrap { max-width: 720px; margin: 0 auto; }
+  /* En pantallas angostas (celulares) usamos la versión vertical del
+     fondo, hecha a medida para ese formato — la horizontal se ve mal
+     recortada en una pantalla tan alta y angosta. */
+  @media (max-width: 768px) {
+    body {
+      background-image: url("images/fondo-campamento-movil.jpg");
+    }
+  }
   header {
-    background: #1b5e20;
+    background: var(--verde);
     color: white;
-    padding: 16px 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   }
-  header h1 { margin: 0; font-size: 18px; }
-  header a { color: #cde; font-size: 12px; }
-  .card {
+  header .logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
     background: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 18px;
-    margin-bottom: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
   }
-  .card h2 { font-size: 15px; margin: 0 0 12px 0; }
-  input[type="password"], input[type="file"] {
+  header .logo img {
     width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-    margin-bottom: 10px;
+    height: 100%;
+    object-fit: cover;
   }
-  button {
-    background: #1b5e20;
+  header h1 {
+    font-size: 17px;
+    margin: 0;
+    font-weight: 700;
+  }
+  header p {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.85;
+  }
+  .page-body {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    overflow-y: auto;
+    padding: 20px 16px;
+  }
+  .mascot {
+    width: 220px;
+    max-width: 22vw;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 10px;
+    align-self: center;
+  }
+  @media (max-width: 1100px) {
+    .mascot { display: none; }
+  }
+  .mascot-inline {
+    display: none;
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+  }
+  @media (max-width: 1100px) {
+    #chat { position: relative; }
+    .mascot-inline-bottom {
+      display: block;
+      top: 320px;
+      left: 16px;
+      width: 190px;
+      opacity: 0.3;
+    }
+  }
+  .chat-column {
+    display: flex;
+    flex-direction: column;
+    max-width: 760px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    align-self: stretch;
+  }
+  #chat {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 300px;
+  }
+  .msg {
+    max-width: 78%;
+    padding: 10px 14px;
+    border-radius: 14px;
+    line-height: 1.45;
+    font-size: 14.5px;
+    white-space: pre-wrap;
+    position: relative;
+    z-index: 1;
+  }
+  .msg.user {
+    align-self: flex-end;
+    background: var(--burbuja-usuario);
+    color: white;
+    border-bottom-right-radius: 4px;
+  }
+  .msg.bot {
+    align-self: flex-start;
+    background: var(--burbuja-bot);
+    border: 1px solid #e0e0e0;
+    border-bottom-left-radius: 4px;
+  }
+  .msg.bot .fuentes {
+    display: block;
+    margin-top: 8px;
+    font-size: 11.5px;
+    color: #666;
+    border-top: 1px dashed #ddd;
+    padding-top: 6px;
+  }
+  .msg.bot .imagenes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .msg.bot .imagenes figure {
+    margin: 0;
+    max-width: 220px;
+  }
+  .msg.bot .imagenes img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+  }
+  .msg.bot .imagenes figcaption {
+    font-size: 11.5px;
+    color: #666;
+    margin-top: 4px;
+  }
+  .msg.system {
+    align-self: center;
+    color: #777;
+    font-size: 13px;
+    text-align: center;
+  }
+  .typing {
+    align-self: flex-start;
+    background: var(--burbuja-bot);
+    border: 1px solid #e0e0e0;
+    padding: 10px 14px;
+    border-radius: 14px;
+    border-bottom-left-radius: 4px;
+    font-size: 14px;
+    color: #888;
+  }
+  form#form {
+    display: flex;
+    gap: 8px;
+    padding: 14px 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border-top: 1px solid #e0e0e0;
+  }
+  #input {
+    flex: 1;
+    padding: 12px 14px;
+    border-radius: 24px;
+    border: 1px solid #ccc;
+    font-size: 14.5px;
+    outline: none;
+  }
+  #input:focus { border-color: var(--verde-claro); }
+  #send {
+    background: var(--verde);
     color: white;
     border: none;
-    border-radius: 8px;
-    padding: 10px 18px;
-    font-size: 14px;
+    border-radius: 24px;
+    padding: 0 22px;
+    font-size: 14.5px;
     cursor: pointer;
     font-weight: 600;
   }
-  button:disabled { opacity: 0.6; cursor: not-allowed; }
-  .doc-row, .log-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-    font-size: 13.5px;
+  #send:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
-  .doc-row:last-child, .log-row:last-child { border-bottom: none; }
-  .doc-row button {
-    background: #c62828;
-    padding: 4px 10px;
-    font-size: 12px;
+  #suggest-toggle {
+    display: block;
+    text-align: center;
+    padding: 8px;
+    font-size: 12.5px;
+    color: var(--verde-claro);
+    cursor: pointer;
+    background: white;
+    border-top: 1px solid #eee;
   }
-  .log-q { font-weight: 600; }
-  .log-a { color: #555; margin-top: 4px; white-space: pre-wrap; }
-  .log-meta { color: #999; font-size: 11px; margin-top: 4px; }
-  .msg { font-size: 13px; margin-top: 8px; }
-  .msg.error { color: #c62828; }
-  .msg.ok { color: #2e7d32; }
-  #app { display: none; }
-  small { color: #777; }
-  .pending-item {
-    border: 1px solid #eee;
+  #suggest-panel {
+    display: none;
+    background: white;
+    padding: 14px 20px;
+    border-top: 1px solid #eee;
+  }
+  #suggest-panel.open { display: block; }
+  #suggest-panel p { font-size: 12.5px; color: #666; margin: 0 0 10px 0; }
+  #suggest-panel input[type="file"],
+  #suggest-panel textarea {
+    width: 100%;
+    padding: 8px;
     border-radius: 8px;
-    padding: 10px 12px;
-    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    margin-bottom: 8px;
+    font-family: inherit;
   }
-  .pending-item .name { font-weight: 600; font-size: 13.5px; }
-  .pending-item .meta { color: #888; font-size: 11.5px; margin: 3px 0 8px 0; }
-  .pending-item .note { font-size: 13px; color: #444; margin-bottom: 8px; font-style: italic; }
-  .pending-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-  .pending-actions button { font-size: 12px; padding: 6px 12px; }
-  .btn-approve { background: #2e7d32; }
-  .btn-reject { background: #c62828; }
-  .btn-download { background: #555; }
+  #suggest-panel textarea { resize: vertical; min-height: 50px; }
+  #suggest-panel button {
+    background: var(--verde);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  #suggest-msg { font-size: 12.5px; margin-top: 8px; }
+  #suggest-msg.ok { color: #2e7d32; }
+  #suggest-msg.error { color: #c62828; }
 </style>
 </head>
 <body>
-<div class="wrap">
 
 <header>
-  <h1>🏕️ Panel de administración</h1>
-  <a href="/">&larr; Volver al chat</a>
+  <div class="logo"><img src="/images/icono.png" alt="Juan Copihue" /></div>
+  <div>
+    <h1>Juan Copihue Bot</h1>
+    <p>Tu compañero que lo sabe todo</p>
+  </div>
 </header>
 
-<div id="login" class="card">
-  <h2>Ingresa la contraseña de administrador</h2>
-  <input id="password" type="password" placeholder="Contraseña" />
-  <button id="loginBtn">Entrar</button>
-  <div id="loginMsg" class="msg error"></div>
-</div>
+<div class="page-body">
+  <img class="mascot" src="/images/juan_saludando.png" alt="Juan Copihue saludando" />
 
-<div id="app">
+  <div class="chat-column">
+    <div id="chat">
+      <img class="mascot-inline mascot-inline-bottom" src="/images/pensando.png" alt="" />
+      <div class="msg system">Hola, soy Juan Copihue, gracias a la tecnología volví, ¿qué puedo ayudarte hoy?</div>
+    </div>
 
-  <div class="card">
-    <h2>Documentos pendientes de aprobación <span id="pendingCount"></span></h2>
-    <small>Documentos que visitantes sugirieron desde la página principal. Descárgalos para revisarlos antes de aprobarlos.</small><br /><br />
-    <div id="pendingList">Cargando...</div>
+    <form id="form">
+      <input id="input" type="text" placeholder="Escribe tu pregunta..." autocomplete="off" />
+      <button id="send" type="submit">Enviar</button>
+    </form>
+
+    <div id="suggest-toggle">📎 ¿Falta un documento? Súgierelo aquí</div>
+    <div id="suggest-panel">
+      <p>Sube un manual o reglamento que creas que falta. Un administrador lo va a revisar antes de agregarlo al chatbot.</p>
+      <input id="suggestFile" type="file" accept=".pdf,.docx,.txt" />
+      <textarea id="suggestNote" placeholder="Comentario opcional (ej: de qué trata, por qué es importante)"></textarea>
+      <button id="suggestBtn">Enviar para aprobación</button>
+      <div id="suggest-msg"></div>
+    </div>
+
+    <div style="text-align:center; padding: 6px; font-size: 11px;">
+      <a href="/admin.html" style="color:#999;">Panel de administración</a>
+    </div>
   </div>
 
-  <div class="card">
-    <h2>Subir documento nuevo</h2>
-    <small>Formatos permitidos: PDF, Word (.docx) o texto (.txt). Máximo 20MB.</small><br /><br />
-    <input id="fileInput" type="file" accept=".pdf,.docx,.txt" />
-    <button id="uploadBtn">Subir y agregar al chatbot</button>
-    <div id="uploadMsg" class="msg"></div>
-  </div>
-
-  <div class="card">
-    <h2>Documentos actuales</h2>
-    <div id="docsList">Cargando...</div>
-  </div>
-
-  <div class="card">
-    <h2>Últimas preguntas hechas al chatbot</h2>
-    <small>Revisa esto de vez en cuando para ver qué falta agregar o aclarar.</small><br /><br />
-    <div id="logsList">Cargando...</div>
-  </div>
-
-</div>
-
+  <img class="mascot" src="/images/pensando.png" alt="Juan Copihue pensando" />
 </div>
 
 <script>
-  let password = "";
+  const chat = document.getElementById("chat");
+  const form = document.getElementById("form");
+  const input = document.getElementById("input");
+  const sendBtn = document.getElementById("send");
 
-  const loginBtn = document.getElementById("loginBtn");
-  const passwordInput = document.getElementById("password");
-  const loginMsg = document.getElementById("loginMsg");
+  let history = [];
 
-  loginBtn.addEventListener("click", async () => {
-    password = passwordInput.value;
-    const res = await fetch("/api/admin/documents", {
-      headers: { "x-admin-password": password },
-    });
-    if (res.ok) {
-      document.getElementById("login").style.display = "none";
-      document.getElementById("app").style.display = "block";
-      loadDocs();
-      loadLogs();
-      loadPending();
-    } else {
-      const data = await res.json().catch(() => ({}));
-      loginMsg.textContent = data.error || "Contraseña incorrecta.";
+  function addMessage(role, text, sources, images) {
+    const div = document.createElement("div");
+    div.className = "msg " + role;
+    div.textContent = text;
+
+    if (images && images.length) {
+      const wrap = document.createElement("div");
+      wrap.className = "imagenes";
+      images.forEach((img) => {
+        const fig = document.createElement("figure");
+        const el = document.createElement("img");
+        el.src = img.url;
+        el.alt = img.description || "";
+        fig.appendChild(el);
+        if (img.description) {
+          const cap = document.createElement("figcaption");
+          cap.textContent = img.description;
+          fig.appendChild(cap);
+        }
+        wrap.appendChild(fig);
+      });
+      div.appendChild(wrap);
     }
+
+    if (sources && sources.length) {
+      const src = document.createElement("span");
+      src.className = "fuentes";
+      src.textContent = "Fuente(s): " + sources.join(", ");
+      div.appendChild(src);
+    }
+
+    chat.appendChild(div);
+    chat.scrollTop = chat.scrollHeight;
+    return div;
+  }
+
+  function showTyping() {
+    const div = document.createElement("div");
+    div.className = "typing";
+    div.id = "typing-indicator";
+    div.textContent = "Escribiendo...";
+    chat.appendChild(div);
+    chat.scrollTop = chat.scrollHeight;
+  }
+
+  function hideTyping() {
+    const el = document.getElementById("typing-indicator");
+    if (el) el.remove();
+  }
+
+  const suggestToggle = document.getElementById("suggest-toggle");
+  const suggestPanel = document.getElementById("suggest-panel");
+  suggestToggle.addEventListener("click", () => {
+    suggestPanel.classList.toggle("open");
   });
 
-  async function loadDocs() {
-    const res = await fetch("/api/admin/documents", {
-      headers: { "x-admin-password": password },
-    });
-    const data = await res.json();
-    const container = document.getElementById("docsList");
-    if (!data.documents || data.documents.length === 0) {
-      container.innerHTML = "<small>No hay documentos indexados todavía.</small>";
-      return;
-    }
-    container.innerHTML = "";
-    data.documents.forEach((doc) => {
-      const row = document.createElement("div");
-      row.className = "doc-row";
-      row.innerHTML = `<span>${doc.source} <small>(${doc.fragments} fragmentos)</small></span>`;
-      const delBtn = document.createElement("button");
-      delBtn.textContent = "Eliminar";
-      delBtn.onclick = async () => {
-        if (!confirm(`¿Eliminar "${doc.source}" del chatbot?`)) return;
-        await fetch(`/api/admin/documents/${encodeURIComponent(doc.source)}`, {
-          method: "DELETE",
-          headers: { "x-admin-password": password },
-        });
-        loadDocs();
-      };
-      row.appendChild(delBtn);
-      container.appendChild(row);
-    });
-  }
+  document.getElementById("suggestBtn").addEventListener("click", async () => {
+    const fileInput = document.getElementById("suggestFile");
+    const note = document.getElementById("suggestNote").value;
+    const msg = document.getElementById("suggest-msg");
 
-  async function loadLogs() {
-    const res = await fetch("/api/admin/logs", {
-      headers: { "x-admin-password": password },
-    });
-    const data = await res.json();
-    const container = document.getElementById("logsList");
-    if (!data.logs || data.logs.length === 0) {
-      container.innerHTML = "<small>Todavía no se ha hecho ninguna pregunta.</small>";
-      return;
-    }
-    container.innerHTML = "";
-    data.logs.forEach((log) => {
-      const row = document.createElement("div");
-      row.className = "log-row";
-      row.style.display = "block";
-      const date = new Date(log.time).toLocaleString("es-CL");
-      row.innerHTML = `
-        <div class="log-q">${log.question}</div>
-        <div class="log-a">${log.answer}</div>
-        <div class="log-meta">${date} · Fuentes: ${(log.sources || []).join(", ") || "ninguna"}</div>
-      `;
-      container.appendChild(row);
-    });
-  }
-
-  async function loadPending() {
-    const res = await fetch("/api/admin/pending", {
-      headers: { "x-admin-password": password },
-    });
-    const data = await res.json();
-    const container = document.getElementById("pendingList");
-    const countSpan = document.getElementById("pendingCount");
-
-    if (!data.pending || data.pending.length === 0) {
-      container.innerHTML = "<small>No hay documentos pendientes por ahora.</small>";
-      countSpan.textContent = "";
-      return;
-    }
-
-    countSpan.textContent = `(${data.pending.length})`;
-    container.innerHTML = "";
-
-    data.pending.forEach((item) => {
-      const date = new Date(item.submittedAt).toLocaleString("es-CL");
-      const sizeKb = Math.round(item.size / 1024);
-
-      const div = document.createElement("div");
-      div.className = "pending-item";
-      div.innerHTML = `
-        <div class="name">${item.originalName}</div>
-        <div class="meta">Enviado el ${date} · ${sizeKb} KB</div>
-        ${item.note ? `<div class="note">"${item.note}"</div>` : ""}
-      `;
-
-      const actions = document.createElement("div");
-      actions.className = "pending-actions";
-
-      const downloadBtn = document.createElement("button");
-      downloadBtn.className = "btn-download";
-      downloadBtn.textContent = "Descargar";
-      downloadBtn.onclick = async () => {
-        const res = await fetch(`/api/admin/pending/${item.id}/download`, {
-          headers: { "x-admin-password": password },
-        });
-        if (!res.ok) {
-          alert("No se pudo descargar el archivo.");
-          return;
-        }
-        const blob = await res.blob();
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = item.originalName;
-        a.click();
-        URL.revokeObjectURL(url);
-      };
-
-      const approveBtn = document.createElement("button");
-      approveBtn.className = "btn-approve";
-      approveBtn.textContent = "Aprobar";
-      approveBtn.onclick = async () => {
-        approveBtn.disabled = true;
-        const res = await fetch(`/api/admin/pending/${item.id}/approve`, {
-          method: "POST",
-          headers: { "x-admin-password": password },
-        });
-        const data = await res.json();
-        if (!res.ok) {
-          alert(data.error || "No se pudo aprobar el documento.");
-          approveBtn.disabled = false;
-          return;
-        }
-        loadPending();
-        loadDocs();
-      };
-
-      const rejectBtn = document.createElement("button");
-      rejectBtn.className = "btn-reject";
-      rejectBtn.textContent = "Rechazar";
-      rejectBtn.onclick = async () => {
-        if (!confirm(`¿Rechazar y eliminar "${item.originalName}"?`)) return;
-        await fetch(`/api/admin/pending/${item.id}`, {
-          method: "DELETE",
-          headers: { "x-admin-password": password },
-        });
-        loadPending();
-      };
-
-      actions.appendChild(downloadBtn);
-      actions.appendChild(approveBtn);
-      actions.appendChild(rejectBtn);
-      div.appendChild(actions);
-      container.appendChild(div);
-    });
-  }
-
-  document.getElementById("uploadBtn").addEventListener("click", async () => {
-    const fileInput = document.getElementById("fileInput");
-    const msg = document.getElementById("uploadMsg");
     if (!fileInput.files.length) {
-      msg.className = "msg error";
+      msg.className = "error";
       msg.textContent = "Elige un archivo primero.";
       return;
     }
 
     const formData = new FormData();
     formData.append("file", fileInput.files[0]);
+    formData.append("note", note);
 
-    msg.className = "msg";
-    msg.textContent = "Subiendo y procesando...";
+    msg.className = "";
+    msg.textContent = "Enviando...";
 
     try {
-      const res = await fetch("/api/admin/upload", {
+      const res = await fetch("/api/submit-document", {
         method: "POST",
-        headers: { "x-admin-password": password },
         body: formData,
       });
       const data = await res.json();
 
       if (!res.ok) {
-        msg.className = "msg error";
+        msg.className = "error";
         msg.textContent = data.error || "Ocurrió un error.";
         return;
       }
 
-      msg.className = "msg ok";
+      msg.className = "ok";
       msg.textContent = data.message;
       fileInput.value = "";
-      loadDocs();
+      document.getElementById("suggestNote").value = "";
     } catch (err) {
-      msg.className = "msg error";
+      msg.className = "error";
       msg.textContent = "No se pudo conectar con el servidor.";
+    }
+  });
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const question = input.value.trim();
+    if (!question) return;
+
+    addMessage("user", question);
+    history.push({ role: "user", content: question });
+    input.value = "";
+    sendBtn.disabled = true;
+    showTyping();
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: question, history }),
+      });
+
+      const data = await res.json();
+      hideTyping();
+
+      if (!res.ok) {
+        addMessage("bot", data.error || "Ocurrió un error. Intenta de nuevo.");
+        return;
+      }
+
+      addMessage("bot", data.answer, data.sources, data.images);
+      history.push({ role: "assistant", content: data.answer });
+    } catch (err) {
+      hideTyping();
+      addMessage("bot", "No pude conectarme al servidor. Intenta de nuevo en unos momentos.");
+    } finally {
+      sendBtn.disabled = false;
+      input.focus();
     }
   });
 </script>
