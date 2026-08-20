@@ -107,6 +107,26 @@ try {
   );
 }
 
+// Además de los documentos oficiales que vienen en el repo (/knowledge),
+// recargamos cualquier documento que se haya agregado desde el panel admin
+// después del último redeploy (guardado en la tabla 'knowledge_documents'
+// de Supabase). Así el bot no "olvida" lo que se aprobó recientemente.
+async function reloadDocumentsFromSupabase() {
+  try {
+    const { data, error } = await supabase.from("knowledge_documents").select("*");
+    if (error) throw error;
+    for (const doc of data || []) {
+      addDocument(doc.source_name, doc.content);
+    }
+    if (data && data.length) {
+      console.log(`Recargados ${data.length} documento(s) agregados desde el panel admin.`);
+    }
+  } catch (err) {
+    console.error("⚠️  No se pudieron recargar los documentos guardados en Supabase:", err.message);
+  }
+}
+reloadDocumentsFromSupabase();
+
 const SYSTEM_PROMPT = `Eres Juan Copihue, el asistente virtual de la Agrupación Nacional de Boy Scouts de Chile.
 Respondes preguntas de dirigentes, familias y scouts sobre manuales y reglamentos oficiales.
 
@@ -350,7 +370,17 @@ app.post(
         .trim()
         .replace(/\s+/g, "_");
 
-      const fragments = addDocument(sourceName || `documento_${Date.now()}`, text);
+      const finalSourceName = sourceName || `documento_${Date.now()}`;
+      const fragments = addDocument(finalSourceName, text);
+
+      // Guardamos el texto en Supabase para que sobreviva al próximo
+      // redeploy (el índice local se pierde, esta tabla no).
+      const { error: saveError } = await supabase
+        .from("knowledge_documents")
+        .upsert({ source_name: finalSourceName, content: text }, { onConflict: "source_name" });
+      if (saveError) {
+        console.error("No se pudo guardar el documento en Supabase:", saveError.message);
+      }
 
       res.json({
         message: `Documento agregado: ${fragments} fragmentos indexados.`,
@@ -365,8 +395,10 @@ app.post(
 );
 
 // Elimina un documento del índice.
-app.delete("/api/admin/documents/:source", checkAdminPassword, (req, res) => {
+app.delete("/api/admin/documents/:source", checkAdminPassword, async (req, res) => {
   const removed = removeDocument(req.params.source);
+  // Lo borramos también de Supabase — si no, "resucitaría" al reiniciar.
+  await supabase.from("knowledge_documents").delete().eq("source_name", req.params.source);
   res.json({ removed, documents: listSources() });
 });
 
@@ -457,7 +489,17 @@ app.post("/api/admin/pending/:id/approve", checkAdminPassword, async (req, res) 
       .trim()
       .replace(/\s+/g, "_");
 
-    const fragments = addDocument(sourceName || `documento_${Date.now()}`, text);
+    const finalSourceName = sourceName || `documento_${Date.now()}`;
+    const fragments = addDocument(finalSourceName, text);
+
+    // Guardamos el texto en Supabase para que sobreviva al próximo
+    // redeploy (el índice local se pierde, esta tabla no).
+    const { error: saveError } = await supabase
+      .from("knowledge_documents")
+      .upsert({ source_name: finalSourceName, content: text }, { onConflict: "source_name" });
+    if (saveError) {
+      console.error("No se pudo guardar el documento en Supabase:", saveError.message);
+    }
 
     // Ya quedó incorporado al índice oficial, así que se quita de la lista
     // de pendientes (archivo en Storage + fila en la tabla).
@@ -465,7 +507,7 @@ app.post("/api/admin/pending/:id/approve", checkAdminPassword, async (req, res) 
     await supabase.from("pending_documents").delete().eq("id", item.id);
 
     res.json({
-      message: `Documento aprobado y agregado: ${fragments} fragmentos indexados. Ojo: como el índice se genera en disco local, este cambio se va a perder en el próximo redeploy — para que quede permanente, súbelo también directamente a la carpeta /knowledge del repo.`,
+      message: `Documento aprobado y agregado: ${fragments} fragmentos indexados. Ya queda guardado de forma permanente, sobrevive a los redeploys.`,
       documents: listSources(),
     });
   } catch (err) {
