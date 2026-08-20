@@ -22,6 +22,7 @@ const fetch = require("node-fetch");
 const multer = require("multer");
 const pdfParse = require("pdf-parse");
 const mammoth = require("mammoth");
+const { createClient } = require("@supabase/supabase-js");
 const { search, loadIndex, addDocument, removeDocument, listSources, findArticleChunks, searchKeyword } = require("./retrieval");
 
 const app = express();
@@ -36,64 +37,32 @@ const upload = multer({
 const {
   GEMINI_API_KEY,
   ADMIN_PASSWORD,
+  SUPABASE_URL,
+  SUPABASE_SERVICE_ROLE_KEY,
   PORT = 3000,
 } = process.env;
+
+// El disco de Render (plan gratis) es efímero: cualquier archivo que
+// escribamos localmente se borra en cada reinicio o redeploy. Por eso la
+// biblioteca de imágenes, los documentos pendientes de aprobación y el
+// registro de preguntas se guardan en Supabase (Storage + Postgres) en vez
+// de en disco — eso sí sobrevive a los reinicios.
+if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
+  console.error(
+    "⚠️  Falta configurar SUPABASE_URL y/o SUPABASE_SERVICE_ROLE_KEY. " +
+    "La biblioteca de imágenes, los documentos pendientes y el registro de preguntas no van a funcionar hasta que las agregues como variables de entorno."
+  );
+}
+const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+const MEDIA_BUCKET = "media-files";
+const PENDING_BUCKET = "pending-files";
+const MEDIA_ALLOWED_EXTENSIONS = [".png", ".jpg", ".jpeg", ".webp", ".gif"];
 
 // Modelo gratuito de Gemini vigente. Google actualiza estos nombres de vez
 // en cuando — si en el futuro deja de funcionar, revisa el modelo disponible
 // en aistudio.google.com y actualiza esta línea.
 const GEMINI_MODEL = "gemini-3.5-flash-lite";
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
-
-const LOG_FILE = path.join(__dirname, "questions-log.jsonl");
-
-// ---------- Documentos sugeridos por visitantes, pendientes de aprobación ----------
-const PENDING_DIR = path.join(__dirname, "pending");
-const PENDING_FILES_DIR = path.join(PENDING_DIR, "files");
-const PENDING_META_FILE = path.join(PENDING_DIR, "pending.json");
-
-if (!fs.existsSync(PENDING_FILES_DIR)) {
-  fs.mkdirSync(PENDING_FILES_DIR, { recursive: true });
-}
-
-function loadPending() {
-  if (!fs.existsSync(PENDING_META_FILE)) return [];
-  try {
-    return JSON.parse(fs.readFileSync(PENDING_META_FILE, "utf-8"));
-  } catch {
-    return [];
-  }
-}
-
-function savePending(list) {
-  fs.writeFileSync(PENDING_META_FILE, JSON.stringify(list, null, 2), "utf-8");
-}
-
-// ---------- Biblioteca de imágenes (nudos, señas, insignias, etc.) ----------
-const MEDIA_DIR = path.join(__dirname, "media");
-const MEDIA_FILES_DIR = path.join(MEDIA_DIR, "files");
-const MEDIA_META_FILE = path.join(MEDIA_DIR, "media.json");
-const MEDIA_ALLOWED_EXTENSIONS = [".png", ".jpg", ".jpeg", ".webp", ".gif"];
-
-if (!fs.existsSync(MEDIA_FILES_DIR)) {
-  fs.mkdirSync(MEDIA_FILES_DIR, { recursive: true });
-}
-
-// Las imágenes de la biblioteca se sirven como archivos estáticos normales.
-app.use("/media-files", express.static(MEDIA_FILES_DIR));
-
-function loadMedia() {
-  if (!fs.existsSync(MEDIA_META_FILE)) return [];
-  try {
-    return JSON.parse(fs.readFileSync(MEDIA_META_FILE, "utf-8"));
-  } catch {
-    return [];
-  }
-}
-
-function saveMedia(list) {
-  fs.writeFileSync(MEDIA_META_FILE, JSON.stringify(list, null, 2), "utf-8");
-}
 
 // Quita tildes/acentos para que la comparación de palabras no falle por eso.
 function normalizeText(str) {
@@ -104,10 +73,15 @@ function normalizeText(str) {
     .trim();
 }
 
-// Busca en la biblioteca las imágenes cuyas etiquetas coincidan con la pregunta.
-function findMatchingImages(question, maxResults = 2) {
-  const media = loadMedia();
-  if (media.length === 0) return [];
+// Busca en la biblioteca (tabla 'media' en Supabase) las imágenes cuyas
+// etiquetas coincidan con la pregunta.
+async function findMatchingImages(question, maxResults = 2) {
+  const { data: media, error } = await supabase.from("media").select("*");
+  if (error) {
+    console.error("Error leyendo la biblioteca de imágenes:", error.message);
+    return [];
+  }
+  if (!media || media.length === 0) return [];
 
   const normalizedQuestion = normalizeText(question);
 
@@ -117,7 +91,7 @@ function findMatchingImages(question, maxResults = 2) {
   });
 
   return matches.slice(0, maxResults).map((item) => ({
-    url: `/media-files/${item.storedFileName}`,
+    url: supabase.storage.from(MEDIA_BUCKET).getPublicUrl(item.stored_file_name).data.publicUrl,
     description: item.description || "",
   }));
 }
@@ -147,15 +121,14 @@ Cómo responder:
 - Responde siempre en español.`;
 
 // ---------- Utilidad: registrar cada pregunta hecha ----------
-function logQuestion(question, answer, sources) {
+async function logQuestion(question, answer, sources) {
   try {
-    const entry = {
-      time: new Date().toISOString(),
+    const { error } = await supabase.from("question_logs").insert({
       question,
       answer,
       sources,
-    };
-    fs.appendFileSync(LOG_FILE, JSON.stringify(entry) + "\n", "utf-8");
+    });
+    if (error) throw error;
   } catch (err) {
     console.error("No se pudo guardar el registro de la pregunta:", err.message);
   }
@@ -252,9 +225,9 @@ app.post("/api/chat", async (req, res) => {
       "No pude generar una respuesta, intenta reformular tu pregunta.";
 
     const sources = [...new Set(relevantChunks.map((c) => c.source))];
-    const images = findMatchingImages(message);
+    const images = await findMatchingImages(message);
 
-    logQuestion(message, answer, sources);
+    await logQuestion(message, answer, sources);
 
     res.json({ answer, sources, images });
   } catch (err) {
@@ -266,7 +239,7 @@ app.post("/api/chat", async (req, res) => {
 // ---------- Endpoint público: sugerir un documento (queda pendiente de aprobación) ----------
 const ALLOWED_EXTENSIONS = [".pdf", ".docx", ".txt"];
 
-app.post("/api/submit-document", upload.single("file"), (req, res) => {
+app.post("/api/submit-document", upload.single("file"), async (req, res) => {
   try {
     if (!req.file) {
       return res.status(400).json({ error: "No se recibió ningún archivo." });
@@ -285,18 +258,19 @@ app.post("/api/submit-document", upload.single("file"), (req, res) => {
     const safeOriginalName = req.file.originalname.replace(/[^a-zA-Z0-9_\-.áéíóúñÁÉÍÓÚÑ ]/g, "");
     const storedFileName = `${id}__${safeOriginalName}`;
 
-    fs.writeFileSync(path.join(PENDING_FILES_DIR, storedFileName), req.file.buffer);
+    const { error: uploadError } = await supabase.storage
+      .from(PENDING_BUCKET)
+      .upload(storedFileName, req.file.buffer, { contentType: req.file.mimetype });
+    if (uploadError) throw uploadError;
 
-    const pending = loadPending();
-    pending.push({
+    const { error: insertError } = await supabase.from("pending_documents").insert({
       id,
-      originalName: req.file.originalname,
-      storedFileName,
+      original_name: req.file.originalname,
+      stored_file_name: storedFileName,
       note,
-      submittedAt: new Date().toISOString(),
       size: req.file.size,
     });
-    savePending(pending);
+    if (insertError) throw insertError;
 
     res.json({
       message: "¡Gracias! Tu documento quedó enviado para revisión de un administrador.",
@@ -397,56 +371,79 @@ app.delete("/api/admin/documents/:source", checkAdminPassword, (req, res) => {
 });
 
 // Devuelve las últimas preguntas hechas al bot (para revisión humana).
-app.get("/api/admin/logs", checkAdminPassword, (req, res) => {
+app.get("/api/admin/logs", checkAdminPassword, async (req, res) => {
   try {
-    if (!fs.existsSync(LOG_FILE)) return res.json({ logs: [] });
-    const lines = fs
-      .readFileSync(LOG_FILE, "utf-8")
-      .split("\n")
-      .filter(Boolean)
-      .slice(-50)
-      .reverse()
-      .map((line) => JSON.parse(line));
-    res.json({ logs: lines });
+    const { data, error } = await supabase
+      .from("question_logs")
+      .select("*")
+      .order("time", { ascending: false })
+      .limit(50);
+    if (error) throw error;
+    res.json({ logs: data });
   } catch (err) {
     res.status(500).json({ error: "No se pudo leer el registro." });
   }
 });
 
 // Lista los documentos pendientes de aprobación.
-app.get("/api/admin/pending", checkAdminPassword, (req, res) => {
-  const pending = loadPending();
-  res.json({ pending: pending.slice().reverse() });
+app.get("/api/admin/pending", checkAdminPassword, async (req, res) => {
+  const { data, error } = await supabase
+    .from("pending_documents")
+    .select("*")
+    .order("submitted_at", { ascending: false });
+  if (error) return res.status(500).json({ error: "No se pudo leer la lista de pendientes." });
+  res.json({
+    pending: data.map((p) => ({
+      id: p.id,
+      originalName: p.original_name,
+      storedFileName: p.stored_file_name,
+      note: p.note,
+      submittedAt: p.submitted_at,
+      size: p.size,
+    })),
+  });
 });
 
 // Descarga el archivo original de un documento pendiente, para revisarlo.
-app.get("/api/admin/pending/:id/download", checkAdminPassword, (req, res) => {
-  const pending = loadPending();
-  const item = pending.find((p) => p.id === req.params.id);
-  if (!item) return res.status(404).json({ error: "No se encontró ese documento pendiente." });
+app.get("/api/admin/pending/:id/download", checkAdminPassword, async (req, res) => {
+  const { data: item, error } = await supabase
+    .from("pending_documents")
+    .select("*")
+    .eq("id", req.params.id)
+    .maybeSingle();
+  if (error || !item) return res.status(404).json({ error: "No se encontró ese documento pendiente." });
 
-  const filePath = path.join(PENDING_FILES_DIR, item.storedFileName);
-  if (!fs.existsSync(filePath)) {
-    return res.status(404).json({ error: "El archivo ya no está disponible en el servidor." });
+  const { data: fileData, error: downloadError } = await supabase.storage
+    .from(PENDING_BUCKET)
+    .download(item.stored_file_name);
+  if (downloadError) {
+    return res.status(404).json({ error: "El archivo ya no está disponible." });
   }
 
-  res.download(filePath, item.originalName);
+  const buffer = Buffer.from(await fileData.arrayBuffer());
+  res.setHeader("Content-Disposition", `attachment; filename="${item.original_name}"`);
+  res.send(buffer);
 });
 
 // Aprueba un documento pendiente: lo agrega oficialmente al chatbot.
 app.post("/api/admin/pending/:id/approve", checkAdminPassword, async (req, res) => {
   try {
-    const pending = loadPending();
-    const item = pending.find((p) => p.id === req.params.id);
-    if (!item) return res.status(404).json({ error: "No se encontró ese documento pendiente." });
+    const { data: item, error } = await supabase
+      .from("pending_documents")
+      .select("*")
+      .eq("id", req.params.id)
+      .maybeSingle();
+    if (error || !item) return res.status(404).json({ error: "No se encontró ese documento pendiente." });
 
-    const filePath = path.join(PENDING_FILES_DIR, item.storedFileName);
-    if (!fs.existsSync(filePath)) {
+    const { data: fileData, error: downloadError } = await supabase.storage
+      .from(PENDING_BUCKET)
+      .download(item.stored_file_name);
+    if (downloadError) {
       return res.status(404).json({ error: "El archivo ya no está disponible en el servidor." });
     }
+    const buffer = Buffer.from(await fileData.arrayBuffer());
 
-    const buffer = fs.readFileSync(filePath);
-    const text = await extractText({ originalname: item.originalName, buffer });
+    const text = await extractText({ originalname: item.original_name, buffer });
 
     if (!text || text.trim().length < 20) {
       return res.status(400).json({
@@ -455,20 +452,20 @@ app.post("/api/admin/pending/:id/approve", checkAdminPassword, async (req, res) 
     }
 
     const sourceName = path
-      .basename(item.originalName, path.extname(item.originalName))
+      .basename(item.original_name, path.extname(item.original_name))
       .replace(/[^a-zA-Z0-9_\-áéíóúñÁÉÍÓÚÑ ]/g, "")
       .trim()
       .replace(/\s+/g, "_");
 
     const fragments = addDocument(sourceName || `documento_${Date.now()}`, text);
 
-    // Ya quedó incorporado al índice oficial (y respaldado en /knowledge),
-    // así que se quita de la lista de pendientes.
-    fs.unlinkSync(filePath);
-    savePending(pending.filter((p) => p.id !== item.id));
+    // Ya quedó incorporado al índice oficial, así que se quita de la lista
+    // de pendientes (archivo en Storage + fila en la tabla).
+    await supabase.storage.from(PENDING_BUCKET).remove([item.stored_file_name]);
+    await supabase.from("pending_documents").delete().eq("id", item.id);
 
     res.json({
-      message: `Documento aprobado y agregado: ${fragments} fragmentos indexados.`,
+      message: `Documento aprobado y agregado: ${fragments} fragmentos indexados. Ojo: como el índice se genera en disco local, este cambio se va a perder en el próximo redeploy — para que quede permanente, súbelo también directamente a la carpeta /knowledge del repo.`,
       documents: listSources(),
     });
   } catch (err) {
@@ -478,26 +475,42 @@ app.post("/api/admin/pending/:id/approve", checkAdminPassword, async (req, res) 
 });
 
 // Rechaza (elimina) un documento pendiente sin agregarlo al chatbot.
-app.delete("/api/admin/pending/:id", checkAdminPassword, (req, res) => {
-  const pending = loadPending();
-  const item = pending.find((p) => p.id === req.params.id);
-  if (!item) return res.status(404).json({ error: "No se encontró ese documento pendiente." });
+app.delete("/api/admin/pending/:id", checkAdminPassword, async (req, res) => {
+  const { data: item, error } = await supabase
+    .from("pending_documents")
+    .select("*")
+    .eq("id", req.params.id)
+    .maybeSingle();
+  if (error || !item) return res.status(404).json({ error: "No se encontró ese documento pendiente." });
 
-  const filePath = path.join(PENDING_FILES_DIR, item.storedFileName);
-  if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
-
-  savePending(pending.filter((p) => p.id !== item.id));
+  await supabase.storage.from(PENDING_BUCKET).remove([item.stored_file_name]);
+  await supabase.from("pending_documents").delete().eq("id", item.id);
 
   res.json({ message: "Documento rechazado y eliminado." });
 });
 
 // Lista las imágenes de la biblioteca (nudos, señas, etc.).
-app.get("/api/admin/media", checkAdminPassword, (req, res) => {
-  res.json({ media: loadMedia().slice().reverse() });
+app.get("/api/admin/media", checkAdminPassword, async (req, res) => {
+  const { data, error } = await supabase
+    .from("media")
+    .select("*")
+    .order("uploaded_at", { ascending: false });
+  if (error) return res.status(500).json({ error: "No se pudo leer la biblioteca." });
+  res.json({
+    media: data.map((m) => ({
+      id: m.id,
+      storedFileName: m.stored_file_name,
+      originalName: m.original_name,
+      tags: m.tags,
+      description: m.description,
+      uploadedAt: m.uploaded_at,
+      url: supabase.storage.from(MEDIA_BUCKET).getPublicUrl(m.stored_file_name).data.publicUrl,
+    })),
+  });
 });
 
 // Sube una imagen nueva a la biblioteca, con etiquetas para que el bot la encuentre.
-app.post("/api/admin/media", checkAdminPassword, upload.single("file"), (req, res) => {
+app.post("/api/admin/media", checkAdminPassword, upload.single("file"), async (req, res) => {
   try {
     if (!req.file) {
       return res.status(400).json({ error: "No se recibió ninguna imagen." });
@@ -521,20 +534,27 @@ app.post("/api/admin/media", checkAdminPassword, upload.single("file"), (req, re
 
     const id = crypto.randomUUID();
     const storedFileName = `${id}${ext}`;
-    fs.writeFileSync(path.join(MEDIA_FILES_DIR, storedFileName), req.file.buffer);
 
-    const media = loadMedia();
-    media.push({
+    const { error: uploadError } = await supabase.storage
+      .from(MEDIA_BUCKET)
+      .upload(storedFileName, req.file.buffer, { contentType: req.file.mimetype });
+    if (uploadError) throw uploadError;
+
+    const { error: insertError } = await supabase.from("media").insert({
       id,
-      storedFileName,
-      originalName: req.file.originalname,
+      stored_file_name: storedFileName,
+      original_name: req.file.originalname,
       tags,
       description,
-      uploadedAt: new Date().toISOString(),
     });
-    saveMedia(media);
+    if (insertError) throw insertError;
 
-    res.json({ message: "Imagen agregada a la biblioteca.", media: media.slice().reverse() });
+    const { data: media } = await supabase
+      .from("media")
+      .select("*")
+      .order("uploaded_at", { ascending: false });
+
+    res.json({ message: "Imagen agregada a la biblioteca.", media });
   } catch (err) {
     console.error("Error subiendo imagen a la biblioteca:", err);
     res.status(500).json({ error: "No se pudo subir la imagen." });
@@ -542,15 +562,16 @@ app.post("/api/admin/media", checkAdminPassword, upload.single("file"), (req, re
 });
 
 // Elimina una imagen de la biblioteca.
-app.delete("/api/admin/media/:id", checkAdminPassword, (req, res) => {
-  const media = loadMedia();
-  const item = media.find((m) => m.id === req.params.id);
-  if (!item) return res.status(404).json({ error: "No se encontró esa imagen." });
+app.delete("/api/admin/media/:id", checkAdminPassword, async (req, res) => {
+  const { data: item, error } = await supabase
+    .from("media")
+    .select("*")
+    .eq("id", req.params.id)
+    .maybeSingle();
+  if (error || !item) return res.status(404).json({ error: "No se encontró esa imagen." });
 
-  const filePath = path.join(MEDIA_FILES_DIR, item.storedFileName);
-  if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
-
-  saveMedia(media.filter((m) => m.id !== item.id));
+  await supabase.storage.from(MEDIA_BUCKET).remove([item.stored_file_name]);
+  await supabase.from("media").delete().eq("id", item.id);
 
   res.json({ message: "Imagen eliminada." });
 });

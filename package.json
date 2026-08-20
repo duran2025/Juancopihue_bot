@@ -1,7 +1,7 @@
 {
   "name": "scout-web-bot",
   "version": "1.0.0",
-  "description": "Chatbot web con IA para consultar manuales y reglamentos de la Agrupación Nacional de Boy Scouts de Chile",
+  "description": "Chatbot web con IA para consultar manuales y reglamentos de la Agrupaci\u00f3n Nacional de Boy Scouts de Chile",
   "main": "server.js",
   "type": "commonjs",
   "scripts": {
@@ -15,7 +15,8 @@
     "natural": "^6.12.0",
     "multer": "^1.4.5-lts.1",
     "pdf-parse": "^1.1.1",
-    "mammoth": "^1.7.2"
+    "mammoth": "^1.7.2",
+    "@supabase/supabase-js": "^2.45.0"
   },
   "engines": {
     "node": ">=18.0.0"
