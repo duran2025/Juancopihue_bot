@@ -418,7 +418,7 @@
       const div = document.createElement("div");
       div.className = "media-item";
       div.innerHTML = `
-        <img src="/media-files/${item.storedFileName}" alt="" />
+        <img src="${item.url}" alt="" />
         <div class="info">
           <div class="tags">${item.tags}</div>
           <div class="desc">${item.description || ""}</div>
