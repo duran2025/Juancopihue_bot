@@ -141,12 +141,13 @@ Cómo responder:
 - Responde siempre en español.`;
 
 // ---------- Utilidad: registrar cada pregunta hecha ----------
-async function logQuestion(question, answer, sources) {
+async function logQuestion(question, answer, sources, responseMs) {
   try {
     const { error } = await supabase.from("question_logs").insert({
       question,
       answer,
       sources,
+      response_ms: responseMs,
     });
     if (error) throw error;
   } catch (err) {
@@ -156,6 +157,7 @@ async function logQuestion(question, answer, sources) {
 
 // ---------- Endpoint principal del chat ----------
 app.post("/api/chat", async (req, res) => {
+  const startTime = Date.now();
   try {
     const { message, history = [] } = req.body;
 
@@ -246,8 +248,9 @@ app.post("/api/chat", async (req, res) => {
 
     const sources = [...new Set(relevantChunks.map((c) => c.source))];
     const images = await findMatchingImages(message);
+    const responseMs = Date.now() - startTime;
 
-    await logQuestion(message, answer, sources);
+    await logQuestion(message, answer, sources, responseMs);
 
     res.json({ answer, sources, images });
   } catch (err) {
@@ -298,6 +301,17 @@ app.post("/api/submit-document", upload.single("file"), async (req, res) => {
   } catch (err) {
     console.error("Error recibiendo documento sugerido:", err);
     res.status(500).json({ error: "No se pudo recibir el archivo. Intenta de nuevo." });
+  }
+});
+
+// ---------- Endpoint público: registrar una visita a la página ----------
+app.post("/api/track-visit", async (req, res) => {
+  try {
+    await supabase.from("site_visits").insert({});
+    res.json({ ok: true });
+  } catch (err) {
+    // Que falle esto nunca debe afectar la carga de la página.
+    res.json({ ok: false });
   }
 });
 
@@ -471,6 +485,75 @@ app.delete("/api/admin/error-reports/:id", checkAdminPassword, async (req, res) 
   const { error } = await supabase.from("error_reports").delete().eq("id", req.params.id);
   if (error) return res.status(500).json({ error: "No se pudo eliminar el reporte." });
   res.json({ message: "Reporte eliminado." });
+});
+
+// Estadísticas generales del sitio: visitas, preguntas repetidas, velocidad
+// de respuesta y errores reportados.
+app.get("/api/admin/stats", checkAdminPassword, async (req, res) => {
+  try {
+    const now = new Date();
+    const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000).toISOString();
+    const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000).toISOString();
+
+    const [
+      { count: visitsTotal },
+      { count: visits7d },
+      { count: visits30d },
+      { count: questionsTotal },
+      { data: questionRows },
+      { count: errorsTotal },
+      { count: errorsUnresolved },
+    ] = await Promise.all([
+      supabase.from("site_visits").select("*", { count: "exact", head: true }),
+      supabase.from("site_visits").select("*", { count: "exact", head: true }).gte("visited_at", sevenDaysAgo),
+      supabase.from("site_visits").select("*", { count: "exact", head: true }).gte("visited_at", thirtyDaysAgo),
+      supabase.from("question_logs").select("*", { count: "exact", head: true }),
+      supabase.from("question_logs").select("question, response_ms, time").order("time", { ascending: false }).limit(2000),
+      supabase.from("error_reports").select("*", { count: "exact", head: true }),
+      supabase.from("error_reports").select("*", { count: "exact", head: true }).eq("resolved", false),
+    ]);
+
+    const rows = questionRows || [];
+
+    // Velocidad de respuesta: promedio general y de los últimos 7 días.
+    const withTime = rows.filter((r) => typeof r.response_ms === "number");
+    const avgAll = withTime.length
+      ? Math.round(withTime.reduce((sum, r) => sum + r.response_ms, 0) / withTime.length)
+      : null;
+    const withTimeRecent = withTime.filter((r) => r.time >= sevenDaysAgo);
+    const avgRecent = withTimeRecent.length
+      ? Math.round(withTimeRecent.reduce((sum, r) => sum + r.response_ms, 0) / withTimeRecent.length)
+      : null;
+
+    // Preguntas que más se repiten: agrupamos por texto normalizado
+    // (sin tildes/mayúsculas) para que "¿Cómo hago el nudo?" y "como hago
+    // el nudo" cuenten como la misma pregunta.
+    const grouped = {};
+    for (const r of rows) {
+      const key = normalizeText(r.question || "");
+      if (!key) continue;
+      if (!grouped[key]) {
+        grouped[key] = { question: r.question, count: 0, lastAsked: r.time };
+      }
+      grouped[key].count += 1;
+      if (r.time > grouped[key].lastAsked) grouped[key].lastAsked = r.time;
+    }
+    const topQuestions = Object.values(grouped)
+      .filter((g) => g.count > 1)
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 10);
+
+    res.json({
+      visits: { total: visitsTotal || 0, last7Days: visits7d || 0, last30Days: visits30d || 0 },
+      questions: { total: questionsTotal || 0 },
+      responseSpeed: { avgMsAllTime: avgAll, avgMsLast7Days: avgRecent },
+      topRepeatedQuestions: topQuestions,
+      errorReports: { total: errorsTotal || 0, unresolved: errorsUnresolved || 0 },
+    });
+  } catch (err) {
+    console.error("Error calculando estadísticas:", err);
+    res.status(500).json({ error: "No se pudieron calcular las estadísticas." });
+  }
 });
 
 // Lista los documentos pendientes de aprobación.
