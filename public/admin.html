@@ -106,6 +106,60 @@
   .media-item .info { flex: 1; min-width: 0; }
   .media-item .tags { font-size: 12px; font-weight: 600; }
   .media-item .desc { font-size: 11.5px; color: #888; }
+  .tab-bar {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .tab-bar button {
+    background: white;
+    color: #1b5e20;
+    border: 1px solid #1b5e20;
+    font-weight: 600;
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+  .tab-bar button.active {
+    background: #1b5e20;
+    color: white;
+  }
+  .tab-section { display: none; }
+  .tab-section.active { display: block; }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .stat-box {
+    background: #f4f6f4;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+  }
+  .stat-box .num { font-size: 22px; font-weight: 700; color: #1b5e20; }
+  .stat-box .label { font-size: 11px; color: #777; margin-top: 2px; }
+  .repeat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+  }
+  .repeat-row:last-child { border-bottom: none; }
+  .repeat-row .count {
+    background: #1b5e20;
+    color: white;
+    border-radius: 10px;
+    padding: 2px 9px;
+    font-size: 11.5px;
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-left: 10px;
+  }
 </style>
 </head>
 <body>
@@ -124,6 +178,15 @@
 </div>
 
 <div id="app">
+
+  <div class="tab-bar">
+    <button class="tab-btn active" data-tab="contenido">📚 Contenido</button>
+    <button class="tab-btn" data-tab="reportes">⚠️ Reportes</button>
+    <button class="tab-btn" data-tab="preguntas">💬 Preguntas</button>
+    <button class="tab-btn" data-tab="estadisticas">📊 Estadísticas</button>
+  </div>
+
+  <div class="tab-section active" data-tab="contenido">
 
   <div class="card">
     <h2>Biblioteca de imágenes (nudos, señas, insignias, etc.)</h2>
@@ -163,16 +226,34 @@
     <div id="docsList">Cargando...</div>
   </div>
 
+  </div>
+
+  <div class="tab-section" data-tab="reportes">
   <div class="card">
     <h2>Errores reportados por usuarios</h2>
     <small>Cuando alguien marca "Reportar un error" en el chat, aparece acá.</small><br /><br />
     <div id="reportsList">Cargando...</div>
   </div>
+  </div>
 
+  <div class="tab-section" data-tab="preguntas">
   <div class="card">
     <h2>Últimas preguntas hechas al chatbot</h2>
     <small>Revisa esto de vez en cuando para ver qué falta agregar o aclarar.</small><br /><br />
     <div id="logsList">Cargando...</div>
+  </div>
+  </div>
+
+  <div class="tab-section" data-tab="estadisticas">
+  <div class="card">
+    <h2>Estadísticas del sitio</h2>
+    <div id="statsGrid" class="stats-grid"><small>Cargando...</small></div>
+  </div>
+  <div class="card">
+    <h2>Preguntas que más se repiten</h2>
+    <small>Agrupadas ignorando mayúsculas y tildes. Solo se muestran las que se preguntaron más de una vez.</small><br /><br />
+    <div id="topQuestionsList">Cargando...</div>
+  </div>
   </div>
 
 </div>
@@ -185,6 +266,16 @@
   const loginBtn = document.getElementById("loginBtn");
   const passwordInput = document.getElementById("password");
   const loginMsg = document.getElementById("loginMsg");
+
+  // Manejo de las pestañas del panel.
+  document.querySelectorAll(".tab-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+      document.querySelectorAll(".tab-section").forEach((s) => s.classList.remove("active"));
+      btn.classList.add("active");
+      document.querySelector(`.tab-section[data-tab="${btn.dataset.tab}"]`).classList.add("active");
+    });
+  });
 
   loginBtn.addEventListener("click", async () => {
     password = passwordInput.value;
@@ -199,6 +290,7 @@
       loadReports();
       loadPending();
       loadMedia();
+      loadStats();
     } else {
       const data = await res.json().catch(() => ({}));
       loginMsg.textContent = data.error || "Contraseña incorrecta.";
@@ -232,6 +324,51 @@
       };
       row.appendChild(delBtn);
       container.appendChild(row);
+    });
+  }
+
+  function formatMs(ms) {
+    if (ms === null || ms === undefined) return "sin datos";
+    if (ms >= 1000) return (ms / 1000).toFixed(1) + "s";
+    return ms + "ms";
+  }
+
+  async function loadStats() {
+    const res = await fetch("/api/admin/stats", {
+      headers: { "x-admin-password": password },
+    });
+    const grid = document.getElementById("statsGrid");
+    const topList = document.getElementById("topQuestionsList");
+
+    if (!res.ok) {
+      grid.innerHTML = "<small>No se pudieron cargar las estadísticas.</small>";
+      topList.innerHTML = "";
+      return;
+    }
+
+    const data = await res.json();
+
+    grid.innerHTML = `
+      <div class="stat-box"><div class="num">${data.visits.total}</div><div class="label">Visitas totales</div></div>
+      <div class="stat-box"><div class="num">${data.visits.last7Days}</div><div class="label">Visitas últimos 7 días</div></div>
+      <div class="stat-box"><div class="num">${data.visits.last30Days}</div><div class="label">Visitas últimos 30 días</div></div>
+      <div class="stat-box"><div class="num">${data.questions.total}</div><div class="label">Preguntas totales</div></div>
+      <div class="stat-box"><div class="num">${formatMs(data.responseSpeed.avgMsAllTime)}</div><div class="label">Velocidad promedio</div></div>
+      <div class="stat-box"><div class="num">${formatMs(data.responseSpeed.avgMsLast7Days)}</div><div class="label">Velocidad últimos 7 días</div></div>
+      <div class="stat-box"><div class="num">${data.errorReports.unresolved}</div><div class="label">Errores sin resolver</div></div>
+      <div class="stat-box"><div class="num">${data.errorReports.total}</div><div class="label">Errores reportados (total)</div></div>
+    `;
+
+    if (!data.topRepeatedQuestions || data.topRepeatedQuestions.length === 0) {
+      topList.innerHTML = "<small>Todavía no hay preguntas repetidas.</small>";
+      return;
+    }
+    topList.innerHTML = "";
+    data.topRepeatedQuestions.forEach((q) => {
+      const row = document.createElement("div");
+      row.className = "repeat-row";
+      row.innerHTML = `<span>${q.question}</span><span class="count">${q.count}×</span>`;
+      topList.appendChild(row);
     });
   }
 

@@ -374,6 +374,10 @@
 
   let history = [];
 
+  // Registramos la visita para las estadísticas del panel admin. Si falla
+  // (sin internet, bloqueador de anuncios, etc.) no afecta el chat.
+  fetch("/api/track-visit", { method: "POST" }).catch(() => {});
+
   function addMessage(role, text, sources, images, question) {
     const div = document.createElement("div");
     div.className = "msg " + role;
