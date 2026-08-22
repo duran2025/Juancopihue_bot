@@ -164,6 +164,12 @@
   </div>
 
   <div class="card">
+    <h2>Errores reportados por usuarios</h2>
+    <small>Cuando alguien marca "Reportar un error" en el chat, aparece acá.</small><br /><br />
+    <div id="reportsList">Cargando...</div>
+  </div>
+
+  <div class="card">
     <h2>Últimas preguntas hechas al chatbot</h2>
     <small>Revisa esto de vez en cuando para ver qué falta agregar o aclarar.</small><br /><br />
     <div id="logsList">Cargando...</div>
@@ -190,6 +196,7 @@
       document.getElementById("app").style.display = "block";
       loadDocs();
       loadLogs();
+      loadReports();
       loadPending();
       loadMedia();
     } else {
@@ -222,6 +229,56 @@
           headers: { "x-admin-password": password },
         });
         loadDocs();
+      };
+      row.appendChild(delBtn);
+      container.appendChild(row);
+    });
+  }
+
+  async function loadReports() {
+    const res = await fetch("/api/admin/error-reports", {
+      headers: { "x-admin-password": password },
+    });
+    const data = await res.json();
+    const container = document.getElementById("reportsList");
+    if (!data.reports || data.reports.length === 0) {
+      container.innerHTML = "<small>No hay errores reportados por ahora.</small>";
+      return;
+    }
+    container.innerHTML = "";
+    data.reports.forEach((report) => {
+      const row = document.createElement("div");
+      row.className = "log-row";
+      row.style.display = "block";
+      row.style.opacity = report.resolved ? "0.55" : "1";
+      const date = new Date(report.reported_at).toLocaleString("es-CL");
+      row.innerHTML = `
+        <div class="log-meta"><strong>Reporte:</strong> ${report.report_text}${report.resolved ? " · <em>(resuelto)</em>" : ""}</div>
+        <div class="log-q">${report.question}</div>
+        <div class="log-a">${report.answer}</div>
+        <div class="log-meta">${date} · Fuentes: ${(report.sources || []).join(", ") || "ninguna"}</div>
+      `;
+      if (!report.resolved) {
+        const resolveBtn = document.createElement("button");
+        resolveBtn.textContent = "Marcar como resuelto";
+        resolveBtn.onclick = async () => {
+          await fetch(`/api/admin/error-reports/${report.id}/resolve`, {
+            method: "POST",
+            headers: { "x-admin-password": password },
+          });
+          loadReports();
+        };
+        row.appendChild(resolveBtn);
+      }
+      const delBtn = document.createElement("button");
+      delBtn.textContent = "Eliminar";
+      delBtn.onclick = async () => {
+        if (!confirm("¿Eliminar este reporte?")) return;
+        await fetch(`/api/admin/error-reports/${report.id}`, {
+          method: "DELETE",
+          headers: { "x-admin-password": password },
+        });
+        loadReports();
       };
       row.appendChild(delBtn);
       container.appendChild(row);

@@ -175,6 +175,66 @@
     color: #666;
     margin-top: 4px;
   }
+  .reportar-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 11.5px;
+    color: #999;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+  }
+  .reportar-link:hover {
+    color: var(--verde);
+  }
+  .reportar-burbuja {
+    margin-top: 8px;
+    background: #fff8e1;
+    border: 1px solid #f0dfa0;
+    border-radius: 10px;
+    padding: 10px 12px;
+    max-width: 320px;
+  }
+  .reportar-burbuja textarea {
+    width: 100%;
+    min-height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-family: inherit;
+    font-size: 13px;
+    resize: vertical;
+    box-sizing: border-box;
+  }
+  .reportar-burbuja .botones {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+    justify-content: flex-end;
+  }
+  .reportar-burbuja button {
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+  .reportar-burbuja .btn-enviar {
+    background: var(--verde);
+    color: white;
+  }
+  .reportar-burbuja .btn-cancelar {
+    background: #eee;
+    color: #333;
+  }
+  .reportar-burbuja .confirmacion {
+    font-size: 12.5px;
+    color: var(--verde);
+    font-weight: 600;
+  }
   .msg.system {
     align-self: center;
     color: #777;
@@ -281,7 +341,7 @@
   <div class="chat-column">
     <div id="chat">
       <img class="mascot-inline mascot-inline-bottom" src="/images/pensando.png" alt="" />
-      <div class="msg system">Hola, soy Juan Copihue, gracias a la tecnología volví, ¿en qué puedo ayudarte hoy?</div>
+      <div class="msg system">Hola, soy Juan Copihue, gracias a la tecnología volví, ¿qué puedo ayudarte hoy?</div>
     </div>
 
     <form id="form">
@@ -314,7 +374,7 @@
 
   let history = [];
 
-  function addMessage(role, text, sources, images) {
+  function addMessage(role, text, sources, images, question) {
     const div = document.createElement("div");
     div.className = "msg " + role;
     div.textContent = text;
@@ -345,9 +405,75 @@
       div.appendChild(src);
     }
 
+    // Solo las respuestas reales del bot (con una pregunta detrás) pueden
+    // reportarse — no los mensajes de sistema/error genéricos.
+    if (role === "bot" && question) {
+      addReportLink(div, { question, answer: text, sources: sources || [] });
+    }
+
     chat.appendChild(div);
     chat.scrollTop = chat.scrollHeight;
     return div;
+  }
+
+  // Agrega el link "Reportar un error" bajo un mensaje del bot, y la
+  // burbuja que aparece al hacer clic para escribir el detalle.
+  function addReportLink(div, context) {
+    const link = document.createElement("button");
+    link.type = "button";
+    link.className = "reportar-link";
+    link.textContent = "Reportar un error";
+
+    const burbuja = document.createElement("div");
+    burbuja.className = "reportar-burbuja";
+    burbuja.style.display = "none";
+    burbuja.innerHTML = `
+      <textarea placeholder="¿Qué estuvo mal en esta respuesta?"></textarea>
+      <div class="botones">
+        <button type="button" class="btn-cancelar">Cancelar</button>
+        <button type="button" class="btn-enviar">Enviar</button>
+      </div>
+    `;
+
+    link.addEventListener("click", () => {
+      burbuja.style.display = burbuja.style.display === "none" ? "block" : "none";
+    });
+
+    burbuja.querySelector(".btn-cancelar").addEventListener("click", () => {
+      burbuja.style.display = "none";
+    });
+
+    burbuja.querySelector(".btn-enviar").addEventListener("click", async () => {
+      const textarea = burbuja.querySelector("textarea");
+      const reportText = textarea.value.trim();
+      if (!reportText) {
+        textarea.focus();
+        return;
+      }
+      const enviarBtn = burbuja.querySelector(".btn-enviar");
+      enviarBtn.disabled = true;
+      try {
+        const res = await fetch("/api/report-error", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            question: context.question,
+            answer: context.answer,
+            sources: context.sources,
+            reportText,
+          }),
+        });
+        if (!res.ok) throw new Error("No se pudo enviar");
+        burbuja.innerHTML = '<span class="confirmacion">¡Gracias! Reporte enviado.</span>';
+        link.remove();
+      } catch (err) {
+        enviarBtn.disabled = false;
+        alert("No se pudo enviar el reporte. Intenta de nuevo.");
+      }
+    });
+
+    div.appendChild(link);
+    div.appendChild(burbuja);
   }
 
   function showTyping() {
@@ -437,7 +563,7 @@
         return;
       }
 
-      addMessage("bot", data.answer, data.sources, data.images);
+      addMessage("bot", data.answer, data.sources, data.images, question);
       history.push({ role: "assistant", content: data.answer });
     } catch (err) {
       hideTyping();
