@@ -301,6 +301,33 @@ app.post("/api/submit-document", upload.single("file"), async (req, res) => {
   }
 });
 
+// ---------- Endpoint público: reportar un error en una respuesta ----------
+app.post("/api/report-error", async (req, res) => {
+  try {
+    const { question, answer, sources, reportText } = req.body;
+
+    if (typeof reportText !== "string" || !reportText.trim()) {
+      return res.status(400).json({ error: "Escribe una breve descripción del error." });
+    }
+    if (typeof question !== "string" || typeof answer !== "string") {
+      return res.status(400).json({ error: "Falta información de la pregunta o respuesta original." });
+    }
+
+    const { error } = await supabase.from("error_reports").insert({
+      question: question.slice(0, 2000),
+      answer: answer.slice(0, 8000),
+      sources: Array.isArray(sources) ? sources.slice(0, 20) : [],
+      report_text: reportText.slice(0, 1000),
+    });
+    if (error) throw error;
+
+    res.json({ message: "¡Gracias por avisar! Un administrador va a revisar esta respuesta." });
+  } catch (err) {
+    console.error("Error guardando el reporte:", err);
+    res.status(500).json({ error: "No se pudo enviar el reporte. Intenta de nuevo." });
+  }
+});
+
 // ================== PANEL DE ADMINISTRACIÓN ==================
 // Todo lo de aquí abajo requiere la contraseña de administrador
 // (variable de entorno ADMIN_PASSWORD). Si no está configurada, estas
@@ -415,6 +442,35 @@ app.get("/api/admin/logs", checkAdminPassword, async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: "No se pudo leer el registro." });
   }
+});
+
+// Lista los errores reportados por los usuarios, sin resolver primero.
+app.get("/api/admin/error-reports", checkAdminPassword, async (req, res) => {
+  try {
+    const { data, error } = await supabase
+      .from("error_reports")
+      .select("*")
+      .order("resolved", { ascending: true })
+      .order("reported_at", { ascending: false });
+    if (error) throw error;
+    res.json({ reports: data });
+  } catch (err) {
+    res.status(500).json({ error: "No se pudo leer los reportes." });
+  }
+});
+
+// Marca un reporte como resuelto (no lo borra, solo lo saca del tope de la lista).
+app.post("/api/admin/error-reports/:id/resolve", checkAdminPassword, async (req, res) => {
+  const { error } = await supabase.from("error_reports").update({ resolved: true }).eq("id", req.params.id);
+  if (error) return res.status(500).json({ error: "No se pudo actualizar el reporte." });
+  res.json({ message: "Reporte marcado como resuelto." });
+});
+
+// Elimina un reporte definitivamente.
+app.delete("/api/admin/error-reports/:id", checkAdminPassword, async (req, res) => {
+  const { error } = await supabase.from("error_reports").delete().eq("id", req.params.id);
+  if (error) return res.status(500).json({ error: "No se pudo eliminar el reporte." });
+  res.json({ message: "Reporte eliminado." });
 });
 
 // Lista los documentos pendientes de aprobación.
