@@ -421,6 +421,12 @@ app.post(
         .upsert({ source_name: finalSourceName, content: text }, { onConflict: "source_name" });
       if (saveError) {
         console.error("No se pudo guardar el documento en Supabase:", saveError.message);
+        return res.status(500).json({
+          error:
+            `El documento se agregó y ya responde preguntas AHORA MISMO, pero no quedó guardado ` +
+            `de forma permanente (error de Supabase: ${saveError.message}). Se perderá en el próximo ` +
+            `redeploy si no se arregla esto. Verifica que la tabla "knowledge_documents" exista en Supabase.`,
+        });
       }
 
       res.json({
@@ -637,7 +643,18 @@ app.post("/api/admin/pending/:id/approve", checkAdminPassword, async (req, res) 
       .from("knowledge_documents")
       .upsert({ source_name: finalSourceName, content: text }, { onConflict: "source_name" });
     if (saveError) {
+      // Si esto falla, el documento SÍ quedó respondiendo ahora mismo (está
+      // en memoria), pero se perderá en el próximo redeploy. Se lo dejamos
+      // clarísimo al admin en vez de que se entere días después: no lo
+      // sacamos de "pendientes" (por si prefiere reintentar) y devolvemos
+      // un error explícito.
       console.error("No se pudo guardar el documento en Supabase:", saveError.message);
+      return res.status(500).json({
+        error:
+          `El documento se agregó y ya responde preguntas AHORA MISMO, pero no quedó guardado ` +
+          `de forma permanente (error de Supabase: ${saveError.message}). Se perderá en el próximo ` +
+          `redeploy si no se arregla esto. Verifica que la tabla "knowledge_documents" exista en Supabase.`,
+      });
     }
 
     // Ya quedó incorporado al índice oficial, así que se quita de la lista
