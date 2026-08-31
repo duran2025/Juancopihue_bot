@@ -79,6 +79,18 @@ function loadIndex() {
 // Devuelve los N fragmentos más relevantes para una pregunta dada.
 // Todos los documentos compiten en igualdad de condiciones: no hay ningún
 // documento con puntaje reforzado ni preferencia por nombre o tipo.
+//
+// Ranking en dos niveles (importante para bibliotecas grandes con muchos
+// documentos, como esta): primero se ordenan los DOCUMENTOS según su mejor
+// fragmento, y luego se toman fragmentos dentro de cada documento en ese
+// orden. Si se ordenara todo junto por fragmento (como se hacía antes), un
+// documento muy extenso y muy concentrado en una palabra de la pregunta
+// (ej: un manual entero sobre "el Clan" cuando preguntan por "el Clan")
+// puede ocupar, solo, varias de las primeras posiciones del ranking de
+// fragmentos y así dejar completamente afuera del top N a documentos más
+// cortos que sí son relevantes pero para los que esa palabra es menos
+// frecuente en términos absolutos (ej: un documento nuevo sobre "escollos
+// del Clan" que menciona "Clan" solo un par de veces).
 function search(query, topN = 5) {
   if (!tfidf) loadIndex();
 
@@ -87,56 +99,79 @@ function search(query, topN = 5) {
     scores.push({ index: i, score: measure });
   });
 
-  scores.sort((a, b) => b.score - a.score);
-
   const positiveScores = scores.filter((s) => s.score > 0);
   if (positiveScores.length === 0) return [];
 
-  // Descartamos coincidencias demasiado débiles comparadas con la mejor de
+  // Puntaje de cada DOCUMENTO = el de su mejor fragmento para esta pregunta.
+  const bestScoreBySource = {};
+  for (const s of positiveScores) {
+    const source = chunks[s.index].source;
+    if (!bestScoreBySource[source] || s.score > bestScoreBySource[source]) {
+      bestScoreBySource[source] = s.score;
+    }
+  }
+
+  const rankedSources = Object.entries(bestScoreBySource).sort(
+    (a, b) => b[1] - a[1]
+  );
+  const topScore = rankedSources[0][1];
+
+  // Descartamos documentos demasiado débiles comparados con el mejor de
   // esta búsqueda (ruido de palabras sueltas que aparecen por casualidad).
-  const topScore = positiveScores[0].score;
-  const filtered = positiveScores.filter(
-    (s) => s.score >= topScore * MIN_RELATIVE_SCORE
+  const eligibleSources = rankedSources.filter(
+    ([, score]) => score >= topScore * MIN_RELATIVE_SCORE
   );
 
-  // Recorremos los resultados ya ordenados por relevancia y los vamos
-  // tomando, con un límite de fragmentos por documento — más flexible para
-  // el documento que domina claramente esta búsqueda, más estricto para el
-  // resto, así el contexto queda diverso salvo que un solo documento sea
-  // obviamente la fuente correcta (por ejemplo, un listado completo).
-  const bestSourceForThisQuery = chunks[filtered[0].index].source;
-  const secondBestScore = filtered.find(
-    (s) => chunks[s.index].source !== bestSourceForThisQuery
-  )?.score;
+  const bestSourceForThisQuery = eligibleSources[0][0];
+  const secondBestScore = eligibleSources[1]?.[1];
   const isDominant =
     !secondBestScore || topScore >= secondBestScore * DOMINANCE_RATIO;
 
-  const perSourceCount = {};
-  const picked = [];
+  // Fragmentos de cada documento elegible, ya ordenados por relevancia
+  // dentro de ese documento.
+  const chunksBySource = {};
+  for (const s of positiveScores) {
+    const source = chunks[s.index].source;
+    if (!(source in bestScoreBySource)) continue;
+    (chunksBySource[source] ||= []).push(s);
+  }
+  for (const source in chunksBySource) {
+    chunksBySource[source].sort((a, b) => b.score - a.score);
+  }
 
-  for (const s of filtered) {
-    const chunk = chunks[s.index];
+  // Recorremos los documentos en orden de relevancia y, de cada uno,
+  // tomamos sus mejores fragmentos — más de ellos para el documento que
+  // domina claramente esta búsqueda, menos para el resto, así el contexto
+  // queda diverso salvo que un solo documento sea obviamente la fuente
+  // correcta (por ejemplo, un listado completo).
+  const picked = [];
+  for (const [source] of eligibleSources) {
     const limit =
-      isDominant && chunk.source === bestSourceForThisQuery
+      isDominant && source === bestSourceForThisQuery
         ? MAX_CHUNKS_TOP_SOURCE
         : MAX_CHUNKS_PER_SOURCE;
-    const count = perSourceCount[chunk.source] || 0;
-    if (count >= limit) continue;
-    perSourceCount[chunk.source] = count + 1;
-    picked.push(chunk);
+    for (const s of chunksBySource[source].slice(0, limit)) {
+      picked.push(chunks[s.index]);
+      if (picked.length >= topN) break;
+    }
     if (picked.length >= topN) break;
   }
 
-  // Si el límite por documento dejó resultados afuera y aún hay espacio,
-  // completamos con lo que sea (siempre respetando el orden de relevancia),
-  // para no devolver menos fragmentos de los pedidos si hay más disponibles.
+  // Si el límite por documento dejó espacio libre (pocos documentos
+  // elegibles con pocos fragmentos cada uno), completamos con lo que sea,
+  // siempre respetando el orden de relevancia por documento y luego por
+  // fragmento, para no devolver menos fragmentos de los pedidos si hay
+  // más disponibles.
   if (picked.length < topN) {
     const pickedIds = new Set(picked.map((c) => c.id));
-    for (const s of filtered) {
-      const chunk = chunks[s.index];
-      if (pickedIds.has(chunk.id)) continue;
-      picked.push(chunk);
-      pickedIds.add(chunk.id);
+    for (const [source] of eligibleSources) {
+      for (const s of chunksBySource[source]) {
+        const chunk = chunks[s.index];
+        if (pickedIds.has(chunk.id)) continue;
+        picked.push(chunk);
+        pickedIds.add(chunk.id);
+        if (picked.length >= topN) break;
+      }
       if (picked.length >= topN) break;
     }
   }
