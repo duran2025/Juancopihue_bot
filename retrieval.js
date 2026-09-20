@@ -42,6 +42,10 @@ const MIN_RELATIVE_SCORE = 0.12; // 12% del puntaje del mejor resultado
 
 let chunks = [];
 let tfidf = null;
+// Texto normalizado de cada fragmento, en el mismo orden que 'chunks'.
+// Se recalcula junto con el índice TF-IDF (ver rebuildTfidf) para no tener
+// que normalizar 13.000+ fragmentos en cada pregunta que se haga.
+let normalizedChunkTexts = [];
 
 // Quita tildes/acentos y baja a minúsculas, para que "artículo" y
 // "articulo", o "reunión" y "REUNION", se comparen como la misma palabra.
@@ -57,12 +61,95 @@ function normalizeForSearch(str) {
 
 function rebuildTfidf() {
   tfidf = new natural.TfIdf();
-  for (const chunk of chunks) {
+  normalizedChunkTexts = chunks.map((chunk) => normalizeForSearch(chunk.text));
+  for (const normalizedText of normalizedChunkTexts) {
     // Indexamos la versión normalizada (sin tildes) de cada fragmento, no
     // el texto crudo. El texto original se conserva intacto en chunk.text
     // para mostrarlo/enviarlo a la IA tal cual está escrito.
-    tfidf.addDocument(normalizeForSearch(chunk.text));
+    tfidf.addDocument(normalizedText);
   }
+}
+
+// Palabras "genéricas" de una pregunta (pronombres, conectores, verbos de
+// pedido) que NUNCA cuentan como distintivas de un tema, aunque sean
+// poco comunes en la biblioteca por casualidad.
+const QUESTION_STOPWORDS = new Set([
+  "cuales", "cuando", "donde", "dame", "puedes", "podrias", "decime",
+  "cuanto", "cuanta", "cuantos", "cuantas", "existe", "existen", "sobre",
+  "segun", "estas", "estos", "esas", "esos", "quiero", "necesito", "favor",
+]);
+
+// Reduce una palabra a una forma aproximada de singular, para que
+// "banderas" (como la escribe quien pregunta) también encuentre fragmentos
+// que dicen "bandera" en singular (como suele estar redactado un
+// reglamento, describiendo cada bandera una por una). Es una heurística
+// simple, no un analizador morfológico real, pero alcanza para este uso.
+function toApproximateSingular(word) {
+  if (word.length > 6 && word.endsWith("es")) return word.slice(0, -2);
+  if (word.length > 4 && word.endsWith("s")) return word.slice(0, -1);
+  return word;
+}
+
+// Un buscador por palabras clave (como este) no entiende sinónimos: si el
+// reglamento dice "Dimensiones: 90 x 140 cm" y preguntan por "medidas", no
+// hay ninguna coincidencia de palabras que los conecte, aunque para
+// cualquier persona sean lo mismo. Esta lista cubre los pares de sinónimos
+// detectados en uso real; agregar uno nuevo es una línea.
+const QUERY_SYNONYMS = {
+  medida: ["dimension"],
+  dimension: ["medida"],
+};
+
+// Agrega a la pregunta, además de sus palabras originales, los sinónimos
+// conocidos de esas palabras — así una pregunta por "medidas" también
+// encuentra fragmentos que solo dicen "Dimensiones", y viceversa.
+function expandQueryWithSynonyms(normalizedQuery) {
+  const words = normalizedQuery.split(/\s+/).filter(Boolean);
+  const extra = [];
+  for (const word of words) {
+    const stem = toApproximateSingular(word);
+    if (QUERY_SYNONYMS[stem]) extra.push(...QUERY_SYNONYMS[stem]);
+  }
+  return extra.length > 0
+    ? `${normalizedQuery} ${extra.join(" ")}`
+    : normalizedQuery;
+}
+
+// De las palabras de una pregunta, ¿cuáles son realmente distintivas del
+// tema (aparecen en pocos fragmentos de TODA la biblioteca)? Sirve para
+// casos como "medidas reglamentarias de las banderas": dentro de un mismo
+// manual que mezcla uniformes, insignias y banderas, hay muchos más
+// fragmentos sobre medidas de insignias que sobre medidas de banderas, y
+// por puntaje general esos otros fragmentos pueden ganarle a los que sí
+// importan. "banderas" es la palabra que de verdad distingue qué se está
+// preguntando, así que un fragmento que la contenga literalmente (en
+// singular o plural) merece prioridad dentro de su propio documento,
+// aunque su puntaje TF-IDF general sea menor que el de otro fragmento del
+// mismo documento sobre un tema parecido pero distinto.
+function findDistinctiveTerms(query, maxShareOfLibrary = 0.05) {
+  const words = [
+    ...new Set(
+      normalizeForSearch(query)
+        .split(/\s+/)
+        .filter((w) => w.length >= 5 && !QUESTION_STOPWORDS.has(w))
+        .map(toApproximateSingular)
+    ),
+  ];
+  if (words.length === 0 || normalizedChunkTexts.length === 0) return [];
+
+  const total = normalizedChunkTexts.length;
+  const distinctive = [];
+  for (const word of words) {
+    const re = new RegExp(`\\b${word}`, "i"); // prefijo: cubre singular/plural
+    let count = 0;
+    for (const text of normalizedChunkTexts) {
+      if (re.test(text)) count++;
+    }
+    if (count > 0 && count / total <= maxShareOfLibrary) {
+      distinctive.push(word);
+    }
+  }
+  return distinctive;
 }
 
 function loadIndex() {
@@ -95,7 +182,7 @@ function search(query, topN = 5) {
   if (!tfidf) loadIndex();
 
   const scores = [];
-  tfidf.tfidfs(normalizeForSearch(query), (i, measure) => {
+  tfidf.tfidfs(expandQueryWithSynonyms(normalizeForSearch(query)), (i, measure) => {
     scores.push({ index: i, score: measure });
   });
 
@@ -128,7 +215,11 @@ function search(query, topN = 5) {
     !secondBestScore || topScore >= secondBestScore * DOMINANCE_RATIO;
 
   // Fragmentos de cada documento elegible, ya ordenados por relevancia
-  // dentro de ese documento.
+  // dentro de ese documento — pero primero los que contienen literalmente
+  // alguna palabra distintiva de la pregunta (ver findDistinctiveTerms),
+  // para que no se pierdan detrás de otros fragmentos de un tema parecido
+  // que solo comparten palabras genéricas.
+  const distinctiveTerms = findDistinctiveTerms(query);
   const chunksBySource = {};
   for (const s of positiveScores) {
     const source = chunks[s.index].source;
@@ -136,7 +227,18 @@ function search(query, topN = 5) {
     (chunksBySource[source] ||= []).push(s);
   }
   for (const source in chunksBySource) {
-    chunksBySource[source].sort((a, b) => b.score - a.score);
+    chunksBySource[source].sort((a, b) => {
+      if (distinctiveTerms.length > 0) {
+        const aHas = distinctiveTerms.some((t) =>
+          normalizedChunkTexts[a.index].includes(t)
+        );
+        const bHas = distinctiveTerms.some((t) =>
+          normalizedChunkTexts[b.index].includes(t)
+        );
+        if (aHas !== bHas) return aHas ? -1 : 1;
+      }
+      return b.score - a.score;
+    });
   }
 
   // Recorremos los documentos en orden de relevancia y, de cada uno,
